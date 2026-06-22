@@ -37,21 +37,23 @@ def render_app():
     apply_custom_styles()
     print("STREAMLIT_APP configured page", flush=True)
 
-    st.markdown(
-        """
-        <div class="app-hero">
-            <div class="app-hero-title">
-                TestGen
-            </div>
-            Hệ thống kiểm thử tự động multi-agent
-            <div class="app-hero-subtitle">
-            </div>
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
     selected_mode, workflow_mode, framework, test_technique, gemini_api_key, profile, use_preindexed_docs = render_sidebar()
+    print(f"STREAMLIT_APP sidebar workflow={workflow_mode}", flush=True)
+
+    if workflow_mode != PRIVACY_WORKFLOW:
+        st.markdown(
+            """
+            <div class="app-hero">
+                <div class="app-hero-title">
+                    TestGen
+                </div>
+                Hệ thống kiểm thử tự động multi-agent
+                <div class="app-hero-subtitle">
+                </div>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
     print(f"STREAMLIT_APP sidebar workflow={workflow_mode}", flush=True)
 
     requirement_text = ""

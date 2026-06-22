@@ -18,7 +18,7 @@ def _get_size_str(path: Path) -> str:
 def render_privacy_panel() -> None:
     st.markdown(
         """
-        <div class="flow-card">
+        <div class="flow-card" style="margin-top: 2rem;">
             <div class="flow-title">Quản lý dữ liệu & dung lượng</div>
             <div class="flow-desc">Xem dung lượng và dọn lịch sử chạy hoặc vector database.</div>
         </div>

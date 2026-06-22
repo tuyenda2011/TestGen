@@ -51,7 +51,8 @@ def review_test_code(
             "1. Using Regex in `pm.response.to.have.header()` or using `.to.be.oneOf([null, undefined])` to check missing fields are strict syntax errors and MUST be flagged as 'Lỗi nghiêm trọng'.\n"
             "2. Generating excessively long strings (e.g. hundreds of characters) for payloads is strictly prohibited. Flag it as 'Lỗi nghiêm trọng' if a generated string exceeds 50 characters.\n"
             "3. If the test asserts state changes across multiple requests against a dummy API like JSONPlaceholder (e.g., expecting consecutive POSTs to return different IDs), flag it as 'Lỗi nghiêm trọng' because dummy APIs do not persist state.\n"
-            "4. Using `pm.expect(pm.response.text()).to.be.empty` to assert an empty JSON object is logically wrong and fails at runtime (because `{}` is not empty). Flag this as 'Lỗi nghiêm trọng' and instruct the generator to use `pm.expect(Object.keys(pm.response.json())).to.be.empty` instead."
+            "4. Using `pm.expect(pm.response.text()).to.be.empty` to assert an empty JSON object is logically wrong and fails at runtime (because `{}` is not empty). Flag this as 'Lỗi nghiêm trọng' and instruct the generator to use `pm.expect(Object.keys(pm.response.json())).to.be.empty` instead.\n"
+            "5. Dummy APIs (like JSONPlaceholder) always return 200 or 201 for POST/PUT requests even if the payload is invalid/missing. If a generated test correctly asserts 200/201 (because that's what the mock API actually returns), DO NOT penalize the test as a 'Lỗi nghiêm trọng' just because the original Test Plan expected a 400 or 500 error. The test is reflecting reality."
         )
     source_block = source_code_text.strip() or "No source code provided."
     prompt = (

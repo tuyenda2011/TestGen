@@ -164,7 +164,7 @@ def generate_test_plan(
     if framework == "Postman script":
         system_prompt += (
             "\n\n[POSTMAN GUIDANCE]:\n"
-            "CRITICAL: If the target API is a dummy/mock API (like JSONPlaceholder), remember that it DOES NOT persist state. POST/PUT/DELETE requests will always return the same dummy ID (e.g. 101) and will not actually mutate the backend. DO NOT plan test scenarios that expect state changes across multiple consecutive requests (e.g., verifying unique sequential IDs for consecutive POSTs).\n"
+            "CRITICAL: If the target API is a dummy/mock API (like JSONPlaceholder), remember that it DOES NOT persist state AND DOES NOT validate inputs. POST/PUT/DELETE requests will always return a 201 or 200 success regardless of whether the payload is missing fields or invalid. DO NOT plan test scenarios that expect state changes across multiple consecutive requests. DO NOT plan negative scenarios expecting '400 Bad Request' or '500 Server Error' for invalid payloads, because the dummy API will just return success.\n"
             "CRITICAL: ABSOLUTELY DO NOT plan `null` or `undefined` tests for Postman because HTTP inputs are always strings or empty strings, never JS `null`/`undefined`."
         )
     if framework in ("Selenium", "Playwright"):

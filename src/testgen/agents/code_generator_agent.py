@@ -727,6 +727,7 @@ def heal_pytest_code(
     coverage_percent: float = 0.0,
     coverage_threshold: float = PYTEST_COVERAGE_THRESHOLD,
     failure_summary: str = "",
+    framework: str = "pytest",
 ) -> str:
     # Special rules for collection errors (NameError, ImportError preventing test collection)
     collection_error_rules = ""
@@ -766,9 +767,33 @@ def heal_pytest_code(
         "7. Preserve imports and helper functions unless they are directly causing the failure.\n"
         "8. NEVER use snapshot() from inline_snapshot in the output. All assertions must use concrete values.\n"
         "9. Return the full corrected pytest file only. Do not explain."
-        + collection_error_rules
-        + low_coverage_rules
     )
+    
+    framework_specific_rules = ""
+    normalized_framework = framework.lower()
+    if normalized_framework == "playwright":
+        framework_specific_rules = (
+            "\n\nSPECIAL RULES FOR PLAYWRIGHT E2E:\n"
+            "- CRITICAL: If fixing 'wrong_expected_value', the root cause is often hardcoded expected values in `@pytest.mark.parametrize` or test functions (e.g., `110.00` or `105.00`).\n"
+            "- You MUST KEEP `@pytest.mark.parametrize`! Do NOT split into separate functions! Just remove hardcoded expected values from the parametrization data. Instead, pass only the input data (`data` dict) to the test function.\n"
+            "- Inside the test function, you MUST call a NATIVE PYTHON helper function to compute the expected value dynamically. DO NOT use `page.evaluate()` to call the target JS to compute expected values, because if the JS throws an error, `page.evaluate()` will crash the test!\n"
+            "- AFTER computing expected dynamically, use `page.click()` to calculate on the UI, extract the ACTUAL output from the UI, and assert UI matches dynamically computed expected value.\n"
+            "- Handle JS exceptions by capturing the console error: `errors = []; page.on('pageerror', lambda e: errors.append(e)); page.click(...); assert len(errors) > 0`.\n"
+            "- FIXING 'Cannot type text into input[type=number]': Do NOT use `locator.fill('abc')`. You MUST use `page.locator('#id').evaluate(\"node => node.value = 'abc'\")`.\n"
+            "- FIXING 'Timeout 1000ms exceeded. waiting for navigation': Do NOT use `expect_navigation()` to test that a page DOES NOT reload. Just assert `page.url == initial_url`.\n"
+            "- FIXING 'Locator expected to be visible. Actual value: hidden': Empty `<output></output>` tags are treated as hidden by Playwright. Use `to_have_text(\"\")` or `to_be_empty()` instead of `to_be_visible()`.\n"
+        )
+    elif normalized_framework == "selenium":
+        framework_specific_rules = (
+            "\n\nSPECIAL RULES FOR SELENIUM E2E:\n"
+            "- CRITICAL: If fixing 'wrong_expected_value', the root cause is often hardcoded expected values in `@pytest.mark.parametrize` or test functions (e.g., `110.00` or `105.00`).\n"
+            "- You MUST remove hardcoded expected values from parametrization! Instead, pass only the input data to the test function.\n"
+            "- Inside the test function, you MUST call your Python helper function to compute the expected value dynamically at runtime.\n"
+            "- AFTER computing expected dynamically, use UI interactions to calculate on the UI, extract the ACTUAL output from the UI, and assert UI matches dynamically computed expected value.\n"
+            "- Handle JS exceptions by using `pytest.raises` with `driver.execute_script('return function(...)')`. Do not use .click() for testing exceptions.\n"
+        )
+        
+    system_prompt += collection_error_rules + low_coverage_rules + framework_specific_rules
     prompt = (
         f"Current generated pytest code:\n```python\n{test_code}\n```\n\n"
         f"Source code under test:\n```python\n{source_code_text}\n```\n\n"

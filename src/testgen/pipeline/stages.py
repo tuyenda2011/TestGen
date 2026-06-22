@@ -892,6 +892,7 @@ class ExecutionStage:
                             coverage_percent=previous_coverage,
                             coverage_threshold=PYTEST_COVERAGE_THRESHOLD,
                             failure_summary=previous_failure_summary,
+                            framework=executor.framework,
                         )
                     elif executor.framework == "JUnit" and attempt < 4 and self.deps.heal_junit_code and isinstance(previous_issue, dict) and previous_issue.get("type") in ["security_block", "assertion_error", "test_compilation_error", "null_pointer_error", "runtime_exception", "low_coverage"]:
                         # Fail-fast JUnit security_block: chỉ cho 1 vòng security sanitize retry

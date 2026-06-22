@@ -1,191 +1,137 @@
-# testgen-chatbot
+# TestGen - Hệ thống kiểm thử tự động Multi-Agent
 
-Ứng dụng Streamlit multi-agent để sinh, chạy và rà soát mã kiểm thử từ yêu cầu, tài liệu, source code và test code đầu vào.
+Ứng dụng Streamlit đa tác tử (multi-agent) hỗ trợ sinh, chạy và rà soát mã kiểm thử từ yêu cầu nghiệp vụ, tài liệu RAG, mã nguồn ứng dụng và tệp kiểm thử đầu vào.
 
-## Cấu trúc
+![Giao diện chính](imgs/main_menu.png)
 
-```text
-app.py                  # launcher cho streamlit run app.py
-src/testgen/            # source ứng dụng chính
-src/testgen/agents/     # requirement, planning, generator, reviewer, pytest executor
-src/testgen/rag/        # document loading, chunking, vector store, retriever
-prompts/                # prompt template có thể chỉnh mà không đụng package
-tests/                  # pytest regression tests
-outputs/                # file xuất và lịch sử chạy
-.runtime/               # ChromaDB runtime, tự sinh và bị ignore
-```
+## 📌 Các tính năng chính
+- **Sinh mã kiểm thử tự động**: Tự động phân tích cây cú pháp AST, sinh test plan và sinh test code tối ưu cho 6 framework khác nhau.
+- **Tự động sửa lỗi (Self-Healing)**: Khi chạy thử gặp lỗi, hệ thống tự động đọc log lỗi của trình thực thi và sửa mã nguồn test.
+- **Rà soát mã nguồn kiểm thử (Code Review)**: Phân tích chất lượng test code có sẵn và xuất báo cáo điểm số chi tiết.
+- **Quản lý tài liệu RAG**: Chunk và index tài liệu nghiệp vụ vào ChromaDB để tăng độ chính xác khi sinh test case.
 
-## Cài đặt
+---
 
-1. Cài Python 3.10+ và Ollama.
-2. Kéo model local:
+## ⚙️ Cài đặt & Chuẩn bị môi trường
 
-```bash
-ollama pull qwen2.5:7b
-ollama pull llama3.1:8b
-ollama pull qwen2.5-coder:7b
-ollama pull deepseek-coder:6.7b
-ollama pull nomic-embed-text
-```
-
-3. Cài thư viện:
-
+### 1. Cài đặt Python & Trình quản lý thư viện
+Yêu cầu Python 3.10+ (Khuyến nghị dùng Conda/Miniconda).
+Cài đặt toàn bộ thư viện cần thiết (bao gồm cả các thư viện chạy demo local và E2E) bằng lệnh:
 ```bash
 pip install -r requirements.txt
 ```
 
-4. Tạo cấu hình local nếu cần:
-
+### 2. Thiết lập Biến môi trường
+Sao chép cấu hình từ file mẫu để tạo file `.env` (file này đã được bỏ qua trong `.gitignore`):
 ```bash
-cp .env.example .env
+# Trên Windows cmd / powershell
+copy .env.example .env
 ```
+Mở file `.env` và thiết lập các API key (Gemini API Key hoặc OpenRouter API Key) nếu bạn muốn chạy ở chế độ Cloud AI.
+*(Người dùng có thể khởi tạo và lấy OpenRouter API Key tại địa chỉ: [https://openrouter.ai/workspaces/default/keys](https://openrouter.ai/workspaces/default/keys))*
 
-5. Chạy ứng dụng:
+**Lưu ý về Bảo mật**: Bạn cũng có thể nhập trực tiếp Gemini API Key hoặc OpenRouter API Key ngay trên giao diện web (khung Sidebar bên trái). API Key nhập trên giao diện chỉ lưu tạm thời trong bộ nhớ phiên chạy (Session State) của trình duyệt và sẽ tự động xóa sạch khi bạn tắt trình duyệt hoặc kết thúc phiên làm việc, hoàn toàn đảm bảo an toàn bảo mật và không lo bị lộ.
 
-```bash
-streamlit run app.py
-```
+### 3. Tải các mô hình AI Local (Ollama)
 
-## Cấu hình model
-
-Model mặc định nằm trong `src/testgen/core/config.py` và có thể override bằng biến môi trường hoặc chọn lại trong sidebar.
-
-- Requirement: `qwen2.5:7b`
-- Test Planning: `llama3.1:8b`
-- Code Generator: `qwen2.5-coder:7b`
-- Code Review: `deepseek-coder:6.7b`
-- Embedding: `nomic-embed-text`
-
-OpenRouter chỉ xử lý chat/completion. Nếu bật RAG mà không dùng Gemini embedding, hệ thống vẫn cần Ollama embedding local với `nomic-embed-text`.
-
-Không commit API key thật. Với Streamlit, ưu tiên nhập Gemini/OpenRouter key trong sidebar. Run history chỉ lưu metadata đã sanitize, không lưu API key.
-
-## Demo nhanh
-
-Bộ demo hoàn chỉnh nằm ở `examples/demo/`.
-
-- Source mẫu: `examples/demo/sample_source.py`
-- Requirement mẫu: `examples/demo/requirements.md`
-- Hướng dẫn từng bước: `examples/demo/streamlit_demo_guide.md`
-- Output/report mẫu: `examples/demo/sample_outputs/`
-
-Chạy demo:
-
-```bash
-streamlit run app.py
-```
-
-Nếu muốn phần retry theo coverage hiện rõ khi thuyết trình, đặt ngưỡng coverage demo trước khi chạy:
-
-```powershell
-$env:PYTEST_COVERAGE_THRESHOLD = "95"
-streamlit run app.py
-```
-
-README trong `examples/demo/` ghi sẵn model khuyến nghị cho local Ollama và OpenRouter, các bước nạp source/requirement, cách chỉ ra AST, retry, coverage, review report và diagnostics.
-
-## Hướng dẫn cấu hình & Chạy kiểm thử cho từng Framework
-
-TestGen hỗ trợ sinh và chạy mã tự động cho nhiều framework khác nhau. Dưới đây là yêu cầu môi trường local bắt buộc để hệ thống có thể thực thi (Run Executor) thành công:
-
-### 1. Pytest (Python)
-- **Môi trường:** Python 3.10+
-- **Cài đặt:** `pip install pytest pytest-cov`
-- **Hoạt động:** TestGen tự động phân tích coverage và chạy test thông qua môi trường Python hiện tại.
-
-### 2. JUnit 5 (Java)
-- **Môi trường:** Java JDK 11+ và Maven.
-- **Cài đặt:** Dự án của bạn phải có sẵn `pom.xml` cấu hình JUnit 5 và plugin JaCoCo (nếu muốn lấy điểm coverage).
-- **Hoạt động:** TestGen sẽ tự động tạo thư mục maven ảo, copy source code và chạy lệnh `mvn test`.
-
-### 3. Jest (JavaScript)
-- **Môi trường:** Node.js (v14+) và `npm`.
-- **Cài đặt:** Cần cài đặt Jest trong thư mục gốc hoặc chạy lệnh `npm install --save-dev jest jest-environment-jsdom`.
-- **Hoạt động:** TestGen sẽ gọi `npx jest` hoặc `npm test` để thu thập coverage và parse JSON kết quả.
-
-### 4. Selenium (Python - E2E Testing)
-- **Môi trường:** Python 3.10+
-- **Cài đặt:** `pip install pytest selenium`
-- **Lưu ý:** Nếu tệp kiểm thử gọi vào UI của web local, bạn phải đảm bảo web app đang chạy ở dưới nền. Mặc định TestGen sinh mã dùng `webdriver.Edge()` nên máy cần có trình duyệt MS Edge.
-
-### 5. Playwright (Python - E2E Testing)
-- **Môi trường:** Python 3.10+
-- **Cài đặt:** 
-  - `pip install pytest-playwright`
-  - Chạy lệnh `playwright install` trên Terminal để tải các trình duyệt.
-- **Lưu ý:** Tương tự Selenium, web app mục tiêu phải đang ở trạng thái chạy (nếu test nội bộ).
-
-### 6. Postman / Newman (API Testing)
-- **Môi trường:** Node.js
-- **Cài đặt:** Cài đặt Newman global bằng lệnh: `npm install -g newman`
-- **Lưu ý:** Newman đóng vai trò là client gửi request. Ứng dụng API server của bạn **bắt buộc phải đang chạy** (ví dụ: đang bật ở `http://localhost:8000`) để Newman có thể gọi và kiểm tra HTTP status code hoặc schema.
-- **Chạy Demo API Server Local:** Để thử nghiệm sinh test Postman, bạn có thể bật API Server mẫu tích hợp sẵn bằng lệnh:
+- **Lựa chọn A: Nếu chạy chế độ Local AI (Ollama)**, hãy khởi động Ollama và chạy các lệnh tải toàn bộ mô hình sau:
   ```bash
-  python examples/demo/postman/local_api_server/order_pricing_api_server.py
+  ollama pull qwen2.5:7b
+  ollama pull llama3.1:8b
+  ollama pull qwen2.5-coder:7b
+  ollama pull deepseek-coder:6.7b
+  ollama pull nomic-embed-text
   ```
-  Khi thấy thông báo `Postman demo API listening on http://localhost:8000`, bạn có thể yên tâm dùng TestGen để sinh và chạy tệp kiểm thử Postman cho API này.
 
-## Kiểm thử
+- **Lựa chọn B: Nếu chỉ sử dụng OpenRouter API**, bạn không cần tải các mô hình sinh mã cồng kềnh trên máy. Tuy nhiên, hệ thống vẫn cần mô hình cục bộ để thực hiện nhúng (embed) tài liệu phục vụ tính năng RAG. Bạn chỉ cần tải duy nhất mô hình sau:
+  ```bash
+  ollama pull nomic-embed-text
+  ```
 
-```bash
-python -m pytest -q
-```
+### 4. Chạy ứng dụng Streamlit
 
-Trên máy Windows đang dùng conda env `chatbot`:
+Để khởi chạy ứng dụng không bị lỗi hiển thị tiếng Việt (Unicode) trên Windows Terminal, hãy thực hiện theo thứ tự sau:
 
+1. Chạy file cấu hình môi trường để thiết lập UTF-8:
 ```powershell
-cmd /c "call D:\Miniconda\Scripts\activate.bat chatbot && python -m pytest -q"
+.\run_utf8.ps1
 ```
 
-CI cơ bản nằm ở `.github/workflows/tests.yml` và chạy `python -m pytest -q`.
-
-## Benchmark
-
-Kiểm kê bộ nguồn benchmark cố định và xuất `BENCHMARK_REPORT.md`:
-
+2. Khởi chạy giao diện web của TestGen:
 ```bash
-python benchmark.py
-```
-
-Chạy benchmark qua pipeline thật:
-
-```bash
-python benchmark.py --execute --mode OpenRouter --api-key <OPENROUTER_API_KEY>
-```
-
-## Luồng chính
-
-1. Nạp tài liệu hoặc source code.
-2. Chunk và index vào ChromaDB, kèm metadata source/section/line range.
-3. Requirement Agent trích xuất JSON yêu cầu.
-4. Test Planning Agent tạo test plan và tự repair JSON schema khi model trả sai dạng phổ biến.
-5. Function Prompt Builder dựng prompt động theo hàm/class/branch/exception từ AST.
-6. Code Generator Agent gọi LLM sinh test code theo framework.
-7. Pytest Executor kiểm tra `pytest --collect-only`, sau đó chạy test sinh ra và đo coverage.
-8. Nếu test pass nhưng coverage thiếu, hệ thống retry theo function chứa missing lines và chạy combined coverage.
-9. Pytest Executor phân loại lỗi execution (`syntax_error`, `wrong_expected_value`, `low_coverage`, ...).
-10. Code Review Agent tạo báo cáo.
-11. Formatter lưu code, Excel, PDF, combined coverage report và raw coverage JSON vào `outputs/runs`.
-
-ChromaDB được lưu ở `.runtime/chroma` và có thể xóa an toàn khi cần tạo lại index.
-
-## Khắc phục sự cố (Troubleshooting)
-
-### Lỗi hiển thị Tiếng Việt trên Windows (UnicodeEncodeError)
-Khi AI sinh mã kiểm thử với các comment giải thích bằng tiếng Việt, plugin `inline-snapshot` của pytest có thể bị crash khi in ra màn hình Console mặc định của Windows do lỗi mã hóa (`UnicodeEncodeError: 'charmap' codec can't encode character...`), khiến hệ thống báo lỗi `pytest pass=False` (dù code test chạy thành công 100%).
-
-**Cách khắc phục:** Thiết lập biến môi trường để ép Windows Terminal sử dụng mã UTF-8 trước khi khởi chạy ứng dụng.
-
-Nếu dùng **PowerShell** (Mặc định trong VSCode):
-```powershell
-$env:PYTHONIOENCODING="utf-8"
 streamlit run app.py
 ```
 
-Nếu dùng **Command Prompt (cmd)**:
-```cmd
-set PYTHONIOENCODING=utf-8
-streamlit run app.py
-```
+---
 
-*(Mẹo: Bạn có thể cấu hình `PYTHONIOENCODING=utf-8` vào file `.env` hoặc System Environment Variables của Windows để áp dụng vĩnh viễn).*
+## 🚀 Hướng dẫn chạy thử nghiệm với các tệp Demo cụ thể
+
+Dưới đây là hướng dẫn chạy demo chi tiết cho từng framework sử dụng các tệp mẫu nằm trong thư mục `examples/demo/`.
+
+### 1. Pytest (Python Unit Test)
+![Giao diện Pytest](imgs/pytest.png)
+- **Tệp nguồn (Source code dưới test)**: [examples/demo/pytest/order_processor.py](examples/demo/pytest/order_processor.py)
+- **Cách chạy**:
+  1. Trong sidebar, chọn Khung kiểm thử: **Pytest**.
+  2. Tại bảng **Sinh mã kiểm thử**, tải lên file [order_processor.py](examples/demo/pytest/order_processor.py) làm nguồn.
+  3. Nhấn **Sinh mã kiểm thử**. Hệ thống sẽ tự động tạo bộ test suite hoàn chỉnh, đo độ phủ (coverage) và tự sửa lỗi nếu có.
+
+### 2. Jest (JavaScript Unit Test)
+![Giao diện Jest](imgs/jest.png)
+- **Tệp nguồn**: [examples/demo/jest/library_manager.js](examples/demo/jest/library_manager.js)
+- **Cách chạy**:
+  1. Chọn Khung kiểm thử: **Jest**.
+  2. Tải lên file [library_manager.js](examples/demo/jest/library_manager.js).
+  3. Nhấn **Sinh mã kiểm thử**. Trình thực thi sẽ gọi `npx jest` để chạy các file test sinh ra và thu thập dữ liệu độ phủ dòng code.
+
+### 3. JUnit 5 (Java Unit Test)
+![Giao diện JUnit](imgs/junit.png)
+- **Tệp nguồn**: [examples/demo/junit/LibraryManager.java](examples/demo/junit/LibraryManager.java)
+- **Cách chạy**:
+  1. Chọn Khung kiểm thử: **JUnit**.
+  2. Tải lên file [LibraryManager.java](examples/demo/junit/LibraryManager.java).
+  3. Nhấn **Sinh mã kiểm thử**. TestGen sẽ tạo cấu trúc Maven ảo độc lập và biên dịch, thực thi kiểm thử bằng `mvn test`.
+
+### 4. Selenium (Python Web E2E)
+![Giao diện Selenium](imgs/selenium.png)
+- **Tệp giao diện (HTML Page)**: [examples/demo/selenium/shopping_cart.html](examples/demo/selenium/shopping_cart.html)
+- **Cách chạy**:
+  1. Chọn Khung kiểm thử: **Selenium**.
+  2. Tải lên file [shopping_cart.html](examples/demo/selenium/shopping_cart.html).
+  3. Nhấn **Sinh mã kiểm thử**. AI sẽ phân tích cấu trúc DOM và sinh mã python sử dụng thư viện Selenium webdriver để tự động click chọn, điền form giỏ hàng và kiểm thử luồng UI.
+
+### 5. Playwright (Python Web E2E)
+![Giao diện Playwright](imgs/playwright.png)
+- **Tệp giao diện (HTML Page)**: [examples/demo/playwright/shopping_cart.html](examples/demo/playwright/shopping_cart.html)
+- **Cách chạy**:
+  1. Chọn Khung kiểm thử: **Playwright**.
+  2. Tải lên file [shopping_cart.html](examples/demo/playwright/shopping_cart.html).
+  3. Nhấn **Sinh mã kiểm thử** để AI sinh mã kiểm thử E2E tối ưu bằng Playwright Python API.
+
+### 6. Postman / Newman (API Integration Test)
+![Giao diện Postman](imgs/postman.png)
+
+#### Lựa chọn A: Demo qua API thật từ xa (Khuyến nghị - Nhanh nhất)
+- **Tệp Collection (Không chứa test)**: [examples/demo/postman/remote_api/typicode_crud.postman_collection.json](examples/demo/postman/remote_api/typicode_crud.postman_collection.json)
+- **Cách chạy**:
+  1. Chọn Khung kiểm thử: **Postman / Newman**.
+  2. Tải lên tệp [typicode_crud.postman_collection.json](examples/demo/postman/remote_api/typicode_crud.postman_collection.json).
+  3. Nhấn **Sinh mã kiểm thử**. Newman sẽ tự động sinh test và gửi request thật đến endpoint hoạt động `https://jsonplaceholder.typicode.com` để kiểm định.
+
+#### Lựa chọn B: Demo qua API Server cục bộ (Local)
+- **Tệp API Server**: [examples/demo/postman/local_api_server/inventory_api.py](examples/demo/postman/local_api_server/inventory_api.py)
+- **Tệp Collection**: [examples/demo/postman/local_api_server/local_inventory.postman_collection.json](examples/demo/postman/local_api_server/local_inventory.postman_collection.json)
+- **Cách chạy**:
+  1. Bật API Server cục bộ ở Terminal:
+     ```bash
+     python examples/demo/postman/local_api_server/inventory_api.py
+     ```
+     Server sẽ hoạt động tại địa chỉ: `http://127.0.0.1:8000`.
+  2. Trên giao diện TestGen, chọn khung **Postman / Newman** và tải lên file [local_inventory.postman_collection.json](examples/demo/postman/local_api_server/local_inventory.postman_collection.json).
+  3. Nhấn **Sinh mã kiểm thử** để thực hiện gửi request đến local server và đo đạc kết quả.
+
+---
+
+## 📊 Quản lý Dữ liệu & RAG
+![Quản lý dữ liệu](imgs/quanlydata.png)
+Bạn có thể truy cập khu vực làm việc **Quản lý dữ liệu** hoặc **Quản lý tài liệu** để dọn dẹp các tệp tạm, xem kích thước lưu trữ của cơ sở dữ liệu Vector (ChromaDB) hoặc làm sạch lịch sử chạy của TestGen nhằm tối ưu bộ nhớ ổ đĩa.

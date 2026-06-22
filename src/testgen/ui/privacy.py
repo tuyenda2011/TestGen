@@ -1,6 +1,7 @@
 import shutil
 from pathlib import Path
 
+# pyrefly: ignore [missing-import]
 import streamlit as st
 
 from testgen.core.config import CHROMA_PATH, OUTPUT_RUNS_PATH

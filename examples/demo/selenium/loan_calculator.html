@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Loan EMI Calculator</title>
+</head>
+<body>
+    <h2>Loan EMI Calculator</h2>
+    <div>
+        <label>Loan Amount ($):</label>
+        <input type="number" id="principal" step="1000">
+    </div>
+    <div>
+        <label>Annual Interest Rate (%):</label>
+        <input type="number" id="interest_rate" step="0.1">
+    </div>
+    <div>
+        <label>Term (Months):</label>
+        <input type="number" id="term" step="1">
+    </div>
+    <div>
+        <label>Loan Type:</label>
+        <select id="loan_type">
+            <option value="personal">Personal Loan</option>
+            <option value="auto">Auto Loan (-0.5% rate)</option>
+            <option value="mortgage">Mortgage (-1.0% rate)</option>
+        </select>
+    </div>
+    <button id="calc-btn">Calculate EMI</button>
+    <div id="result"></div>
+    <div id="error" style="color:red;"></div>
+
+    <script>
+        document.getElementById('calc-btn').addEventListener('click', function() {
+            var pStr = document.getElementById('principal').value;
+            var rStr = document.getElementById('interest_rate').value;
+            var tStr = document.getElementById('term').value;
+            var type = document.getElementById('loan_type').value;
+            
+            var resultDiv = document.getElementById('result');
+            var errorDiv = document.getElementById('error');
+            
+            resultDiv.innerText = "";
+            errorDiv.innerText = "";
+            
+            if (!pStr || !rStr || !tStr) {
+                errorDiv.innerText = "Validation Error: All fields are required.";
+                return;
+            }
+            
+            var principal = parseFloat(pStr);
+            var annualRate = parseFloat(rStr);
+            var term = parseInt(tStr, 10);
+            
+            if (principal <= 0 || term <= 0) {
+                errorDiv.innerText = "Validation Error: Principal and Term must be > 0.";
+                return;
+            }
+            
+            // Apply discount based on loan type
+            if (type === "auto") {
+                annualRate -= 0.5;
+            } else if (type === "mortgage") {
+                annualRate -= 1.0;
+            }
+            
+            // Floor at 0.1% to prevent zero/negative division in formula
+            if (annualRate < 0.1) {
+                annualRate = 0.1;
+            }
+            
+            var monthlyRate = annualRate / 100 / 12;
+            var emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, term)) / (Math.pow(1 + monthlyRate, term) - 1);
+            var totalPayment = emi * term;
+            var totalInterest = totalPayment - principal;
+            
+            resultDiv.innerText = "EMI: $" + emi.toFixed(2) + " | Total Interest: $" + totalInterest.toFixed(2);
+        });
+    </script>
+</body>
+</html>

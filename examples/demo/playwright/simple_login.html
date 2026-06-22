@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Login</title>
+</head>
+<body>
+    <h2>Login Form</h2>
+    <div>
+        <label>Username:</label>
+        <input type="text" id="username" data-testid="username-input">
+    </div>
+    <div>
+        <label>Password:</label>
+        <input type="password" id="password" data-testid="password-input">
+    </div>
+    <button id="login-btn">Login</button>
+    <div id="message" data-testid="message-output"></div>
+
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function() {
+            var user = document.getElementById('username').value;
+            var pass = document.getElementById('password').value;
+            var msg = document.getElementById('message');
+            
+            if (!user || !pass) {
+                msg.innerText = "Error: Fields cannot be empty";
+                msg.style.color = "red";
+                return;
+            }
+            
+            if (user === "admin" && pass === "12345") {
+                msg.innerText = "Success: Welcome admin!";
+                msg.style.color = "green";
+            } else {
+                msg.innerText = "Error: Invalid credentials";
+                msg.style.color = "red";
+            }
+        });
+    </script>
+</body>
+</html>

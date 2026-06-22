@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shopping Cart Checkout</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .item { margin-bottom: 10px; }
+        .error { color: red; margin-top: 10px; }
+        .success { color: green; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h2>Shopping Cart Checkout</h2>
+    <div id="cart-items">
+        <div class="item">
+            <label>Apples ($2.00 each):</label>
+            <input type="number" id="apples-qty" value="0" min="0" max="10">
+        </div>
+        <div class="item">
+            <label>Oranges ($1.50 each):</label>
+            <input type="number" id="oranges-qty" value="0" min="0" max="10">
+        </div>
+        <div class="item">
+            <label>Bananas ($0.80 each):</label>
+            <input type="number" id="bananas-qty" value="0" min="0" max="10">
+        </div>
+    </div>
+    
+    <div>
+        <label>Shipping Type:</label>
+        <select id="shipping">
+            <option value="standard">Standard Shipping ($5.00)</option>
+            <option value="express">Express Shipping ($12.00)</option>
+            <option value="pickup">Store Pickup ($0.00)</option>
+        </select>
+    </div>
+    
+    <div style="margin-top: 10px;">
+        <label>Promo Code:</label>
+        <input type="text" id="promo-code" placeholder="e.g. SAVE10">
+    </div>
+    
+    <div style="margin-top: 15px;">
+        <button id="checkout-btn">Proceed to Checkout</button>
+    </div>
+    
+    <div id="message-output" data-testid="message-output"></div>
+
+    <script>
+        document.getElementById('checkout-btn').addEventListener('click', function() {
+            var apples = parseInt(document.getElementById('apples-qty').value || 0, 10);
+            var oranges = parseInt(document.getElementById('oranges-qty').value || 0, 10);
+            var bananas = parseInt(document.getElementById('bananas-qty').value || 0, 10);
+            var shipping = document.getElementById('shipping').value;
+            var promo = document.getElementById('promo-code').value.trim();
+            
+            var output = document.getElementById('message-output');
+            output.innerHTML = "";
+            output.className = "";
+            
+            if (apples < 0 || oranges < 0 || bananas < 0) {
+                output.innerText = "Error: Quantities cannot be negative";
+                output.style.color = "red";
+                return;
+            }
+            
+            var totalItems = apples + oranges + bananas;
+            if (totalItems === 0) {
+                output.innerText = "Error: Your cart is empty";
+                output.style.color = "red";
+                return;
+            }
+            
+            var subtotal = (apples * 2.00) + (oranges * 1.50) + (bananas * 0.80);
+            
+            var discount = 0;
+            if (promo) {
+                if (promo === "SAVE10") {
+                    discount = subtotal * 0.10;
+                } else if (promo === "SAVE20") {
+                    discount = subtotal * 0.20;
+                } else {
+                    output.innerText = "Error: Invalid promo code";
+                    output.style.color = "red";
+                    return;
+                }
+            }
+            
+            var shippingFee = 0;
+            if (shipping === "standard") {
+                shippingFee = 5.00;
+            } else if (shipping === "express") {
+                shippingFee = 12.00;
+            }
+            
+            var finalTotal = subtotal - discount + shippingFee;
+            finalTotal = Math.max(0, finalTotal);
+            
+            output.innerText = "Success: Order placed! Subtotal: $" + subtotal.toFixed(2) + 
+                               ", Discount: $" + discount.toFixed(2) + 
+                               ", Shipping: $" + shippingFee.toFixed(2) + 
+                               ", Total: $" + finalTotal.toFixed(2);
+            output.style.color = "green";
+        });
+    </script>
+</body>
+</html>

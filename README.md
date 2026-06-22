@@ -39,18 +39,35 @@ Cài đặt toàn bộ thư viện cần thiết (bao gồm cả các thư việ
 pip install -r requirements.txt
 ```
 
-### 2. Thiết lập Biến môi trường
-Sao chép cấu hình từ file mẫu để tạo file `.env` (file này đã được bỏ qua trong `.gitignore`):
+### 2. Cài đặt môi trường chạy Test (Node.js & Java)
+Để TestGen có thể biên dịch, chạy và đo lường độ phủ của các bộ test không phải Python trong môi trường hộp cát (sandbox):
+
+- **Node.js & NPM (Yêu cầu cho framework Jest)**:
+  - Yêu cầu Node.js phiên bản LTS mới nhất (v18+). Tải và cài đặt tại: [https://nodejs.org/](https://nodejs.org/)
+  - Xác nhận đã cài đặt bằng lệnh: `node -v` và `npm -v` trong terminal.
+- **Java JDK & Apache Maven (Yêu cầu cho framework JUnit 5)**:
+  - Yêu cầu Java JDK 17+ và Apache Maven.
+  - Khuyến nghị tải JDK tại: [https://adoptium.net/](https://adoptium.net/) (Eclipse Temurin) và Maven tại [https://maven.apache.org/](https://maven.apache.org/)
+  - Cấu hình biến môi trường `JAVA_HOME` và thêm thư mục `bin` của Maven vào biến `PATH`.
+  - Xác nhận đã cài đặt bằng lệnh: `java -version` và `mvn -version`.
+
+### 3. Thiết lập Biến môi trường
+Sao chép cấu hình từ file mẫu để tạo file `.env` (tệp này đã được cấu hình trong `.gitignore` để tránh lộ khóa):
 ```bash
 # Trên Windows cmd / powershell
 copy .env.example .env
 ```
-Mở file `.env` và thiết lập các API key (Gemini API Key hoặc OpenRouter API Key) nếu bạn muốn chạy ở chế độ Cloud AI.
-*(Người dùng có thể khởi tạo và lấy OpenRouter API Key tại địa chỉ: [https://openrouter.ai/workspaces/default/keys](https://openrouter.ai/workspaces/default/keys))*
+Mở file `.env` và điền các API key của bạn (`GEMINI_API_KEY` hoặc `OPENROUTER_API_KEY`) nếu chạy chế độ Cloud AI.
 
-**Lưu ý về Bảo mật**: Bạn cũng có thể nhập trực tiếp Gemini API Key hoặc OpenRouter API Key ngay trên giao diện web (khung Sidebar bên trái). API Key nhập trên giao diện chỉ lưu tạm thời trong bộ nhớ phiên chạy (Session State) của trình duyệt và sẽ tự động xóa sạch khi bạn tắt trình duyệt hoặc kết thúc phiên làm việc, hoàn toàn đảm bảo an toàn bảo mật và không lo bị lộ.
+> [!TIP]
+> **Cách lấy OpenRouter API Key**:
+> Bạn có thể tạo và lấy API Key tại: [https://openrouter.ai/workspaces/default/keys](https://openrouter.ai/workspaces/default/keys)
 
-### 3. Tải các mô hình AI Local (Ollama)
+> [!IMPORTANT]
+> **Lưu ý về Bảo mật**:
+> Bạn cũng có thể nhập trực tiếp Gemini API Key hoặc OpenRouter API Key ngay trên giao diện web (khung Sidebar bên trái). API Key nhập trên giao diện chỉ lưu tạm thời trong bộ nhớ phiên chạy (Session State) của trình duyệt và sẽ tự động xóa sạch khi kết thúc phiên làm việc, đảm bảo an toàn bảo mật.
+
+### 4. Tải các mô hình AI Local (Ollama)
 
 - **Lựa chọn A: Nếu chạy chế độ Local AI (Ollama)**, hãy khởi động Ollama và chạy các lệnh tải toàn bộ mô hình sau:
   ```bash
@@ -66,19 +83,28 @@ Mở file `.env` và thiết lập các API key (Gemini API Key hoặc OpenRoute
   ollama pull nomic-embed-text
   ```
 
-### 4. Chạy ứng dụng Streamlit
+### 5. Chạy ứng dụng Streamlit
 
-Để khởi chạy ứng dụng không bị lỗi hiển thị tiếng Việt (Unicode) trên Windows Terminal, hãy thực hiện theo thứ tự sau:
+Để khởi chạy ứng dụng không bị lỗi hiển thị tiếng Việt (Unicode) trên Windows Terminal, bạn có hai cách:
 
-1. Chạy file cấu hình môi trường để thiết lập UTF-8:
+#### Lựa chọn 1: Chạy bằng file script đóng gói sẵn (Khuyến nghị trên Windows / VS Code Terminal)
+Chạy lệnh sau trên cửa sổ Terminal của VS Code (sử dụng PowerShell) để tự động cấu hình mã hóa UTF-8 toàn hệ thống và khởi chạy ứng dụng:
 ```powershell
 .\run_utf8.ps1
 ```
 
-2. Khởi chạy giao diện web của TestGen:
-```bash
-streamlit run app.py
-```
+#### Lựa chọn 2: Khởi chạy thủ công bằng lệnh Streamlit
+*Mẹo khắc phục lỗi Unicode hiển thị tiếng Việt trên Windows Terminal:*
+- Nếu dùng **PowerShell** (Terminal mặc định trong VS Code):
+  ```powershell
+  $env:PYTHONIOENCODING="utf-8"
+  streamlit run app.py
+  ```
+- Nếu dùng **Command Prompt (cmd)**:
+  ```cmd
+  set PYTHONIOENCODING=utf-8
+  streamlit run app.py
+  ```
 
 ---
 

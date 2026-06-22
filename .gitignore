@@ -11,4 +11,15 @@ htmlcov/
 *.sqlite
 *.sqlite3
 *.db
-outputs/runs/tmp_execution/
+outputs/
+scratch/
+*.log
+*.tmp
+# IDE / OS / Python Build
+.vscode/
+.idea/
+.DS_Store
+build/
+dist/
+*.egg-info/
+.mypy_cache/

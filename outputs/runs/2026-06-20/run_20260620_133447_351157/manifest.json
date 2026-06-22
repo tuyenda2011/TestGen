@@ -1,0 +1,458 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260620_133447_351157",
+  "created_at": "2026-06-20T14:09:07",
+  "workflow": "Sinh mã kiểm thử",
+  "mode": "OpenRouter / Multi-model",
+  "backend": "openrouter",
+  "framework": "Jest",
+  "test_technique": "Hybrid",
+  "diagnostics": {
+    "docs_chunks_indexed": 0,
+    "docs_chunks_reused": 2383,
+    "source_chunks_indexed": 5,
+    "source_chunks_reused": 0,
+    "rag_reused_collections": 1,
+    "llm_calls_estimated": 8,
+    "pytest_attempts": 0,
+    "pytest_passed": false,
+    "pytest_coverage_percent": 0.0,
+    "pytest_combined_coverage_percent": 0.0,
+    "pytest_targeted_retries": 0,
+    "pytest_full_retries": 0,
+    "pytest_retry_modes": [],
+    "stage_timings_ms": {
+      "input": 59.23,
+      "rag": 6988.23,
+      "requirement": 48367.24,
+      "planning": 343943.39,
+      "generation": 219735.41,
+      "execution": 628870.4,
+      "review": 52099.51,
+      "heal_generation_1": 246018.57,
+      "heal_execution_1": 467514.85,
+      "heal_review_1": 27251.72
+    },
+    "rag_retrieval": {
+      "docs": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": true,
+        "filter_fallback": false,
+        "metadata_filter": {
+          "framework": "Jest"
+        }
+      },
+      "source": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": false,
+        "filter_fallback": true,
+        "metadata_filter": {
+          "framework": "Jest"
+        }
+      }
+    },
+    "context_lengths": {
+      "retrieval_context_chars": 2562,
+      "python_source_chars": 1603
+    },
+    "context_budget_chars": {
+      "requirement": 9000,
+      "generation": 8000,
+      "review": 8000
+    },
+    "test_execution_framework": "Jest",
+    "retry_modes": [
+      "initial",
+      "targeted_function_retry",
+      "initial",
+      "heal_retry"
+    ],
+    "jest_retry_modes": [
+      "initial",
+      "targeted_function_retry",
+      "initial",
+      "heal_retry"
+    ],
+    "attempts": 2,
+    "jest_attempts": 2,
+    "jest_execution_issue_type": "none",
+    "jest_failure_issue_type": "none",
+    "jest_best_coverage_percent": 100.0,
+    "jest_best_coverage_attempt": 2,
+    "traceability": {
+      "planned_cases": 8,
+      "implemented_cases": 26,
+      "required_in_scope_cases": 7,
+      "implemented_in_scope_cases": 7,
+      "missing_in_scope_case_ids": [],
+      "out_of_scope_case_ids": [],
+      "ambiguous_case_ids": [
+        "TC-003"
+      ],
+      "semantically_implemented_case_ids": [],
+      "missing_case_ids": [],
+      "raw_missing_case_ids": [],
+      "case_bindings": {
+        "TC-001": [
+          "normalizelabel"
+        ],
+        "TC-002": [
+          "normalizelabel"
+        ],
+        "TC-004": [
+          "calculatediscount"
+        ],
+        "TC-005": [
+          "calculatediscount"
+        ],
+        "TC-006": [
+          "calculatediscount"
+        ],
+        "TC-007": [
+          "calculatediscount"
+        ],
+        "TC-008": [
+          "calculatediscount"
+        ]
+      },
+      "case_binding_reasons": {
+        "TC-003": "Does not reference any exported source symbol"
+      }
+    },
+    "targeted_retries": 1,
+    "jest_targeted_retries": 1,
+    "selected_attempt_id": "attempt_02_heal_retry",
+    "ledger": {
+      "run_id": "run_20260620_133447_351157",
+      "selected_attempt_id": "attempt_02_heal_retry",
+      "selection_reason": "better_rank",
+      "attempts": [
+        {
+          "attempt_id": "attempt_01_initial",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_133447_351157\\attempt_01_initial",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_133447_351157\\attempt_01_initial\\generated.test.js",
+          "generated_code": "const target = require('./source_under_test');\n\n// Plan: TC-001, TC-002, TC-003, TC-004, TC-005, TC-006, TC-007, TC-008, TC-009, TC-010, TC-011, TC-012, TC-013, TC-014, TC-015, TC-016, TC-017, TC-018, TC-019, TC-020, TC-021, TC-022, TC-023, TC-024, TC-025, TC-026\n\ndescribe('normalizeLabel', () => {\n  // TC-001: Kiểm tra hàm normalizeLabel cắt khoảng trắng và chuyển về chữ thường\n  test('TC-001 should trim whitespace and convert to lowercase', () => {\n    // Input: '  VIP  ' -> trim() -> 'VIP' -> toLowerCase() -> 'vip'\n    expect(target.normalizeLabel('  VIP  ')).toBe('vip');\n  });\n\n  // TC-002: Kiểm tra hàm normalizeLabel xử lý chuỗi rỗng và chuỗi đã chuẩn hóa\n  test('TC-002 should handle empty string and already normalized input', () => {\n    // Input: '' -> trim() -> '' -> toLowerCase() -> ''\n    expect(target.normalizeLabel('')).toBe('');\n    // Input: 'standard' -> trim() -> 'standard' -> toLowerCase() -> 'standard'\n    expect(target.normalizeLabel('standard')).toBe('standard');\n  });\n});\n\ndescribe('roundMoney', () => {\n  // TC-003: Kiểm tra hàm roundMoney làm tròn đến 2 chữ số thập phân\n  test('TC-003 should round to two decimal places correctly', () => {\n    // 10.123 * 100 = 1012.3, Math.round(1012.3) = 1012, 1012/100 = 10.12\n    expect(target.roundMoney(10.123)).toBe(10.12);\n    // 10.126 * 100 = 1012.6, Math.round(1012.6) = 1013, 1013/100 = 10.13\n    expect(target.roundMoney(10.126)).toBe(10.13);\n    // 10.1 * 100 = 1010, Math.round(1010) = 1010, 1010/100 = 10.1\n    expect(target.roundMoney(10.1)).toBe(10.1);\n    // 10 * 100 = 1000, Math.round(1000) = 1000, 1000/100 = 10\n    expect(target.roundMoney(10)).toBe(10);\n    // -5.555 * 100 = -555.5, Math.round(-555.5) = -556, -556/100 = -5.56\n    expect(target.roundMoney(-5.555)).toBe(-5.56);\n  });\n});\n\ndescribe('calculateDiscount', () => {\n  // TC-004: Kiểm tra chiết khấu VIP với subtotal 500, capped tại 50\n  test('TC-004 should return correct VIP discount with cap at 50', () => {\n    // subtotal = 500, tier = 'vip'\n    // discount = Math.min(500 * 0.12, 50) = Math.min(60, 50) = 50\n    // roundMoney(50) = 50\n    expect(target.calculateDiscount(500, 'vip')).toBe(50);\n  });\n\n  // TC-005: Kiểm tra chiết khấu VIP với subtotal 100, dưới mức cap\n  test('TC-005 should return correct VIP discount below cap', () => {\n    // subtotal = 100, tier = 'VIP' -> normalize -> 'vip'\n    // discount = Math.min(100 * 0.12, 50) = Math.min(12, 50) = 12\n    // roundMoney(12) = 12\n    expect(target.calculateDiscount(100, 'VIP')).toBe(12);\n  });\n\n  // TC-006: Kiểm tra chiết khấu loyal với subtotal 500, capped tại 30\n  test('TC-006 should return correct loyal discount with cap at 30', () => {\n    // subtotal = 500, tier = ' loyal ' -> normalize -> 'loyal'\n    // discount = Math.min(500 * 0.07, 30) = Math.min(35, 30) = 30\n    // roundMoney(30) = 30\n    expect(target.calculateDiscount(500, ' loyal ')).toBe(30);\n  });\n\n  // TC-007: Kiểm tra chiết khấu standard bằng 0\n  test('TC-007 should return zero for standard tier', () => {\n    // subtotal = 1000, tier = 'STANDARD' -> normalize -> 'standard'\n    // discount = 0\n    expect(target.calculateDiscount(1000, 'STANDARD')).toBe(0);\n  });\n\n  // TC-008: Kiểm tra ngoại lệ khi subtotal âm\n  test('TC-008 should throw Error for negative subtotal', () => {\n    // subtotal = -10 < 0, phải throw Error\n    expect(() => target.calculateDiscount(-10, 'vip')).toThrow('subtotal must not be negative');\n  });\n\n  // TC-009: Kiểm tra ngoại lệ khi customerTier không hợp lệ\n  test('TC-009 should throw Error for invalid customer tier', () => {\n    // tier = 'invalid' không phải vip, loyal, hoặc standard\n    expect(() => target.calculateDiscount(100, 'invalid')).toThrow('unsupported customer tier: invalid');\n  });\n\n  // TC-010: Kiểm tra chiết khấu loyal với subtotal 100, dưới mức cap\n  test('TC-010 should return correct loyal discount below cap', () => {\n    // subtotal = 100, tier = 'loyal'\n    // discount = Math.min(100 * 0.07, 30) = Math.min(7, 30) = 7\n    // roundMoney(7) = 7\n    expect(target.calculateDiscount(100, 'loyal')).toBe(7);\n  });\n\n  // TC-011: Kiểm tra chiết khấu VIP với subtotal 0\n  test('TC-011 should return zero VIP discount for zero subtotal', () => {\n    // subtotal = 0, tier = 'vip'\n    // discount = Math.min(0 * 0.12, 50) = Math.min(0, 50) = 0\n    // roundMoney(0) = 0\n    expect(target.calculateDiscount(0, 'vip')).toBe(0);\n  });\n\n  // TC-012: Kiểm tra chiết khấu loyal với subtotal 0\n  test('TC-012 should return zero loyal discount for zero subtotal', () => {\n    // subtotal = 0, tier = 'loyal'\n    // discount = Math.min(0 * 0.07, 30) = Math.min(0, 30) = 0\n    // roundMoney(0) = 0\n    expect(target.calculateDiscount(0, 'loyal')).toBe(0);\n  });\n});\n\ndescribe('shippingFee', () => {\n  // TC-013: Kiểm tra phí vận chuyển nội địa không dễ vỡ, weight <= 5\n  test('TC-013 should calculate domestic shipping fee for weight <= 5', () => {\n    // weightKg = 1, destination = 'domestic', fragile = false\n    // fee = 5 (domestic base), weight <= 5 -> no additional, fragile = false -> no additional\n    // roundMoney(5) = 5\n    expect(target.shippingFee(1, 'domestic', false)).toBe(5);\n  });\n\n  // TC-014: Kiểm tra phí vận chuyển nội địa không dễ vỡ, 5 < weight <= 20\n  test('TC-014 should calculate domestic shipping fee for 5 < weight <= 20', () => {\n    // weightKg = 10, destination = 'domestic', fragile = false\n    // fee = 5 (domestic base) + 10 (weight > 5) = 15\n    // roundMoney(15) = 15\n    expect(target.shippingFee(10, 'domestic', false)).toBe(15);\n  });\n\n  // TC-015: Kiểm tra phí vận chuyển nội địa không dễ vỡ, weight > 20\n  test('TC-015 should calculate domestic shipping fee for weight > 20', () => {\n    // weightKg = 25, destination = 'domestic', fragile = false\n    // fee = 5 (domestic base) + 25 (weight > 20) = 30\n    // roundMoney(30) = 30\n    expect(target.shippingFee(25, 'domestic', false)).toBe(30);\n  });\n\n  // TC-016: Kiểm tra phí vận chuyển quốc tế không dễ vỡ, weight <= 5\n  test('TC-016 should calculate international shipping fee for weight <= 5', () => {\n    // weightKg = 1, destination = 'international', fragile = false\n    // fee = 18 (international base), weight <= 5 -> no additional, fragile = false -> no additional\n    // roundMoney(18) = 18\n    expect(target.shippingFee(1, 'international', false)).toBe(18);\n  });\n\n  // TC-017: Kiểm tra phí vận chuyển nội địa dễ vỡ\n  test('TC-017 should calculate domestic fragile shipping fee', () => {\n    // weightKg = 1, destination = 'domestic', fragile = true\n    // fee = 5 (domestic base) + 7.5 (fragile) = 12.5\n    // roundMoney(12.5) = 12.5\n    expect(target.shippingFee(1, 'domestic', true)).toBe(12.5);\n  });\n\n  // TC-018: Kiểm tra ngoại lệ khi weightKg <= 0\n  test('TC-018 should throw Error for weight less than or equal to zero', () => {\n    // weightKg = 0, phải throw Error\n    expect(() => target.shippingFee(0, 'domestic', false)).toThrow('weight must be greater than zero');\n  });\n\n  // TC-019: Kiểm tra ngoại lệ khi destination không hợp lệ\n  test('TC-019 should throw Error for invalid destination', () => {\n    // destination = 'invalid' không phải domestic hay international\n    expect(() => target.shippingFee(1, 'invalid', false)).toThrow('unsupported destination: invalid');\n  });\n\n  // TC-020: Kiểm tra phí vận chuyển quốc tế dễ vỡ\n  test('TC-020 should calculate international fragile shipping fee', () => {\n    // weightKg = 10, destination = 'international', fragile = true\n    // fee = 18 (international base) + 10 (weight > 5) + 7.5 (fragile) = 35.5\n    // roundMoney(35.5) = 35.5\n    expect(target.shippingFee(10, 'international', true)).toBe(35.5);\n  });\n});\n\ndescribe('finalTotal', () => {\n  // TC-021: Kiểm tra ngoại lệ khi subtotal âm trong finalTotal\n  test('TC-021 should throw Error for negative subtotal in order', () => {\n    // order.subtotal = -10 < 0, calculateDiscount sẽ throw Error\n    const order = {\n      subtotal: -10,\n      customerTier: 'vip',\n      storeCredit: 0,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(() => target.finalTotal(order)).toThrow('subtotal must not be negative');\n  });\n\n  // TC-022: Kiểm tra finalTotal khi storeCredit bằng 0\n  test('TC-022 should calculate final total with zero storeCredit', () => {\n    // subtotal = 100, tier = 'standard' -> discount = 0\n    // shippingFee = 5 (domestic, weight 1, not fragile)\n    // subtotal = 100 - 0 + 5 = 105\n    // storeCredit = 0, final = 105 - 0 = 105\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: 0,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(105);\n  });\n\n  // TC-023: Kiểm tra finalTotal khi storeCredit lớn hơn tổng phải trả\n  test('TC-023 should return zero when storeCredit exceeds total', () => {\n    // subtotal = 100, tier = 'standard' -> discount = 0\n    // shippingFee = 5 (domestic, weight 1, not fragile)\n    // subtotal = 100 - 0 + 5 = 105\n    // storeCredit = 150, final = Math.max(105 - 150, 0) = 0\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: 150,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(0);\n  });\n\n  // TC-024: Kiểm tra ngoại lệ khi storeCredit âm\n  test('TC-024 should throw Error for negative storeCredit', () => {\n    // storeCredit = -10 < 0, phải throw Error\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: -10,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(() => target.finalTotal(order)).toThrow('store credit must not be negative');\n  });\n\n  // TC-025: Kiểm tra finalTotal với VIP tier và storeCredit\n  test('TC-025 should calculate final total with VIP discount and storeCredit', () => {\n    // subtotal = 500, tier = 'vip' -> discount = 50 (capped)\n    // shippingFee = 5 (domestic, weight 1, not fragile)\n    // subtotal = 500 - 50 + 5 = 455\n    // storeCredit = 50, final = 455 - 50 = 405\n    const order = {\n      subtotal: 500,\n      customerTier: 'vip',\n      storeCredit: 50,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(405);\n  });\n\n  // TC-026: Kiểm tra finalTotal với loyal tier và storeCredit\n  test('TC-026 should calculate final total with loyal discount and storeCredit', () => {\n    // subtotal = 500, tier = 'loyal' -> discount = 30 (capped)\n    // shippingFee = 18 (international, weight 1, not fragile)\n    // subtotal = 500 - 30 + 18 = 488\n    // storeCredit = 100, final = 488 - 100 = 388\n    const order = {\n      subtotal: 500,\n      customerTier: 'loyal',\n      storeCredit: 100,\n      weightKg: 1,\n      destination: 'international',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(388);\n  });\n});",
+          "pytest_log_path": "",
+          "collection_log_path": "",
+          "coverage_json_path": "",
+          "review_md_path": "",
+          "passed": false,
+          "coverage_percent": 0.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_bindings": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 45,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>",
+            "missing_lines_count": "<truncated>"
+          },
+          "source_hash": "1f67ade080e8eda6713b473cf3503a4d567e58c3383699c62a0807c60c1d1478",
+          "test_hash": "b3a50ae5ae415aa936686bcdcd4ab59bcb21b2af8f66c1d76b9d7bb3fccb4df9",
+          "output": "Jest static public API check failed.\nPublic exports: calculateDiscount, finalTotal, normalizeLabel, shippingFee\nUsed target members: calculateDiscount, finalTotal, normalizeLabel, roundMoney, shippingFee\nUnknown/non-exported members: roundMoney\nTarget monkey-patches: (none)\nFallback implementations: (none)\nReimplemented source exports: (none)\nReimplemented internal helpers: (none)",
+          "collection_output": "",
+          "diagnosis": "Generated Jest test uses non-public source APIs or mutates the target module.",
+          "failure_summary": "Jest static public API check failed.",
+          "combined_report": {}
+        },
+        {
+          "attempt_id": "attempt_02_heal_retry",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_133447_351157\\attempt_02_heal_retry",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_133447_351157\\attempt_02_heal_retry\\generated.test.js",
+          "generated_code": "const target = require('./source_under_test');\n\n// Plan: TC-001, TC-002, TC-003, TC-004, TC-005, TC-006, TC-007, TC-008, TC-009, TC-010, TC-011, TC-012, TC-013, TC-014, TC-015, TC-016, TC-017, TC-018, TC-019, TC-020, TC-021, TC-022, TC-023, TC-024, TC-025, TC-026\n\ndescribe('normalizeLabel', () => {\n  // TC-001: Kiểm tra hàm normalizeLabel cắt khoảng trắng và chuyển về chữ thường\n  test('TC-001 should trim whitespace and convert to lowercase', () => {\n    // Input: '  VIP  ' -> trim() -> 'VIP' -> toLowerCase() -> 'vip'\n    expect(target.normalizeLabel('  VIP  ')).toBe('vip');\n  });\n\n  // TC-002: Kiểm tra hàm normalizeLabel xử lý chuỗi rỗng và chuỗi đã chuẩn hóa\n  test('TC-002 should handle empty string and already normalized input', () => {\n    // Input: '' -> trim() -> '' -> toLowerCase() -> ''\n    expect(target.normalizeLabel('')).toBe('');\n    // Input: 'standard' -> trim() -> 'standard' -> toLowerCase() -> 'standard'\n    expect(target.normalizeLabel('standard')).toBe('standard');\n  });\n});\n\ndescribe('calculateDiscount', () => {\n  // TC-003: Kiểm tra chiết khấu VIP với subtotal 500, capped tại 50\n  test('TC-003 should return correct VIP discount with cap at 50', () => {\n    // subtotal = 500, tier = 'vip'\n    // discount = Math.min(500 * 0.12, 50) = Math.min(60, 50) = 50\n    // roundMoney(50) = 50\n    expect(target.calculateDiscount(500, 'vip')).toBe(50);\n  });\n\n  // TC-004: Kiểm tra chiết khấu VIP với subtotal 100, dưới mức cap\n  test('TC-004 should return correct VIP discount below cap', () => {\n    // subtotal = 100, tier = 'VIP' -> normalize -> 'vip'\n    // discount = Math.min(100 * 0.12, 50) = Math.min(12, 50) = 12\n    // roundMoney(12) = 12\n    expect(target.calculateDiscount(100, 'VIP')).toBe(12);\n  });\n\n  // TC-005: Kiểm tra chiết khấu loyal với subtotal 500, capped tại 30\n  test('TC-005 should return correct loyal discount with cap at 30', () => {\n    // subtotal = 500, tier = ' loyal ' -> normalize -> 'loyal'\n    // discount = Math.min(500 * 0.07, 30) = Math.min(35, 30) = 30\n    // roundMoney(30) = 30\n    expect(target.calculateDiscount(500, ' loyal ')).toBe(30);\n  });\n\n  // TC-006: Kiểm tra chiết khấu standard bằng 0\n  test('TC-006 should return zero for standard tier', () => {\n    // subtotal = 1000, tier = 'STANDARD' -> normalize -> 'standard'\n    // discount = 0\n    expect(target.calculateDiscount(1000, 'STANDARD')).toBe(0);\n  });\n\n  // TC-007: Kiểm tra ngoại lệ khi subtotal âm\n  test('TC-007 should throw Error for negative subtotal', () => {\n    // subtotal = -10 < 0, phải throw Error\n    expect(() => target.calculateDiscount(-10, 'vip')).toThrow('subtotal must not be negative');\n  });\n\n  // TC-008: Kiểm tra ngoại lệ khi customerTier không hợp lệ\n  test('TC-008 should throw Error for invalid customer tier', () => {\n    // tier = 'invalid' không phải vip, loyal, hoặc standard\n    expect(() => target.calculateDiscount(100, 'invalid')).toThrow('unsupported customer tier: invalid');\n  });\n\n  // TC-009: Kiểm tra chiết khấu loyal với subtotal 100, dưới mức cap\n  test('TC-009 should return correct loyal discount below cap', () => {\n    // subtotal = 100, tier = 'loyal'\n    // discount = Math.min(100 * 0.07, 30) = Math.min(7, 30) = 7\n    // roundMoney(7) = 7\n    expect(target.calculateDiscount(100, 'loyal')).toBe(7);\n  });\n\n  // TC-010: Kiểm tra chiết khấu VIP với subtotal 0\n  test('TC-010 should return zero VIP discount for zero subtotal', () => {\n    // subtotal = 0, tier = 'vip'\n    // discount = Math.min(0 * 0.12, 50) = Math.min(0, 50) = 0\n    // roundMoney(0) = 0\n    expect(target.calculateDiscount(0, 'vip')).toBe(0);\n  });\n\n  // TC-011: Kiểm tra chiết khấu loyal với subtotal 0\n  test('TC-011 should return zero loyal discount for zero subtotal', () => {\n    // subtotal = 0, tier = 'loyal'\n    // discount = Math.min(0 * 0.07, 30) = Math.min(0, 30) = 0\n    // roundMoney(0) = 0\n    expect(target.calculateDiscount(0, 'loyal')).toBe(0);\n  });\n});\n\ndescribe('shippingFee', () => {\n  // TC-012: Kiểm tra phí vận chuyển nội địa không dễ vỡ, weight <= 5\n  test('TC-012 should calculate domestic shipping fee for weight <= 5', () => {\n    // weightKg = 1, destination = 'domestic', fragile = false\n    // fee = 5 (domestic base), weight <= 5 -> no additional, fragile = false -> no additional\n    // roundMoney(5) = 5\n    expect(target.shippingFee(1, 'domestic', false)).toBe(5);\n  });\n\n  // TC-013: Kiểm tra phí vận chuyển nội địa không dễ vỡ, 5 < weight <= 20\n  test('TC-013 should calculate domestic shipping fee for 5 < weight <= 20', () => {\n    // weightKg = 10, destination = 'domestic', fragile = false\n    // fee = 5 (domestic base) + 10 (weight > 5) = 15\n    // roundMoney(15) = 15\n    expect(target.shippingFee(10, 'domestic', false)).toBe(15);\n  });\n\n  // TC-014: Kiểm tra phí vận chuyển nội địa không dễ vỡ, weight > 20\n  test('TC-014 should calculate domestic shipping fee for weight > 20', () => {\n    // weightKg = 25, destination = 'domestic', fragile = false\n    // fee = 5 (domestic base) + 25 (weight > 20) = 30\n    // roundMoney(30) = 30\n    expect(target.shippingFee(25, 'domestic', false)).toBe(30);\n  });\n\n  // TC-015: Kiểm tra phí vận chuyển quốc tế không dễ vỡ, weight <= 5\n  test('TC-015 should calculate international shipping fee for weight <= 5', () => {\n    // weightKg = 1, destination = 'international', fragile = false\n    // fee = 18 (international base), weight <= 5 -> no additional, fragile = false -> no additional\n    // roundMoney(18) = 18\n    expect(target.shippingFee(1, 'international', false)).toBe(18);\n  });\n\n  // TC-016: Kiểm tra phí vận chuyển nội địa dễ vỡ\n  test('TC-016 should calculate domestic fragile shipping fee', () => {\n    // weightKg = 1, destination = 'domestic', fragile = true\n    // fee = 5 (domestic base) + 7.5 (fragile) = 12.5\n    // roundMoney(12.5) = 12.5\n    expect(target.shippingFee(1, 'domestic', true)).toBe(12.5);\n  });\n\n  // TC-017: Kiểm tra ngoại lệ khi weightKg <= 0\n  test('TC-017 should throw Error for weight less than or equal to zero', () => {\n    // weightKg = 0, phải throw Error\n    expect(() => target.shippingFee(0, 'domestic', false)).toThrow('weight must be greater than zero');\n  });\n\n  // TC-018: Kiểm tra ngoại lệ khi destination không hợp lệ\n  test('TC-018 should throw Error for invalid destination', () => {\n    // destination = 'invalid' không phải domestic hay international\n    expect(() => target.shippingFee(1, 'invalid', false)).toThrow('unsupported destination: invalid');\n  });\n\n  // TC-019: Kiểm tra phí vận chuyển quốc tế dễ vỡ\n  test('TC-019 should calculate international fragile shipping fee', () => {\n    // weightKg = 10, destination = 'international', fragile = true\n    // fee = 18 (international base) + 10 (weight > 5) + 7.5 (fragile) = 35.5\n    // roundMoney(35.5) = 35.5\n    expect(target.shippingFee(10, 'international', true)).toBe(35.5);\n  });\n});\n\ndescribe('finalTotal', () => {\n  // TC-020: Kiểm tra ngoại lệ khi subtotal âm trong finalTotal\n  test('TC-020 should throw Error for negative subtotal in order', () => {\n    // order.subtotal = -10 < 0, calculateDiscount sẽ throw Error\n    const order = {\n      subtotal: -10,\n      customerTier: 'vip',\n      storeCredit: 0,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(() => target.finalTotal(order)).toThrow('subtotal must not be negative');\n  });\n\n  // TC-021: Kiểm tra finalTotal khi storeCredit bằng 0\n  test('TC-021 should calculate final total with zero storeCredit', () => {\n    // subtotal = 100, tier = 'standard' -> discount = 0\n    // shippingFee = 5 (domestic, weight 1, not fragile)\n    // subtotal = 100 - 0 + 5 = 105\n    // storeCredit = 0, final = 105 - 0 = 105\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: 0,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(105);\n  });\n\n  // TC-022: Kiểm tra finalTotal khi storeCredit lớn hơn tổng phải trả\n  test('TC-022 should return zero when storeCredit exceeds total', () => {\n    // subtotal = 100, tier = 'standard' -> discount = 0\n    // shippingFee = 5 (domestic, weight 1, not fragile)\n    // subtotal = 100 - 0 + 5 = 105\n    // storeCredit = 150, final = Math.max(105 - 150, 0) = 0\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: 150,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(0);\n  });\n\n  // TC-023: Kiểm tra ngoại lệ khi storeCredit âm\n  test('TC-023 should throw Error for negative storeCredit', () => {\n    // storeCredit = -10 < 0, phải throw Error\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: -10,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(() => target.finalTotal(order)).toThrow('store credit must not be negative');\n  });\n\n  // TC-024: Kiểm tra finalTotal với VIP tier và storeCredit\n  test('TC-024 should calculate final total with VIP discount and storeCredit', () => {\n    // subtotal = 500, tier = 'vip' -> discount = 50 (capped)\n    // shippingFee = 5 (domestic, weight 1, not fragile)\n    // subtotal = 500 - 50 + 5 = 455\n    // storeCredit = 50, final = 455 - 50 = 405\n    const order = {\n      subtotal: 500,\n      customerTier: 'vip',\n      storeCredit: 50,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(405);\n  });\n\n  // TC-025: Kiểm tra finalTotal với loyal tier và storeCredit\n  test('TC-025 should calculate final total with loyal discount and storeCredit', () => {\n    // subtotal = 500, tier = 'loyal' -> discount = 30 (capped)\n    // shippingFee = 18 (international, weight 1, not fragile)\n    // subtotal = 500 - 30 + 18 = 488\n    // storeCredit = 100, final = 488 - 100 = 388\n    const order = {\n      subtotal: 500,\n      customerTier: 'loyal',\n      storeCredit: 100,\n      weightKg: 1,\n      destination: 'international',\n      fragile: false\n    };\n    expect(target.finalTotal(order)).toBe(388);\n  });\n});",
+          "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_133447_351157\\attempt_02_heal_retry\\jest.log",
+          "collection_log_path": "",
+          "coverage_json_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_133447_351157\\attempt_02_heal_retry\\coverage\\coverage-summary.json",
+          "review_md_path": "",
+          "passed": true,
+          "coverage_percent": 100.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_bindings": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 100,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>"
+          },
+          "source_hash": "1f67ade080e8eda6713b473cf3503a4d567e58c3383699c62a0807c60c1d1478",
+          "test_hash": "c770694f1b5b6ddb5afa173a2f550bd43405615a748c5f562ed7ca5ad5cd7a27",
+          "output": "> test-workspace@1.0.0 test\n> jest --coverage --runInBand --json --outputFile=jest_results.json --forceExit --env=jsdom\n\nPASS ./generated.test.js\n  normalizeLabel\n    √ TC-001 should trim whitespace and convert to lowercase (6 ms)\n    √ TC-002 should handle empty string and already normalized input (1 ms)\n  calculateDiscount\n    √ TC-003 should return correct VIP discount with cap at 50 (1 ms)\n    √ TC-004 should return correct VIP discount below cap (2 ms)\n    √ TC-005 should return correct loyal discount with cap at 30 (1 ms)\n    √ TC-006 should return zero for standard tier\n    √ TC-007 should throw Error for negative subtotal (21 ms)\n    √ TC-008 should throw Error for invalid customer tier (1 ms)\n    √ TC-009 should return correct loyal discount below cap (1 ms)\n    √ TC-010 should return zero VIP discount for zero subtotal (1 ms)\n    √ TC-011 should return zero loyal discount for zero subtotal\n  shippingFee\n    √ TC-012 should calculate domestic shipping fee for weight <= 5\n    √ TC-013 should calculate domestic shipping fee for 5 < weight <= 20\n    √ TC-014 should calculate domestic shipping fee for weight > 20 (1 ms)\n    √ TC-015 should calculate international shipping fee for weight <= 5\n    √ TC-016 should calculate domestic fragile shipping fee\n    √ TC-017 should throw Error for weight less than or equal to zero (1 ms)\n    √ TC-018 should throw Error for invalid destination (1 ms)\n    √ TC-019 should calculate international fragile shipping fee\n  finalTotal\n    √ TC-020 should throw Error for negative subtotal in order (1 ms)\n    √ TC-021 should calculate final total with zero storeCredit (1 ms)\n    √ TC-022 should return zero when storeCredit exceeds total\n    √ TC-023 should throw Error for negative storeCredit (1 ms)\n    √ TC-024 should calculate final total with VIP discount and storeCredit (1 ms)\n    √ TC-025 should calculate final total with loyal discount and storeCredit\n\nTest Suites: 1 passed, 1 total\nTests:       25 passed, 25 total\nSnapshots:   0 total\nTime:        8.644 s\nRan all test suites.\nTest results written to: jest_results.json\nForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?",
+          "collection_output": "",
+          "diagnosis": "Jest command passed.",
+          "failure_summary": "√ TC-007 should throw Error for negative subtotal (21 ms)\n√ TC-008 should throw Error for invalid customer tier (1 ms)\n√ TC-017 should throw Error for weight less than or equal to zero (1 ms)\n√ TC-018 should throw Error for invalid destination (1 ms)\n√ TC-020 should throw Error for negative subtotal in order (1 ms)\n√ TC-023 should throw Error for negative storeCredit (1 ms)",
+          "combined_report": {
+            "framework": "<truncated>",
+            "passed": "<truncated>",
+            "coverage_percent": "<truncated>",
+            "missing_lines": "<truncated>",
+            "coverage_path": "<truncated>",
+            "test_paths": "<truncated>",
+            "output": "<truncated>",
+            "jest_log_path": "<truncated>",
+            "jest_results_path": "<truncated>",
+            "log_path": "<truncated>",
+            "failure_details": "<truncated>"
+          }
+        }
+      ]
+    },
+    "post_review_quality_score": 95,
+    "post_review_quality_verdict": "Đạt",
+    "post_review_quality_gate": "coverage",
+    "jest_heal_retries": 1,
+    "jest_passed": true,
+    "jest_coverage_percent": 100.0,
+    "jest_coverage_supported": true,
+    "external_attempts": 2,
+    "external_execution_passed": true,
+    "external_coverage_percent": 100.0,
+    "external_coverage_supported": true,
+    "external_execution_issue_type": "none"
+  },
+  "metadata": {
+    "models": {
+      "requirement": "nex-agi/nex-n2-pro:free",
+      "planning": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "code_generator": "poolside/laguna-m.1:free",
+      "review": "openai/gpt-oss-120b:free",
+      "embedding": "nomic-embed-text"
+    },
+    "embedding_backend": "ollama"
+  },
+  "artifacts": [
+    {
+      "kind": "generated_code",
+      "label": "Mã kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_133447_351157\\test_code\\ma_kiem_thu_jest_20260620_140906_413470.js",
+      "name": "ma_kiem_thu_jest_20260620_140906_413470.js",
+      "size_bytes": 10641,
+      "extension": ".js"
+    },
+    {
+      "kind": "test_plan",
+      "label": "Kế hoạch kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_133447_351157\\test_plan\\ke_hoach_kiem_thu_20260620_140906_415505.xlsx",
+      "name": "ke_hoach_kiem_thu_20260620_140906_415505.xlsx",
+      "size_bytes": 5867,
+      "extension": ".xlsx"
+    },
+    {
+      "kind": "review_report",
+      "label": "Báo cáo rà soát",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_133447_351157\\review_report\\bao_cao_phan_tich_20260620_140907_494090.pdf",
+      "name": "bao_cao_phan_tich_20260620_140907_494090.pdf",
+      "size_bytes": 26946,
+      "extension": ".pdf"
+    },
+    {
+      "kind": "review_report_markdown",
+      "label": "Báo cáo rà soát Markdown",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_133447_351157\\review_report\\bao_cao_phan_tich_20260620_140907_494090.md",
+      "name": "bao_cao_phan_tich_20260620_140907_494090.md",
+      "size_bytes": 2209,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_report",
+      "label": "Combined coverage report",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_133447_351157\\coverage_report\\combined_coverage_20260620_140906_393692.md",
+      "name": "combined_coverage_20260620_140906_393692.md",
+      "size_bytes": 2828,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_json",
+      "label": "Combined coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_133447_351157\\coverage_report\\combined_coverage_20260620_140906_393692.json",
+      "name": "combined_coverage_20260620_140906_393692.json",
+      "size_bytes": 3923,
+      "extension": ".json"
+    },
+    {
+      "kind": "coverage_raw_json",
+      "label": "Raw coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_133447_351157\\coverage_report\\coverage_raw_20260620_140906_393692.json",
+      "name": "coverage_raw_20260620_140906_393692.json",
+      "size_bytes": 674,
+      "extension": ".json"
+    },
+    {
+      "kind": "jest_log",
+      "label": "Jest log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_133447_351157\\final\\jest.log",
+      "name": "jest.log",
+      "size_bytes": 2326,
+      "extension": ".log"
+    }
+  ]
+}

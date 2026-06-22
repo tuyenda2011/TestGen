@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.streamlit/secrets.toml
+.env
+.runtime/
+*.sqlite
+*.sqlite3
+*.db
+outputs/runs/tmp_execution/

@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "coverage_percent": 100.0,
+  "missing_lines": [],
+  "coverage_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_141110_457204\\final\\coverage.json",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_141110_457204\\final\\test_generated.py"
+  ],
+  "output": "..............                                                           [100%]\n=============================== tests coverage ================================\n______________ coverage: platform win32, python 3.10.11-final-0 _______________\n\nName                   Stmts   Miss  Cover   Missing\n----------------------------------------------------\nsource_under_test.py      22      0   100%\n----------------------------------------------------\nTOTAL                     22      0   100%\nCoverage JSON written to file coverage.json\n14 passed in 0.11s",
+  "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_141110_457204\\final\\pytest.log",
+  "collection_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_141110_457204\\final\\pytest_collect_only.log",
+  "log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_141110_457204\\final\\pytest.log",
+  "execution_issue": {
+    "type": "none",
+    "title": "Không phát hiện lỗi execution chắc chắn",
+    "hint": "Tiếp tục review chất lượng assert và coverage.",
+    "missing_lines_count": "0"
+  },
+  "failure_summary": "",
+  "selected_attempt_id": "attempt_01_initial",
+  "final_workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_141110_457204\\final",
+  "framework": "Unknown"
+}

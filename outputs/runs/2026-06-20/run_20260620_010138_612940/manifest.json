@@ -1,0 +1,440 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260620_010138_612940",
+  "created_at": "2026-06-20T01:23:50",
+  "workflow": "Sinh mã kiểm thử",
+  "mode": "OpenRouter / Multi-model",
+  "backend": "openrouter",
+  "framework": "Jest",
+  "test_technique": "Hybrid",
+  "diagnostics": {
+    "docs_chunks_indexed": 0,
+    "docs_chunks_reused": 2383,
+    "source_chunks_indexed": 5,
+    "source_chunks_reused": 0,
+    "rag_reused_collections": 1,
+    "llm_calls_estimated": 10,
+    "pytest_attempts": 0,
+    "pytest_passed": false,
+    "pytest_coverage_percent": 0.0,
+    "pytest_combined_coverage_percent": 0.0,
+    "pytest_targeted_retries": 0,
+    "pytest_full_retries": 0,
+    "pytest_retry_modes": [],
+    "stage_timings_ms": {
+      "input": 71.32,
+      "rag": 5606.83,
+      "requirement": 45011.17,
+      "planning": 85539.49,
+      "generation": 90738.17,
+      "execution": 311693.59,
+      "review": 51833.2,
+      "heal_generation_1": 130828.21,
+      "heal_execution_1": 359035.85,
+      "heal_review_1": 43409.81,
+      "heal_generation_2": 63516.81,
+      "heal_execution_2": 113118.04,
+      "heal_review_2": 30389.92
+    },
+    "rag_retrieval": {
+      "docs": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": true,
+        "filter_fallback": false,
+        "metadata_filter": {
+          "framework": "Jest"
+        }
+      },
+      "source": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": false,
+        "filter_fallback": true,
+        "metadata_filter": {
+          "framework": "Jest"
+        }
+      }
+    },
+    "context_lengths": {
+      "retrieval_context_chars": 2562,
+      "python_source_chars": 1603
+    },
+    "context_budget_chars": {
+      "requirement": 9000,
+      "generation": 8000,
+      "review": 8000
+    },
+    "test_execution_framework": "Jest",
+    "retry_modes": [
+      "initial",
+      "initial",
+      "heal_retry",
+      "initial",
+      "heal_retry"
+    ],
+    "jest_retry_modes": [
+      "initial",
+      "initial",
+      "heal_retry",
+      "initial",
+      "heal_retry"
+    ],
+    "attempts": 2,
+    "jest_attempts": 2,
+    "jest_execution_issue_type": "none",
+    "jest_failure_issue_type": "none",
+    "jest_best_coverage_percent": 100.0,
+    "jest_best_coverage_attempt": 1,
+    "traceability": {
+      "planned_cases": 15,
+      "implemented_cases": 15,
+      "required_in_scope_cases": 14,
+      "implemented_in_scope_cases": 14,
+      "missing_in_scope_case_ids": [],
+      "out_of_scope_case_ids": [],
+      "ambiguous_case_ids": [
+        "TC-002"
+      ],
+      "semantically_implemented_case_ids": [],
+      "missing_case_ids": [
+        "TC-002"
+      ],
+      "raw_missing_case_ids": [
+        "TC-002"
+      ],
+      "case_binding_reasons": {
+        "TC-002": "Does not reference any exported source symbol"
+      }
+    },
+    "selected_attempt_id": "attempt_02_heal_retry",
+    "ledger": {
+      "run_id": "run_20260620_010138_612940",
+      "selected_attempt_id": "attempt_02_heal_retry",
+      "selection_reason": "better_rank",
+      "attempts": [
+        {
+          "attempt_id": "attempt_01_initial",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_01_initial",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_01_initial\\generated.test.js",
+          "generated_code": "// Plan: TC-001, TC-002, TC-003, TC-004, TC-005, TC-006, TC-007, TC-008, TC-009, TC-010, TC-011, TC-012, TC-013, TC-014, TC-015, TC-016, TC-017\nconst target = require('./source_under_test');\n\ndescribe('orderPricing module', () => {\n  // TC-001: normalizeLabel trims and lowercases input\n  test('TC-001 normalizeLabel trims and lowercases input', () => {\n    const result = target.normalizeLabel('  HeLLo WoRLd  ');\n    expect(result).toBe('hello world');\n  });\n\n  // TC-002: roundMoney rounds to two decimal places (direct test)\n  test('TC-002 roundMoney rounds to two decimal places', () => {\n    // Kiểm tra làm tròn lên và làm tròn xuống\n    expect(target.roundMoney(123.4567)).toBeCloseTo(123.46);\n    expect(target.roundMoney(0.005)).toBeCloseTo(0.01);\n    expect(target.roundMoney(10.004)).toBeCloseTo(10.0);\n  });\n\n  // TC-003: calculateDiscount for VIP where 12% of subtotal is less than $50\n  test('TC-003 calculateDiscount VIP below cap', () => {\n    const subtotal = 300;\n    const discount = target.calculateDiscount(subtotal, 'vip');\n    // 12% của 300 = 36, dưới mức cap 50\n    expect(discount).toBeCloseTo(36);\n  });\n\n  // TC-004: calculateDiscount for VIP where cap $50 applies\n  test('TC-004 calculateDiscount VIP cap applied', () => {\n    const subtotal = 600;\n    const discount = target.calculateDiscount(subtotal, 'vip');\n    // 12% của 600 = 72, nhưng cap 50\n    expect(discount).toBeCloseTo(50);\n  });\n\n  // TC-005: calculateDiscount for Loyal where 7% of subtotal is less than $30\n  test('TC-005 calculateDiscount Loyal below cap', () => {\n    const subtotal = 200;\n    const discount = target.calculateDiscount(subtotal, 'loyal');\n    // 7% của 200 = 14, dưới mức cap 30\n    expect(discount).toBeCloseTo(14);\n  });\n\n  // TC-006: calculateDiscount for Loyal where cap $30 applies\n  test('TC-006 calculateDiscount Loyal cap applied', () => {\n    const subtotal = 500;\n    const discount = target.calculateDiscount(subtotal, 'loyal');\n    // 7% của 500 = 35, nhưng cap 30\n    expect(discount).toBeCloseTo(30);\n  });\n\n  // TC-007: calculateDiscount for Standard customer returns zero\n  test('TC-007 calculateDiscount Standard returns zero', () => {\n    const discount = target.calculateDiscount(250, 'standard');\n    expect(discount).toBe(0);\n  });\n\n  // TC-008: calculateDiscount throws error for negative subtotal\n  test('TC-008 calculateDiscount negative subtotal throws', () => {\n    expect(() => {\n      target.calculateDiscount(-10, 'vip');\n    }).toThrowError('subtotal must not be negative');\n  });\n\n  // TC-009: calculateDiscount throws error for unsupported customer tier\n  test('TC-009 calculateDiscount unsupported tier throws', () => {\n    expect(() => {\n      target.calculateDiscount(100, 'gold');\n    }).toThrowError('unsupported customer tier: gold');\n  });\n\n  // TC-010: shippingFee throws error when weightKg is zero or negative\n  test('TC-010 shippingFee zero weight throws', () => {\n    expect(() => {\n      target.shippingFee(0, 'domestic', false);\n    }).toThrowError('weight must be greater than zero');\n  });\n\n  // TC-011: shippingFee throws error for unsupported destination\n  test('TC-011 shippingFee unsupported destination throws', () => {\n    expect(() => {\n      target.shippingFee(5, 'moon', false);\n    }).toThrowError('unsupported destination: moon');\n  });\n\n  // TC-012: shippingFee calculates fee for heavy fragile international shipment\n  test('TC-012 shippingFee heavy fragile international', () => {\n    const fee = target.shippingFee(25, 'international', true);\n    // base 18 + surcharge 25 (weight>20) + fragile 7.5 = 50.5, sau khi làm tròn vẫn 50.5\n    expect(fee).toBeCloseTo(50.5);\n  });\n\n  // TC-013: shippingFee calculates fee for medium non‑fragile domestic shipment\n  test('TC-013 shippingFee medium non-fragile domestic', () => {\n    const fee = target.shippingFee(10, 'domestic', false);\n    // base 5 + surcharge 10 (weight>5) = 15, làm tròn vẫn 15\n    expect(fee).toBeCloseTo(15);\n  });\n\n  // TC-014: finalTotal throws error when storeCredit is negative\n  test('TC-014 finalTotal throws error for negative storeCredit', () => {\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: -5,\n      weightKg: 2,\n      destination: 'domestic',\n      fragile: false,\n    };\n    expect(() => target.finalTotal(order)).toThrowError('store credit must not be negative');\n  });\n\n  // TC-015: finalTotal floors result at zero when discounts and credit exceed subtotal plus shipping\n  test('TC-015 finalTotal floors at zero when overdiscounted', () => {\n    const order = {\n      subtotal: 50,\n      customerTier: 'vip',\n      storeCredit: 100,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false,\n    };\n    const total = target.finalTotal(order);\n    expect(total).toBe(0);\n  });\n\n  // TC-016: finalTotal throws error for negative subtotal (propagated from calculateDiscount)\n  test('TC-016 finalTotal throws error for negative subtotal', () => {\n    const order = {\n      subtotal: -20,\n      customerTier: 'vip',\n      storeCredit: 0,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false,\n    };\n    expect(() => target.finalTotal(order)).toThrowError('subtotal must not be negative');\n  });\n});",
+          "pytest_log_path": "",
+          "collection_log_path": "",
+          "coverage_json_path": "",
+          "review_md_path": "",
+          "passed": false,
+          "coverage_percent": 0.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 45,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>",
+            "missing_lines_count": "<truncated>"
+          },
+          "source_hash": "1f67ade080e8eda6713b473cf3503a4d567e58c3383699c62a0807c60c1d1478",
+          "test_hash": "f489bcb007f969ef4460dcebfe8eda38eafaecca0d6724440f92119ddefeeaad",
+          "output": "Jest static public API check failed.\nPublic exports: calculateDiscount, finalTotal, normalizeLabel, shippingFee\nUsed target members: calculateDiscount, finalTotal, normalizeLabel, roundMoney, shippingFee\nUnknown/non-exported members: roundMoney\nTarget monkey-patches: (none)\nFallback implementations: (none)\nReimplemented source exports: (none)",
+          "collection_output": "",
+          "diagnosis": "Generated Jest test uses non-public source APIs or mutates the target module.",
+          "failure_summary": "Jest static public API check failed.",
+          "combined_report": {}
+        },
+        {
+          "attempt_id": "attempt_02_heal_retry",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_02_heal_retry",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_02_heal_retry\\generated.test.js",
+          "generated_code": "// Plan: TC-001, TC-003, TC-004, TC-005, TC-006, TC-007, TC-008, TC-009, TC-010, TC-011, TC-012, TC-013, TC-014, TC-015, TC-016\nconst target = require('./source_under_test');\n\ndescribe('orderPricing module', () => {\n  // TC-001: normalizeLabel trims and lowercases input\n  test('TC-001 normalizeLabel trims and lowercases input', () => {\n    const result = target.normalizeLabel('  HeLLo WoRLd  ');\n    expect(result).toBe('hello world');\n  });\n\n  // TC-003: calculateDiscount for VIP where 12% of subtotal is less than $50\n  test('TC-003 calculateDiscount VIP below cap', () => {\n    const subtotal = 300;\n    const discount = target.calculateDiscount(subtotal, 'vip');\n    // 12% của 300 = 36, dưới mức cap 50\n    expect(discount).toBeCloseTo(36);\n  });\n\n  // TC-004: calculateDiscount for VIP where cap $50 applies\n  test('TC-004 calculateDiscount VIP cap applied', () => {\n    const subtotal = 600;\n    const discount = target.calculateDiscount(subtotal, 'vip');\n    // 12% của 600 = 72, nhưng cap 50\n    expect(discount).toBeCloseTo(50);\n  });\n\n  // TC-005: calculateDiscount for Loyal where 7% of subtotal is less than $30\n  test('TC-005 calculateDiscount Loyal below cap', () => {\n    const subtotal = 200;\n    const discount = target.calculateDiscount(subtotal, 'loyal');\n    // 7% của 200 = 14, dưới mức cap 30\n    expect(discount).toBeCloseTo(14);\n  });\n\n  // TC-006: calculateDiscount for Loyal where cap $30 applies\n  test('TC-006 calculateDiscount Loyal cap applied', () => {\n    const subtotal = 500;\n    const discount = target.calculateDiscount(subtotal, 'loyal');\n    // 7% của 500 = 35, nhưng cap 30\n    expect(discount).toBeCloseTo(30);\n  });\n\n  // TC-007: calculateDiscount for Standard customer returns zero\n  test('TC-007 calculateDiscount Standard returns zero', () => {\n    const discount = target.calculateDiscount(250, 'standard');\n    expect(discount).toBe(0);\n  });\n\n  // TC-008: calculateDiscount throws error for negative subtotal\n  test('TC-008 calculateDiscount negative subtotal throws', () => {\n    expect(() => {\n      target.calculateDiscount(-10, 'vip');\n    }).toThrowError('subtotal must not be negative');\n  });\n\n  // TC-009: calculateDiscount throws error for unsupported customer tier\n  test('TC-009 calculateDiscount unsupported tier throws', () => {\n    expect(() => {\n      target.calculateDiscount(100, 'gold');\n    }).toThrowError('unsupported customer tier: gold');\n  });\n\n  // TC-010: shippingFee throws error when weightKg is zero or negative\n  test('TC-010 shippingFee zero weight throws', () => {\n    expect(() => {\n      target.shippingFee(0, 'domestic', false);\n    }).toThrowError('weight must be greater than zero');\n  });\n\n  // TC-011: shippingFee throws error for unsupported destination\n  test('TC-011 shippingFee unsupported destination throws', () => {\n    expect(() => {\n      target.shippingFee(5, 'moon', false);\n    }).toThrowError('unsupported destination: moon');\n  });\n\n  // TC-012: shippingFee calculates fee for heavy fragile international shipment\n  test('TC-012 shippingFee heavy fragile international', () => {\n    const fee = target.shippingFee(25, 'international', true);\n    // base 18 + surcharge 25 (weight>20) + fragile 7.5 = 50.5, sau khi làm tròn vẫn 50.5\n    expect(fee).toBeCloseTo(50.5);\n  });\n\n  // TC-013: shippingFee calculates fee for medium non‑fragile domestic shipment\n  test('TC-013 shippingFee medium non-fragile domestic', () => {\n    const fee = target.shippingFee(10, 'domestic', false);\n    // base 5 + surcharge 10 (weight>5) = 15, làm tròn vẫn 15\n    expect(fee).toBeCloseTo(15);\n  });\n\n  // TC-014: finalTotal throws error when storeCredit is negative\n  test('TC-014 finalTotal throws error for negative storeCredit', () => {\n    const order = {\n      subtotal: 100,\n      customerTier: 'standard',\n      storeCredit: -5,\n      weightKg: 2,\n      destination: 'domestic',\n      fragile: false,\n    };\n    expect(() => target.finalTotal(order)).toThrowError('store credit must not be negative');\n  });\n\n  // TC-015: finalTotal floors result at zero when discounts and credit exceed subtotal plus shipping\n  test('TC-015 finalTotal floors at zero when overdiscounted', () => {\n    const order = {\n      subtotal: 50,\n      customerTier: 'vip',\n      storeCredit: 100,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false,\n    };\n    const total = target.finalTotal(order);\n    expect(total).toBe(0);\n  });\n\n  // TC-016: finalTotal throws error for negative subtotal (propagated from calculateDiscount)\n  test('TC-016 finalTotal throws error for negative subtotal', () => {\n    const order = {\n      subtotal: -20,\n      customerTier: 'vip',\n      storeCredit: 0,\n      weightKg: 1,\n      destination: 'domestic',\n      fragile: false,\n    };\n    expect(() => target.finalTotal(order)).toThrowError('subtotal must not be negative');\n  });\n});",
+          "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_02_heal_retry\\jest.log",
+          "collection_log_path": "",
+          "coverage_json_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_02_heal_retry\\coverage\\coverage-summary.json",
+          "review_md_path": "",
+          "passed": true,
+          "coverage_percent": 100.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 100,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>"
+          },
+          "source_hash": "1f67ade080e8eda6713b473cf3503a4d567e58c3383699c62a0807c60c1d1478",
+          "test_hash": "52be8af70db488c2a5791854abdc7f1f6fb13500c25efcdffa4b2c731e3f969a",
+          "output": "> test-workspace@1.0.0 test\n> jest --coverage --runInBand --json --outputFile=jest_results.json --forceExit --env=jsdom\n\nPASS ./generated.test.js\n  orderPricing module\n    √ TC-001 normalizeLabel trims and lowercases input (3 ms)\n    √ TC-003 calculateDiscount VIP below cap (1 ms)\n    √ TC-004 calculateDiscount VIP cap applied\n    √ TC-005 calculateDiscount Loyal below cap\n    √ TC-006 calculateDiscount Loyal cap applied (1 ms)\n    √ TC-007 calculateDiscount Standard returns zero\n    √ TC-008 calculateDiscount negative subtotal throws (8 ms)\n    √ TC-009 calculateDiscount unsupported tier throws (4 ms)\n    √ TC-010 shippingFee zero weight throws (1 ms)\n    √ TC-011 shippingFee unsupported destination throws\n    √ TC-012 shippingFee heavy fragile international (1 ms)\n    √ TC-013 shippingFee medium non-fragile domestic\n    √ TC-014 finalTotal throws error for negative storeCredit\n    √ TC-015 finalTotal floors at zero when overdiscounted (1 ms)\n    √ TC-016 finalTotal throws error for negative subtotal\n\nTest Suites: 1 passed, 1 total\nTests:       15 passed, 15 total\nSnapshots:   0 total\nTime:        0.865 s, estimated 1 s\nRan all test suites.\nTest results written to: jest_results.json\nForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?",
+          "collection_output": "",
+          "diagnosis": "Jest command passed.",
+          "failure_summary": "√ TC-014 finalTotal throws error for negative storeCredit\n√ TC-016 finalTotal throws error for negative subtotal",
+          "combined_report": {
+            "framework": "<truncated>",
+            "passed": "<truncated>",
+            "coverage_percent": "<truncated>",
+            "missing_lines": "<truncated>",
+            "coverage_path": "<truncated>",
+            "test_paths": "<truncated>",
+            "output": "<truncated>",
+            "jest_log_path": "<truncated>",
+            "jest_results_path": "<truncated>",
+            "log_path": "<truncated>",
+            "failure_details": "<truncated>"
+          }
+        }
+      ]
+    },
+    "post_review_quality_score": 77,
+    "post_review_quality_verdict": "Cần sửa",
+    "post_review_quality_gate": "coverage",
+    "jest_heal_retries": 2,
+    "jest_passed": true,
+    "jest_coverage_percent": 100.0,
+    "jest_coverage_supported": true,
+    "external_attempts": 2,
+    "external_execution_passed": true,
+    "external_coverage_percent": 100.0,
+    "external_coverage_supported": true,
+    "external_execution_issue_type": "none"
+  },
+  "metadata": {
+    "models": {
+      "requirement": "nex-agi/nex-n2-pro:free",
+      "planning": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "code_generator": "poolside/laguna-m.1:free",
+      "review": "openai/gpt-oss-120b:free",
+      "embedding": "nomic-embed-text"
+    },
+    "embedding_backend": "ollama"
+  },
+  "artifacts": [
+    {
+      "kind": "generated_code",
+      "label": "Mã kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_010138_612940\\test_code\\ma_kiem_thu_jest_20260620_012349_490194.js",
+      "name": "ma_kiem_thu_jest_20260620_012349_490194.js",
+      "size_bytes": 5016,
+      "extension": ".js"
+    },
+    {
+      "kind": "test_plan",
+      "label": "Kế hoạch kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_010138_612940\\test_plan\\ke_hoach_kiem_thu_20260620_012349_494184.xlsx",
+      "name": "ke_hoach_kiem_thu_20260620_012349_494184.xlsx",
+      "size_bytes": 6442,
+      "extension": ".xlsx"
+    },
+    {
+      "kind": "review_report",
+      "label": "Báo cáo rà soát",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_010138_612940\\review_report\\bao_cao_phan_tich_20260620_012350_403959.pdf",
+      "name": "bao_cao_phan_tich_20260620_012350_403959.pdf",
+      "size_bytes": 26605,
+      "extension": ".pdf"
+    },
+    {
+      "kind": "review_report_markdown",
+      "label": "Báo cáo rà soát Markdown",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_010138_612940\\review_report\\bao_cao_phan_tich_20260620_012350_403959.md",
+      "name": "bao_cao_phan_tich_20260620_012350_403959.md",
+      "size_bytes": 2135,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_report",
+      "label": "Combined coverage report",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_010138_612940\\coverage_report\\combined_coverage_20260620_012349_466396.md",
+      "name": "combined_coverage_20260620_012349_466396.md",
+      "size_bytes": 1904,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_json",
+      "label": "Combined coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_010138_612940\\coverage_report\\combined_coverage_20260620_012349_466396.json",
+      "name": "combined_coverage_20260620_012349_466396.json",
+      "size_bytes": 2739,
+      "extension": ".json"
+    },
+    {
+      "kind": "coverage_raw_json",
+      "label": "Raw coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_010138_612940\\coverage_report\\coverage_raw_20260620_012349_466396.json",
+      "name": "coverage_raw_20260620_012349_466396.json",
+      "size_bytes": 674,
+      "extension": ".json"
+    },
+    {
+      "kind": "jest_log",
+      "label": "Jest log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\final\\jest.log",
+      "name": "jest.log",
+      "size_bytes": 1402,
+      "extension": ".log"
+    }
+  ]
+}

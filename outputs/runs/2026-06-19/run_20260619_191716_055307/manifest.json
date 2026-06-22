@@ -1,0 +1,297 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260619_191716_055307",
+  "created_at": "2026-06-19T19:20:00",
+  "workflow": "Sinh mã kiểm thử",
+  "mode": "OpenRouter / Multi-model",
+  "backend": "openrouter",
+  "framework": "pytest",
+  "test_technique": "Hybrid",
+  "diagnostics": {
+    "docs_chunks_indexed": 0,
+    "docs_chunks_reused": 2383,
+    "source_chunks_indexed": 0,
+    "source_chunks_reused": 0,
+    "rag_reused_collections": 1,
+    "llm_calls_estimated": 4,
+    "pytest_attempts": 1,
+    "pytest_passed": true,
+    "pytest_coverage_percent": 100.0,
+    "pytest_combined_coverage_percent": 0.0,
+    "pytest_targeted_retries": 0,
+    "pytest_full_retries": 0,
+    "pytest_retry_modes": [
+      "initial"
+    ],
+    "stage_timings_ms": {
+      "input": 35.18,
+      "rag": 3339.63,
+      "requirement": 32802.56,
+      "planning": 64770.68,
+      "generation": 48176.1,
+      "execution": 3087.59,
+      "review": 11315.32
+    },
+    "rag_retrieval": {
+      "docs": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": true,
+        "filter_fallback": false,
+        "metadata_filter": {
+          "framework": "pytest"
+        }
+      },
+      "source": {
+        "skipped_reason": "pytest_ast_context"
+      }
+    },
+    "context_lengths": {
+      "retrieval_context_chars": 2616,
+      "python_source_chars": 770
+    },
+    "context_budget_chars": {
+      "requirement": 9000,
+      "generation": 8000,
+      "review": 8000
+    },
+    "test_execution_framework": "pytest",
+    "retry_modes": [
+      "initial"
+    ],
+    "attempts": 1,
+    "pytest_execution_issue_type": "none",
+    "pytest_failure_issue_type": "none",
+    "pytest_best_coverage_percent": 100.0,
+    "pytest_best_coverage_attempt": 1,
+    "traceability": {
+      "planned_cases": 14,
+      "implemented_cases": 14,
+      "required_in_scope_cases": 14,
+      "implemented_in_scope_cases": 14,
+      "missing_in_scope_case_ids": [],
+      "out_of_scope_case_ids": [],
+      "ambiguous_case_ids": [],
+      "semantically_implemented_case_ids": [],
+      "missing_case_ids": [],
+      "raw_missing_case_ids": [],
+      "case_binding_reasons": {}
+    },
+    "selected_attempt_id": "attempt_01_initial",
+    "ledger": {
+      "run_id": "run_20260619_191716_055307",
+      "selected_attempt_id": "attempt_01_initial",
+      "selection_reason": "first_attempt",
+      "attempts": [
+        {
+          "attempt_id": "attempt_01_initial",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_191716_055307\\attempt_01_initial",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_191716_055307\\attempt_01_initial\\test_generated.py",
+          "generated_code": "# ===== Tests for letter_grade =====\nfrom source_under_test import letter_grade\nimport pytest\n\ndef test_letter_grade_negative_score_tc001():\n    \"\"\"Kiểm tra hàm letter_grade ném ValueError khi điểm < 0.\"\"\"\n    with pytest.raises(ValueError) as exc_info:\n        letter_grade(-5)\n    assert str(exc_info.value) == \"score must be between 0 and 100\"\n\ndef test_letter_grade_over_score_tc002():\n    \"\"\"Kiểm tra hàm letter_grade ném ValueError khi điểm > 100.\"\"\"\n    with pytest.raises(ValueError) as exc_info:\n        letter_grade(105)\n    assert str(exc_info.value) == \"score must be between 0 and 100\"\n\ndef test_letter_grade_score_95_tc003():\n    \"\"\"Kiểm tra hàm letter_grade trả về 'A' cho điểm 95.\"\"\"\n    assert letter_grade(95) == \"A\"\n\ndef test_letter_grade_score_85_tc004():\n    \"\"\"Kiểm tra hàm letter_grade trả về 'B' cho điểm 85.\"\"\"\n    assert letter_grade(85) == \"B\"\n\ndef test_letter_grade_score_75_tc005():\n    \"\"\"Kiểm tra hàm letter_grade trả về 'C' cho điểm 75.\"\"\"\n    assert letter_grade(75) == \"C\"\n\ndef test_letter_grade_score_65_tc006():\n    \"\"\"Kiểm tra hàm letter_grade trả về 'D' cho điểm 65.\"\"\"\n    assert letter_grade(65) == \"D\"\n\ndef test_letter_grade_score_59_tc007():\n    \"\"\"Kiểm tra hàm letter_grade trả về 'F' cho điểm 59.\"\"\"\n    assert letter_grade(59) == \"F\"\n\n# ===== Tests for is_passing =====\nfrom source_under_test import is_passing\n\ndef test_is_passing_negative_passing_score_tc008():\n    \"\"\"Kiểm tra hàm is_passing ném ValueError khi passing_score < 0.\"\"\"\n    with pytest.raises(ValueError) as exc_info:\n        is_passing(50, -10)\n    assert str(exc_info.value) == \"passing score must be between 0 and 100\"\n\ndef test_is_passing_over_passing_score_tc009():\n    \"\"\"Kiểm tra hàm is_passing ném ValueError khi passing_score > 100.\"\"\"\n    with pytest.raises(ValueError) as exc_info:\n        is_passing(50, 110)\n    assert str(exc_info.value) == \"passing score must be between 0 and 100\"\n\ndef test_is_passing_true_when_meets_tc010():\n    \"\"\"Kiểm tra hàm is_passing trả về True khi score >= passing_score.\"\"\"\n    assert is_passing(80, 70) is True\n\ndef test_is_passing_false_when_below_tc011():\n    \"\"\"Kiểm tra hàm is_passing trả về False khi score < passing_score.\"\"\"\n    assert is_passing(65, 70) is False\n\n# ===== Tests for grade_points =====\nfrom source_under_test import grade_points\n\ndef test_grade_points_A_tc012():\n    \"\"\"Kiểm tra hàm grade_points trả về 4.0 cho chữ 'A'.\"\"\"\n    assert grade_points(\"A\") == 4.0\n\ndef test_grade_points_F_tc013():\n    \"\"\"Kiểm tra hàm grade_points trả về 0.0 cho chữ 'F'.\"\"\"\n    assert grade_points(\"F\") == 0.0\n\ndef test_grade_points_unknown_letter_tc014():\n    \"\"\"Kiểm tra hàm grade_points ném ValueError khi chữ không hợp lệ.\"\"\"\n    with pytest.raises(ValueError) as exc_info:\n        grade_points(\"Z\")\n    assert str(exc_info.value) == \"unknown grade letter\"",
+          "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_191716_055307\\attempt_01_initial\\pytest.log",
+          "collection_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_191716_055307\\attempt_01_initial\\pytest_collect_only.log",
+          "coverage_json_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_191716_055307\\attempt_01_initial\\coverage.json",
+          "review_md_path": "",
+          "passed": true,
+          "coverage_percent": 100.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 100,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>",
+            "missing_lines_count": "<truncated>"
+          },
+          "source_hash": "6822bf4a867a48789515e4d8f12cabe6afab346a90ec567619688aa70e283082",
+          "test_hash": "1d3622fee8e12fb490938c7b643ed772b547622b0df5479015e7a09d0148239c",
+          "output": "..............                                                           [100%]\n=============================== tests coverage ================================\n______________ coverage: platform win32, python 3.10.11-final-0 _______________\n\nName                   Stmts   Miss  Cover   Missing\n----------------------------------------------------\nsource_under_test.py      22      0   100%\n----------------------------------------------------\nTOTAL                     22      0   100%\nCoverage JSON written to file coverage.json\n14 passed in 0.07s",
+          "collection_output": "test_generated.py::test_letter_grade_negative_score_tc001\ntest_generated.py::test_letter_grade_over_score_tc002\ntest_generated.py::test_letter_grade_score_95_tc003\ntest_generated.py::test_letter_grade_score_85_tc004\ntest_generated.py::test_letter_grade_score_75_tc005\ntest_generated.py::test_letter_grade_score_65_tc006\ntest_generated.py::test_letter_grade_score_59_tc007\ntest_generated.py::test_is_passing_negative_passing_score_tc008\ntest_generated.py::test_is_passing_over_passing_score_tc009\ntest_generated.py::test_is_passing_true_when_meets_tc010\ntest_generated.py::test_is_passing_false_when_below_tc011\ntest_generated.py::test_grade_points_A_tc012\ntest_generated.py::test_grade_points_F_tc013\ntest_generated.py::test_grade_points_unknown_letter_tc014\n\n14 tests collected in 0.04s",
+          "diagnosis": "",
+          "failure_summary": "",
+          "combined_report": {
+            "passed": "<truncated>",
+            "coverage_percent": "<truncated>",
+            "missing_lines": "<truncated>",
+            "coverage_path": "<truncated>",
+            "test_paths": "<truncated>",
+            "output": "<truncated>",
+            "pytest_log_path": "<truncated>",
+            "collection_log_path": "<truncated>"
+          }
+        }
+      ]
+    },
+    "post_review_quality_score": 100,
+    "post_review_quality_verdict": "Đạt",
+    "post_review_quality_gate": "coverage",
+    "pytest_coverage_supported": true
+  },
+  "metadata": {
+    "models": {
+      "requirement": "nex-agi/nex-n2-pro:free",
+      "planning": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "code_generator": "poolside/laguna-m.1:free",
+      "review": "openai/gpt-oss-120b:free",
+      "embedding": "nomic-embed-text"
+    },
+    "embedding_backend": "ollama"
+  },
+  "artifacts": [
+    {
+      "kind": "generated_code",
+      "label": "Mã kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_191716_055307\\test_code\\ma_kiem_thu_pytest_20260619_191959_598771.py",
+      "name": "ma_kiem_thu_pytest_20260619_191959_598771.py",
+      "size_bytes": 3006,
+      "extension": ".py"
+    },
+    {
+      "kind": "test_plan",
+      "label": "Kế hoạch kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_191716_055307\\test_plan\\ke_hoach_kiem_thu_20260619_191959_600768.xlsx",
+      "name": "ke_hoach_kiem_thu_20260619_191959_600768.xlsx",
+      "size_bytes": 5971,
+      "extension": ".xlsx"
+    },
+    {
+      "kind": "review_report",
+      "label": "Báo cáo rà soát",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_191716_055307\\review_report\\bao_cao_phan_tich_20260619_192000_233852.pdf",
+      "name": "bao_cao_phan_tich_20260619_192000_233852.pdf",
+      "size_bytes": 25826,
+      "extension": ".pdf"
+    },
+    {
+      "kind": "review_report_markdown",
+      "label": "Báo cáo rà soát Markdown",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_191716_055307\\review_report\\bao_cao_phan_tich_20260619_192000_233852.md",
+      "name": "bao_cao_phan_tich_20260619_192000_233852.md",
+      "size_bytes": 1316,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_report",
+      "label": "Combined coverage report",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_191716_055307\\coverage_report\\combined_coverage_20260619_191959_588553.md",
+      "name": "combined_coverage_20260619_191959_588553.md",
+      "size_bytes": 1145,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_json",
+      "label": "Combined coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_191716_055307\\coverage_report\\combined_coverage_20260619_191959_588553.json",
+      "name": "combined_coverage_20260619_191959_588553.json",
+      "size_bytes": 1675,
+      "extension": ".json"
+    },
+    {
+      "kind": "coverage_raw_json",
+      "label": "Raw coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_191716_055307\\coverage_report\\coverage_raw_20260619_191959_588553.json",
+      "name": "coverage_raw_20260619_191959_588553.json",
+      "size_bytes": 2634,
+      "extension": ".json"
+    },
+    {
+      "kind": "pytest_log",
+      "label": "Pytest log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_191716_055307\\final\\pytest.log",
+      "name": "pytest.log",
+      "size_bytes": 558,
+      "extension": ".log"
+    },
+    {
+      "kind": "collect_only_log",
+      "label": "Pytest collect-only log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_191716_055307\\final\\pytest_collect_only.log",
+      "name": "pytest_collect_only.log",
+      "size_bytes": 802,
+      "extension": ".log"
+    }
+  ]
+}

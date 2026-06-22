@@ -1,0 +1,434 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260620_194707_887156",
+  "created_at": "2026-06-20T20:10:43",
+  "workflow": "Sinh mã kiểm thử",
+  "mode": "OpenRouter / Multi-model",
+  "backend": "openrouter",
+  "framework": "Selenium",
+  "test_technique": "Hybrid",
+  "diagnostics": {
+    "docs_chunks_indexed": 0,
+    "docs_chunks_reused": 2383,
+    "source_chunks_indexed": 4,
+    "source_chunks_reused": 0,
+    "rag_reused_collections": 1,
+    "llm_calls_estimated": 11,
+    "pytest_attempts": 0,
+    "pytest_passed": false,
+    "pytest_coverage_percent": 0.0,
+    "pytest_combined_coverage_percent": 0.0,
+    "pytest_targeted_retries": 0,
+    "pytest_full_retries": 0,
+    "pytest_retry_modes": [],
+    "stage_timings_ms": {
+      "input": 24.43,
+      "rag": 4775.34,
+      "requirement": 227497.66,
+      "planning": 315925.26,
+      "generation": 90503.35,
+      "execution": 90910.59,
+      "review": 32969.1,
+      "heal_generation_1": 189425.19,
+      "heal_execution_1": 109316.6,
+      "heal_review_1": 55068.68,
+      "heal_generation_2": 72808.36,
+      "heal_execution_2": 218081.59,
+      "heal_review_2": 7891.49
+    },
+    "rag_retrieval": {
+      "docs": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": false,
+        "filter_fallback": true,
+        "metadata_filter": {
+          "framework": "Selenium"
+        }
+      },
+      "source": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": false,
+        "filter_fallback": true,
+        "metadata_filter": {
+          "framework": "Selenium"
+        }
+      }
+    },
+    "context_lengths": {
+      "retrieval_context_chars": 5984,
+      "python_source_chars": 2839
+    },
+    "context_budget_chars": {
+      "requirement": 9000,
+      "generation": 8000,
+      "review": 8000
+    },
+    "test_execution_framework": "Selenium",
+    "retry_modes": [
+      "initial",
+      "traceability_topup_retry",
+      "initial",
+      "full_retry",
+      "initial",
+      "issue_heal_retry"
+    ],
+    "selenium_retry_modes": [
+      "initial",
+      "traceability_topup_retry",
+      "initial",
+      "full_retry",
+      "initial",
+      "issue_heal_retry"
+    ],
+    "attempts": 2,
+    "selenium_attempts": 2,
+    "selenium_execution_issue_type": "none",
+    "selenium_failure_issue_type": "none",
+    "selenium_best_coverage_percent": 0.0,
+    "selenium_best_coverage_attempt": 1,
+    "traceability": {
+      "planned_cases": 3,
+      "implemented_cases": 3,
+      "required_in_scope_cases": 3,
+      "implemented_in_scope_cases": 3,
+      "missing_in_scope_case_ids": [],
+      "out_of_scope_case_ids": [],
+      "ambiguous_case_ids": [],
+      "semantically_implemented_case_ids": [],
+      "missing_case_ids": [],
+      "raw_missing_case_ids": [],
+      "case_bindings": {},
+      "case_binding_reasons": {}
+    },
+    "targeted_retries": 1,
+    "selenium_targeted_retries": 1,
+    "traceability_topup_retries": 1,
+    "selenium_traceability_topup_retries": 1,
+    "selected_attempt_id": "attempt_02_issue_heal_retry",
+    "ledger": {
+      "run_id": "run_20260620_194707_887156",
+      "selected_attempt_id": "attempt_02_issue_heal_retry",
+      "selection_reason": "better_rank",
+      "attempts": [
+        {
+          "attempt_id": "attempt_01_initial",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_01_initial",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_01_initial\\test_generated.py",
+          "generated_code": "import pytest\nfrom pathlib import Path\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# Các selector dùng chung, dễ bảo trì\nSUBTOTAL_INPUT = (By.ID, \"subtotal\")\nWEIGHT_INPUT = (By.ID, \"weight\")\nDESTINATION_SELECT = (By.ID, \"destination\")\nTIER_SELECT = (By.ID, \"tier\")\nFRAGILE_CHECKBOX = (By.ID, \"fragile\")\nCREDIT_INPUT = (By.ID, \"credit\")\nCALCULATE_BUTTON = (By.ID, \"calculate\")\nTOTAL_OUTPUT = (By.CSS_SELECTOR, \"[data-testid='total']\")\nERROR_OUTPUT = (By.CSS_SELECTOR, \"[data-testid='error']\")\n\n@pytest.fixture(scope=\"function\")\ndef driver():\n    \"\"\"Khởi tạo trình duyệt Edge và đóng sau mỗi test.\"\"\"\n    drv = webdriver.Edge()\n    yield drv\n    drv.quit()\n\n# TC-001: Kiểm tra validation subtotal < 0\ndef test_validation_subtotal_negative_TC_001(driver):\n    \"\"\"\n    Nhập subtotal âm, các trường hợp còn lại hợp lệ.\n    Mong đợi: hiển thị lỗi \"subtotal must not be negative\".\n    \"\"\"\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"-10\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"5\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    # Lỗi được hiển thị trong element error\n    error_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(ERROR_OUTPUT)\n    )\n    assert error_elem.text == \"subtotal must not be negative\"\n    # Tổng không thay đổi (giá trị mặc định)\n    total_elem = driver.find_element(*TOTAL_OUTPUT)\n    assert total_elem.text == \"0.00\"\n\n# TC-002: Kiểm tra validation weight <= 0\ndef test_validation_weight_nonpositive_TC_002(driver):\n    \"\"\"\n    Nhập weight = 0, các trường hợp còn lại hợp lệ.\n    Mong đợi: hiển thị lỗi \"weight must be greater than zero\".\n    \"\"\"\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"100\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"0\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    error_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(ERROR_OUTPUT)\n    )\n    assert error_elem.text == \"weight must be greater than zero\"\n    total_elem = driver.find_element(*TOTAL_OUTPUT)\n    assert total_elem.text == \"0.00\"\n\n# TC-003: Kiểm tra validation tier không hợp lệ\ndef test_validation_invalid_tier_TC_003(driver):\n    \"\"\"\n    Nhập tier không tồn tại (gold), các trường hợp còn lại hợp lệ.\n    Mong đợi: hiển thị lỗi \"unsupported customer tier\".\n    \"\"\"\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"100\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"5\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    # Thay đổi giá trị select bằng cách thực thi JavaScript vì option không có \"gold\"\n    driver.execute_script(\"document.getElementById('tier').value = 'gold';\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    error_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(ERROR_OUTPUT)\n    )\n    assert error_elem.text == \"unsupported customer tier\"\n    total_elem = driver.find_element(*TOTAL_OUTPUT)\n    assert total_elem.text == \"0.00\"\n\n# TC-004: Kiểm tra nhập NaN (chuỗi không phải số) cho subtotal\ndef test_validation_subtotal_nan_TC_004(driver):\n    \"\"\"\n    Nhập chuỗi không phải số vào subtotal, các trường hợp còn lại hợp lệ.\n    JavaScript Number('abc') trả về NaN -> tính toán sẽ sinh lỗi và không hiển thị total.\n    Mong đợi: lỗi hiển thị rỗng (do script không bắt lỗi) và total vẫn là 0.00.\n    \"\"\"\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"abc\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"5\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    # Khi subtotal là NaN, tính toán sẽ cho NaN và total sẽ hiển thị \"NaN\"\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    assert total_elem.text == \"NaN\"\n    error_elem = driver.find_element(*ERROR_OUTPUT)\n    assert error_elem.text == \"\"\n\n# TC-005: Kiểm tra credit âm (được chấp nhận, giảm total)\ndef test_credit_negative_TC_005(driver):\n    \"\"\"\n    Nhập credit = -5 (âm), các trường hợp còn lại hợp lệ.\n    Tổng = subtotal - discount + shippingFee - (-5) = total + 5.\n    Với subtotal=100, tier=standard, weight=4 (fee=5), credit=-5 => total = 100 +5 +5 = 110.00\n    \"\"\"\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"100\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"4\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"-5\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    assert total_elem.text == \"110.00\"\n    error_elem = driver.find_element(*ERROR_OUTPUT)\n    assert error_elem.text == \"\"\n\n# TC-006: Kiểm tra phí vận chuyển cho destination = international\ndef test_shipping_fee_international_TC_006(driver):\n    \"\"\"\n    Destination = international, weight = 3kg (không thêm phí trọng lượng), không fragile.\n    Fee cơ bản = 18.\n    subtotal=50, tier=standard, credit=0 => total = 50 + 18 = 68.00\n    \"\"\"\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"50\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"3\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"international\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    assert total_elem.text == \"68.00\"\n    error_elem = driver.find_element(*ERROR_OUTPUT)\n    assert error_elem.text == \"\"\n\n# TC-007: Kiểm tra phí trọng lượng trong khoảng 5‑20kg (thêm $10)\ndef test_shipping_fee_weight_between_5_and_20_TC_007(driver):\n    \"\"\"\n    Weight = 10kg, destination = domestic.\n    Fee cơ bản = 5, weight >5 và <=20 => +10, không fragile.\n    Tổng phí = 15.\n    subtotal=80, tier=standard, credit=0 => total = 95.00\n    \"\"\"\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"80\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"10\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    assert total_elem.text == \"95.00\"\n    error_elem = driver.find_element(*ERROR_OUTPUT)\n    assert error_elem.text == \"\"",
+          "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_01_initial\\pytest.log",
+          "collection_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_01_initial\\pytest_collect_only.log",
+          "coverage_json_path": "",
+          "review_md_path": "",
+          "passed": false,
+          "coverage_percent": 0.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_bindings": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 49,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>",
+            "missing_lines_count": "<truncated>"
+          },
+          "source_hash": "c841ef692e174560daae32b9ad5dca3cd79e4d81d608dcd2e32a738bd78f2190",
+          "test_hash": "c3c9b0db5c3f73988008967c9e5f6f379f1adaac09f6bb495ca59e8adec7b7d0",
+          "output": "FFFF...                                                                  [100%]\n================================== FAILURES ===================================\n__________________ test_validation_subtotal_negative_TC_001 ___________________\n\ndriver = <selenium.webdriver.edge.webdriver.WebDriver (session=\"57d1c0aa5882af2604ff3edae00fb6c0\")>\n\n    def test_validation_subtotal_negative_TC_001(driver):\n        \"\"\"\n        Nh\\u1eadp subtotal \\xe2m, c\\xe1c tr\\u01b0\\u1eddng h\\u1ee3p c\\xf2n l\\u1ea1i h\\u1ee3p l\\u1ec7.\n        Mong \\u0111\\u1ee3i: hi\\u1ec3n th\\u1ecb l\\u1ed7i \"subtotal must not be negative\".\n        \"\"\"\n        url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n        driver.get(url)\n    \n        driver.find_element(*SUBTOTAL_INPUT).clear()\n        driver.find_element(*SUBTOTAL_INPUT).send_keys(\"-10\")\n        driver.find_element(*WEIGHT_INPUT).clear()\n        driver.find_element(*WEIGHT_INPUT).send_keys(\"5\")\n        driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n        driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n        driver.find_element(*CREDIT_INPUT).clear()\n        driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n        driver.find_element(*CALCULATE_BUTTON).click()\n    \n        # L\\u1ed7i \\u0111\\u01b0\\u1ee3c hi\\u1ec3n th\\u1ecb trong element error\n>       error_elem = WebDriverWait(driver, 5).until(\n            EC.visibility_of_element_located(ERROR_OUTPUT)\n        )\n\ntest_generated.py:46: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"57d1c0aa5882af2604ff3edae00fb6c0\")>\nmethod = <function visibility_of_element_located.<locals>._predicate at 0x00000172FAE204C0>\nmessage = ''\n\n    def until(self, method: Callable[[D], Literal[False] | T], message: str = \"\") -> T:\n        \"\"\"Wait until the method returns a value that is not False.\n    \n        Calls the method provided with the driver as an argument until the\n        return value does not evaluate to ``False``.\n    \n        Args:\n            method: A callable object that takes a WebDriver instance as an\n                argument.\n            message: Optional message for TimeoutException.\n    \n        Returns:\n            The result of the last call to `method`.\n    \n        Raises:\n            TimeoutException: If 'method' does not return a truthy value within\n                the WebDriverWait object's timeout.\n    \n        Example:\n            >>> from selenium.webdriver.common.by import By\n            >>> from selenium.webdriver.support.ui import WebDriverWait\n            >>> from selenium.webdriver.support import expected_conditions as EC\n            >>>\n            >>> # Wait until an element is visible on the page\n            >>> wait = WebDriverWait(driver, 10)\n            >>> element = wait.until(EC.visibility_of_element_located((By.ID, \"exampleId\")))\n            >>> print(element.text)\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            if time.monotonic() > end_time:\n                break\n            time.sleep(self._poll)\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n\nD:\\Miniconda\\envs\\chatbot\\lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: TimeoutException\n__________________ test_validation_weight_nonpositive_TC_002 __________________\n\ndriver = <selenium.webdriver.edge.webdriver.WebDriver (session=\"fba95fc9645434d13f344166506b6a66\")>\n\n    def test_validation_weight_nonpositive_TC_002(driver):\n        \"\"\"\n        Nh\\u1eadp weight = 0, c\\xe1c tr\\u01b0\\u1eddng h\\u1ee3p c\\xf2n l\\u1ea1i h\\u1ee3p l\\u1ec7.\n        Mong \\u0111\\u1ee3i: hi\\u1ec3n th\\u1ecb l\\u1ed7i \"weight must be greater than zero\".\n        \"\"\"\n        url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n        driver.get(url)\n    \n        driver.find_element(*SUBTOTAL_INPUT).clear()\n        driver.find_element(*SUBTOTAL_INPUT).send_keys(\"100\")\n        driver.find_element(*WEIGHT_INPUT).clear()\n        driver.find_element(*WEIGHT_INPUT).send_keys(\"0\")\n        driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n        driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n        driver.find_element(*CREDIT_INPUT).clear()\n        driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n        driver.find_element(*CALCULATE_BUTTON).click()\n    \n>       error_elem = WebDriverWait(driver, 5).until(\n            EC.visibility_of_element_located(ERROR_OUTPUT)\n        )\n\ntest_generated.py:73: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"fba95fc9645434d13f344166506b6a66\")>\nmethod = <function visibility_of_element_located.<locals>._predicate at 0x00000172FB195CF0>\nmessage = ''\n\n    def until(self, method: Callable[[D], Literal[False] | T], message: str = \"\") -> T:\n        \"\"\"Wait until the method returns a value that is not False.\n    \n        Calls the method provided with the driver as an argument until the\n        return value does not evaluate to ``False``.\n    \n        Args:\n            method: A callable object that takes a WebDriver instance as an\n                argument.\n            message: Optional message for TimeoutException.\n    \n        Returns:\n            The result of the last call to `method`.\n    \n        Raises:\n            TimeoutException: If 'method' does not return a truthy value within\n                the WebDriverWait object's timeout.\n    \n        Example:\n            >>> from selenium.webdriver.common.by import By\n            >>> from selenium.webdriver.support.ui import WebDriverWait\n            >>> from selenium.webdriver.support import expected_conditions as EC\n            >>>\n            >>> # Wait until an element is visible on the page\n            >>> wait = WebDriverWait(driver, 10)\n            >>> element = wait.until(EC.visibility_of_element_located((By.ID, \"exampleId\")))\n            >>> print(element.text)\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            if time.monotonic() > end_time:\n                break\n            time.sleep(self._poll)\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n\nD:\\Miniconda\\envs\\chatbot\\lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: TimeoutException\n_____________________ test_validation_invalid_tier_TC_003 _____________________\n\ndriver = <selenium.webdriver.edge.webdriver.WebDriver (session=\"f5aa5a201cd38f290a6274281ab1bb01\")>\n\n    def test_validation_invalid_tier_TC_003(driver):\n        \"\"\"\n        Nh\\u1eadp tier kh\\xf4ng t\\u1ed3n t\\u1ea1i (gold), c\\xe1c tr\\u01b0\\u1eddng h\\u1ee3p c\\xf2n l\\u1ea1i h\\u1ee3p l\\u1ec7.\n        Mong \\u0111\\u1ee3i: hi\\u1ec3n th\\u1ecb l\\u1ed7i \"unsupported customer tier\".\n        \"\"\"\n        url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n        driver.get(url)\n    \n        driver.find_element(*SUBTOTAL_INPUT).clear()\n        driver.find_element(*SUBTOTAL_INPUT).send_keys(\"100\")\n        driver.find_element(*WEIGHT_INPUT).clear()\n        driver.find_element(*WEIGHT_INPUT).send_keys(\"5\")\n        driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n        # Thay \\u0111\\u1ed5i gi\\xe1 tr\\u1ecb select b\\u1eb1ng c\\xe1ch th\\u1ef1c thi JavaScript v\\xec option kh\\xf4ng c\\xf3 \"gold\"\n        driver.execute_script(\"document.getElementById('tier').value = 'gold';\")\n        driver.find_element(*CREDIT_INPUT).clear()\n        driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n        driver.find_element(*CALCULATE_BUTTON).click()\n    \n>       error_elem = WebDriverWait(driver, 5).until(\n            EC.visibility_of_element_located(ERROR_OUTPUT)\n        )\n\ntest_generated.py:100: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _\n\nself = <selenium.webdriver.support.wait.WebDriverWait (session=\"f5aa5a201cd38f290a6274281ab1bb01\")>\nmethod = <function visibility_of_element_located.<locals>._predicate at 0x00000172FB195BD0>\nmessage = ''\n\n    def until(self, method: Callable[[D], Literal[False] | T], message: str = \"\") -> T:\n        \"\"\"Wait until the method returns a value that is not False.\n    \n        Calls the method provided with the driver as an argument until the\n        return value does not evaluate to ``False``.\n    \n        Args:\n            method: A callable object that takes a WebDriver instance as an\n                argument.\n            message: Optional message for TimeoutException.\n    \n        Returns:\n            The result of the last call to `method`.\n    \n        Raises:\n            TimeoutException: If 'method' does not return a truthy value within\n                the WebDriverWait object's timeout.\n    \n        Example:\n            >>> from selenium.webdriver.common.by import By\n            >>> from selenium.webdriver.support.ui import WebDriverWait\n            >>> from selenium.webdriver.support import expected_conditions as EC\n            >>>\n            >>> # Wait until an element is visible on the page\n            >>> wait = WebDriverWait(driver, 10)\n            >>> element = wait.until(EC.visibility_of_element_located((By.ID, \"exampleId\")))\n            >>> print(element.text)\n        \"\"\"\n        screen = None\n        stacktrace = None\n    \n        end_time = time.monotonic() + self._timeout\n        while True:\n            try:\n                value = method(self._driver)\n                if value:\n                    return value\n            except self._ignored_exceptions as exc:\n                screen = getattr(exc, \"screen\", None)\n                stacktrace = getattr(exc, \"stacktrace\", None)\n            if time.monotonic() > end_time:\n                break\n            time.sleep(self._poll)\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n\nD:\\Miniconda\\envs\\chatbot\\lib\\site-packages\\selenium\\webdriver\\support\\wait.py:121: TimeoutException\n_____________________ test_validation_subtotal_nan_TC_004 _____________________\n\ndriver = <selenium.webdriver.edge.webdriver.WebDriver (session=\"b7fac34e033575beea9b2bf82c4d4884\")>\n\n    def test_validation_subtotal_nan_TC_004(driver):\n        \"\"\"\n        Nh\\u1eadp chu\\u1ed7i kh\\xf4ng ph\\u1ea3i s\\u1ed1 v\\xe0o subtotal, c\\xe1c tr\\u01b0\\u1eddng h\\u1ee3p c\\xf2n l\\u1ea1i h\\u1ee3p l\\u1ec7.\n        JavaScript Number('abc') tr\\u1ea3 v\\u1ec1 NaN -> t\\xednh to\\xe1n s\\u1ebd sinh l\\u1ed7i v\\xe0 kh\\xf4ng hi\\u1ec3n th\\u1ecb total.\n        Mong \\u0111\\u1ee3i: l\\u1ed7i hi\\u1ec3n th\\u1ecb r\\u1ed7ng (do script kh\\xf4ng b\\u1eaft l\\u1ed7i) v\\xe0 total v\\u1eabn l\\xe0 0.00.\n        \"\"\"\n        url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n        driver.get(url)\n    \n        driver.find_element(*SUBTOTAL_INPUT).clear()\n        driver.find_element(*SUBTOTAL_INPUT).send_keys(\"abc\")\n        driver.find_element(*WEIGHT_INPUT).clear()\n        driver.find_element(*WEIGHT_INPUT).send_keys(\"5\")\n        driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n        driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n        driver.find_element(*CREDIT_INPUT).clear()\n        driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n        driver.find_element(*CALCULATE_BUTTON).click()\n    \n        # Khi subtotal l\\xe0 NaN, t\\xednh to\\xe1n s\\u1ebd cho NaN v\\xe0 total s\\u1ebd hi\\u1ec3n th\\u1ecb \"NaN\"\n        total_elem = WebDriverWait(driver, 5).until(\n            EC.visibility_of_element_located(TOTAL_OUTPUT)\n        )\n>       assert total_elem.text == \"NaN\"\nE       AssertionError: assert '5.00' == 'NaN'\nE         \nE         - NaN\nE         + 5.00\n\ntest_generated.py:131: AssertionError\n=========================== short test summary info ===========================\nFAILED test_generated.py::test_validation_subtotal_negative_TC_001 - selenium...\nFAILED test_generated.py::test_validation_weight_nonpositive_TC_002 - seleniu...\nFAILED test_generated.py::test_validation_invalid_tier_TC_003 - selenium.comm...\nFAILED test_generated.py::test_validation_subtotal_nan_TC_004 - AssertionErro...\n4 failed, 3 passed in 45.52s",
+          "collection_output": "test_generated.py::test_validation_subtotal_negative_TC_001\ntest_generated.py::test_validation_weight_nonpositive_TC_002\ntest_generated.py::test_validation_invalid_tier_TC_003\ntest_generated.py::test_validation_subtotal_nan_TC_004\ntest_generated.py::test_credit_negative_TC_005\ntest_generated.py::test_shipping_fee_international_TC_006\ntest_generated.py::test_shipping_fee_weight_between_5_and_20_TC_007\n\n7 tests collected in 0.21s",
+          "diagnosis": "test fail sớm trước khi cover được source",
+          "failure_summary": "__________________ test_validation_subtotal_negative_TC_001 ___________________\n>       error_elem = WebDriverWait(driver, 5).until(\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n__________________ test_validation_weight_nonpositive_TC_002 __________________\n>       error_elem = WebDriverWait(driver, 5).until(\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n_____________________ test_validation_invalid_tier_TC_003 _____________________\n>       error_elem = WebDriverWait(driver, 5).until(\n>       raise TimeoutException(message, screen, stacktrace)\nE       selenium.common.exceptions.TimeoutException: Message:\n_____________________ test_validation_subtotal_nan_TC_004 _____________________\n>       assert total_elem.text == \"NaN\"\nE       AssertionError: assert '5.00' == 'NaN'\nE         - NaN\nE         + 5.00\nFAILED test_generated.py::test_validation_subtotal_negative_TC_001 - selenium...\nFAILED test_generated.py::test_validation_weight_nonpositive_TC_002 - seleniu...\nFAILED test_generated.py::test_validation_invalid_tier_TC_003 - selenium.\n...",
+          "combined_report": {
+            "passed": "<truncated>",
+            "coverage_percent": "<truncated>",
+            "missing_lines": "<truncated>",
+            "coverage_path": "<truncated>",
+            "test_paths": "<truncated>",
+            "output": "<truncated>",
+            "pytest_log_path": "<truncated>",
+            "collection_log_path": "<truncated>"
+          }
+        },
+        {
+          "attempt_id": "attempt_02_issue_heal_retry",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_02_issue_heal_retry",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_02_issue_heal_retry\\test_generated.py",
+          "generated_code": "import pytest\nfrom pathlib import Path\nfrom selenium import webdriver\nfrom selenium.webdriver.common.by import By\nfrom selenium.webdriver.support.ui import WebDriverWait\nfrom selenium.webdriver.support import expected_conditions as EC\n\n# ----------------------------------------------------------------------\n# Selectors – use stable IDs / data‑testids\n# ----------------------------------------------------------------------\nSUBTOTAL_INPUT = (By.ID, \"subtotal\")\nWEIGHT_INPUT = (By.ID, \"weight\")\nDESTINATION_SELECT = (By.ID, \"destination\")\nTIER_SELECT = (By.ID, \"tier\")\nFRAGILE_CHECKBOX = (By.ID, \"fragile\")\nCREDIT_INPUT = (By.ID, \"credit\")\nCALCULATE_BUTTON = (By.ID, \"calculate\")\nTOTAL_OUTPUT = (By.CSS_SELECTOR, \"[data-testid='total']\")\nERROR_OUTPUT = (By.CSS_SELECTOR, \"[data-testid='error']\")\n\n# ----------------------------------------------------------------------\n# Fixture – Edge browser\n# ----------------------------------------------------------------------\n@pytest.fixture(scope=\"function\")\ndef driver():\n    \"\"\"Khởi tạo trình duyệt Edge và đóng sau mỗi test.\"\"\"\n    drv = webdriver.Edge()\n    yield drv\n    drv.quit()\n\n# ----------------------------------------------------------------------\n# Helper – open the fixture page\n# ----------------------------------------------------------------------\ndef open_page(driver):\n    url = (Path.cwd() / \"source_under_test.html\").resolve().as_uri()\n    driver.get(url)\n\n# ----------------------------------------------------------------------\n# 1️⃣ Kiểm tra tính tổng khi mọi dữ liệu hợp lệ\n# ----------------------------------------------------------------------\ndef test_total_calculation_basic(driver):\n    \"\"\"\n    Subtotal=100, tier=standard, weight=6 (domestic → fee 5 + 10 = 15),\n    credit=0, không fragile.\n    Tổng = 100 - 0 + 15 - 0 = 115.00\n    \"\"\"\n    open_page(driver)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"100\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"6\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    # Tổng hiển thị\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    # 100 (subtotal) - 0 (discount) + 15 (shipping) - 0 (credit) = 115.00\n    assert total_elem.text == \"115.00\"\n    # Không có thông báo lỗi\n    assert driver.find_element(*ERROR_OUTPUT).text == \"\"\n\n# ----------------------------------------------------------------------\n# 2️⃣ Kiểm tra giảm giá cho tier VIP (max $50)\n# ----------------------------------------------------------------------\ndef test_discount_vip_capped(driver):\n    \"\"\"\n    Subtotal=600, tier=vip → discount = min(600*0.12, 50) = 50\n    Weight=4kg (domestic, fee=5), credit=0.\n    Tổng = 600 - 50 + 5 = 555.00\n    \"\"\"\n    open_page(driver)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"600\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"4\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"vip\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    # 600 - 50 + 5 = 555.00\n    assert total_elem.text == \"555.00\"\n    assert driver.find_element(*ERROR_OUTPUT).text == \"\"\n\n# ----------------------------------------------------------------------\n# 3️⃣ Kiểm tra phí vận chuyển quốc tế (không phụ thuộc trọng lượng <5kg)\n# ----------------------------------------------------------------------\ndef test_shipping_fee_international(driver):\n    \"\"\"\n    Subtotal=50, tier=standard, weight=3kg, destination=international.\n    Fee cơ bản = 18 (không cộng thêm vì weight ≤5), không fragile.\n    Tổng = 50 + 18 = 68.00\n    \"\"\"\n    open_page(driver)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"50\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"3\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"international\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    # 50 + 18 = 68.00\n    assert total_elem.text == \"68.00\"\n    assert driver.find_element(*ERROR_OUTPUT).text == \"\"\n\n# ----------------------------------------------------------------------\n# 4️⃣ Kiểm tra phí trọng lượng trong khoảng 5‑20kg (thêm $10)\n# ----------------------------------------------------------------------\ndef test_shipping_fee_weight_between_5_and_20(driver):\n    \"\"\"\n    Subtotal=80, tier=standard, weight=10kg (domestic).\n    Fee cơ bản = 5 + 10 = 15, không fragile.\n    Tổng = 80 + 15 = 95.00\n    \"\"\"\n    open_page(driver)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"80\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"10\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    # 80 + 15 = 95.00\n    assert total_elem.text == \"95.00\"\n    assert driver.find_element(*ERROR_OUTPUT).text == \"\"\n\n# ----------------------------------------------------------------------\n# 5️⃣ Kiểm tra phí trọng lượng >20kg (thêm $25) và phí fragile (+7.5)\n# ----------------------------------------------------------------------\ndef test_shipping_fee_heavy_and_fragile(driver):\n    \"\"\"\n    Subtotal=200, tier=loyal, weight=25kg, destination=domestic, fragile=true.\n    Discount = min(200*0.07,30)=14.\n    Fee cơ bản = 5 + 25 (trọng lượng) + 7.5 (fragile) = 37.5\n    Tổng = 200 - 14 + 37.5 = 223.5 → hiển thị 223.50\n    \"\"\"\n    open_page(driver)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"200\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"25\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"loyal\")\n    driver.find_element(*FRAGILE_CHECKBOX).click()          # đánh dấu fragile\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    # 200 - 14 + 37.5 = 223.5 → 223.50\n    assert total_elem.text == \"223.50\"\n    assert driver.find_element(*ERROR_OUTPUT).text == \"\"\n\n# ----------------------------------------------------------------------\n# 6️⃣ Kiểm tra credit âm (giảm tổng)\n# ----------------------------------------------------------------------\ndef test_negative_credit(driver):\n    \"\"\"\n    Subtotal=100, tier=standard, weight=4kg (fee=5), credit=-5.\n    Tổng = 100 - 0 + 5 - (-5) = 110.00\n    \"\"\"\n    open_page(driver)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"100\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"4\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"-5\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    # 100 + 5 + 5 = 110.00\n    assert total_elem.text == \"110.00\"\n    assert driver.find_element(*ERROR_OUTPUT).text == \"\"\n\n# ----------------------------------------------------------------------\n# 7️⃣ Kiểm tra trường hợp subtotal âm – script ném lỗi và total giữ giá trị mặc định\n# ----------------------------------------------------------------------\ndef test_subtotal_negative_keeps_default_total(driver):\n    \"\"\"\n    Subtotal âm sẽ gây lỗi trong calculateDiscount, do đó hàm tính không thay đổi\n    total (giá trị mặc định 0.00) và error không được cập nhật.\n    \"\"\"\n    open_page(driver)\n\n    driver.find_element(*SUBTOTAL_INPUT).clear()\n    driver.find_element(*SUBTOTAL_INPUT).send_keys(\"-10\")\n    driver.find_element(*WEIGHT_INPUT).clear()\n    driver.find_element(*WEIGHT_INPUT).send_keys(\"5\")\n    driver.find_element(*DESTINATION_SELECT).send_keys(\"domestic\")\n    driver.find_element(*TIER_SELECT).send_keys(\"standard\")\n    driver.find_element(*CREDIT_INPUT).clear()\n    driver.find_element(*CREDIT_INPUT).send_keys(\"0\")\n    driver.find_element(*CALCULATE_BUTTON).click()\n\n    total_elem = WebDriverWait(driver, 5).until(\n        EC.visibility_of_element_located(TOTAL_OUTPUT)\n    )\n    # Vì lỗi được ném, total vẫn giữ giá trị mặc định 0.00\n    assert total_elem.text == \"0.00\"\n    # Không có thông báo lỗi được ghi vào element #error\n    assert driver.find_element(*ERROR_OUTPUT).text == \"\"",
+          "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_02_issue_heal_retry\\pytest.log",
+          "collection_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\attempt_02_issue_heal_retry\\pytest_collect_only.log",
+          "coverage_json_path": "",
+          "review_md_path": "",
+          "passed": true,
+          "coverage_percent": 0.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_bindings": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 100,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>",
+            "missing_lines_count": "<truncated>"
+          },
+          "source_hash": "c841ef692e174560daae32b9ad5dca3cd79e4d81d608dcd2e32a738bd78f2190",
+          "test_hash": "a800bf74f283ecb71992eb9a5c7b670412dc65385a79ddcec59d3fd425e8afa0",
+          "output": ".......                                                                  [100%]\n7 passed in 28.58s",
+          "collection_output": "test_generated.py::test_total_calculation_basic\ntest_generated.py::test_discount_vip_capped\ntest_generated.py::test_shipping_fee_international\ntest_generated.py::test_shipping_fee_weight_between_5_and_20\ntest_generated.py::test_shipping_fee_heavy_and_fragile\ntest_generated.py::test_negative_credit\ntest_generated.py::test_subtotal_negative_keeps_default_total\n\n7 tests collected in 0.21s",
+          "diagnosis": "test chạy nhưng không chạm được source mục tiêu",
+          "failure_summary": "",
+          "combined_report": {
+            "passed": "<truncated>",
+            "coverage_percent": "<truncated>",
+            "missing_lines": "<truncated>",
+            "coverage_path": "<truncated>",
+            "test_paths": "<truncated>",
+            "output": "<truncated>",
+            "pytest_log_path": "<truncated>",
+            "collection_log_path": "<truncated>"
+          }
+        }
+      ]
+    },
+    "post_review_quality_score": 69,
+    "post_review_quality_verdict": "Cần sửa",
+    "post_review_quality_gate": "flow_api_assertions",
+    "full_retries": 1,
+    "selenium_full_retries": 1,
+    "selenium_heal_retries": 1,
+    "selenium_passed": true,
+    "selenium_coverage_percent": 0.0,
+    "selenium_coverage_supported": false,
+    "external_attempts": 2,
+    "external_execution_passed": true,
+    "external_coverage_percent": 0.0,
+    "external_coverage_supported": false,
+    "external_execution_issue_type": "none"
+  },
+  "metadata": {
+    "models": {
+      "requirement": "nex-agi/nex-n2-pro:free",
+      "planning": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "code_generator": "poolside/laguna-m.1:free",
+      "review": "openai/gpt-oss-120b:free",
+      "embedding": "nomic-embed-text"
+    },
+    "embedding_backend": "ollama"
+  },
+  "artifacts": [
+    {
+      "kind": "generated_code",
+      "label": "Mã kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_194707_887156\\test_code\\ma_kiem_thu_selenium_20260620_201043_246452.py",
+      "name": "ma_kiem_thu_selenium_20260620_201043_246452.py",
+      "size_bytes": 10327,
+      "extension": ".py"
+    },
+    {
+      "kind": "test_plan",
+      "label": "Kế hoạch kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_194707_887156\\test_plan\\ke_hoach_kiem_thu_20260620_201043_248436.xlsx",
+      "name": "ke_hoach_kiem_thu_20260620_201043_248436.xlsx",
+      "size_bytes": 5389,
+      "extension": ".xlsx"
+    },
+    {
+      "kind": "coverage_report",
+      "label": "Combined coverage report",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_194707_887156\\coverage_report\\combined_coverage_20260620_201043_239459.md",
+      "name": "combined_coverage_20260620_201043_239459.md",
+      "size_bytes": 602,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_json",
+      "label": "Combined coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-20\\run_20260620_194707_887156\\coverage_report\\combined_coverage_20260620_201043_239459.json",
+      "name": "combined_coverage_20260620_201043_239459.json",
+      "size_bytes": 1134,
+      "extension": ".json"
+    },
+    {
+      "kind": "selenium_log",
+      "label": "Selenium log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\final\\pytest.log",
+      "name": "pytest.log",
+      "size_bytes": 99,
+      "extension": ".log"
+    },
+    {
+      "kind": "collect_only_log",
+      "label": "Pytest collect-only log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_194707_887156\\final\\pytest_collect_only.log",
+      "name": "pytest_collect_only.log",
+      "size_bytes": 396,
+      "extension": ".log"
+    }
+  ]
+}

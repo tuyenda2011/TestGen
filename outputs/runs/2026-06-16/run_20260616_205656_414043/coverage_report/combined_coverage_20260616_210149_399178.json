@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "coverage_percent": 0.0,
+  "missing_lines": [],
+  "coverage_path": "",
+  "test_paths": [
+    ""
+  ],
+  "output": "newman\n\nOrder Pricing Demo\n\n→ Quote VIP domestic fragile order\n  POST http://localhost:8000/orders/quote [200 OK, 242B, 32ms]\n  √  status is OK\n  √  response has expected total\n  √  response includes diagnostics\n\n┌─────────────────────────┬──────────────────┬──────────────────┐\n│                         │         executed │           failed │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│              iterations │                1 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│                requests │                1 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│            test-scripts │                1 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│      prerequest-scripts │                0 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│              assertions │                3 │                0 │\n├─────────────────────────┴──────────────────┴──────────────────┤\n│ total run duration: 85ms                                      │\n├───────────────────────────────────────────────────────────────┤\n│ total data received: 97B (approx)                             │\n├───────────────────────────────────────────────────────────────┤\n│ average response time: 32ms [min: 32ms, max: 32ms, s.d.: 0µs] │\n└───────────────────────────────────────────────────────────────┘"
+}

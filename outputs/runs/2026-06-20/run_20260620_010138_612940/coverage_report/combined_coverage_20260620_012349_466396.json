@@ -1,0 +1,25 @@
+{
+  "framework": "Jest",
+  "passed": true,
+  "coverage_percent": 100.0,
+  "missing_lines": [],
+  "coverage_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\final\\coverage\\coverage-summary.json",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\final\\generated.test.js"
+  ],
+  "output": "> test-workspace@1.0.0 test\n> jest --coverage --runInBand --json --outputFile=jest_results.json --forceExit --env=jsdom\n\nPASS ./generated.test.js\n  orderPricing module\n    √ TC-001 normalizeLabel trims and lowercases input (3 ms)\n    √ TC-003 calculateDiscount VIP below cap (1 ms)\n    √ TC-004 calculateDiscount VIP cap applied\n    √ TC-005 calculateDiscount Loyal below cap\n    √ TC-006 calculateDiscount Loyal cap applied (1 ms)\n    √ TC-007 calculateDiscount Standard returns zero\n    √ TC-008 calculateDiscount negative subtotal throws (8 ms)\n    √ TC-009 calculateDiscount unsupported tier throws (4 ms)\n    √ TC-010 shippingFee zero weight throws (1 ms)\n    √ TC-011 shippingFee unsupported destination throws\n    √ TC-012 shippingFee heavy fragile international (1 ms)\n    √ TC-013 shippingFee medium non-fragile domestic\n    √ TC-014 finalTotal throws error for negative storeCredit\n    √ TC-015 finalTotal floors at zero when overdiscounted (1 ms)\n    √ TC-016 finalTotal throws error for negative subtotal\n\nTest Suites: 1 passed, 1 total\nTests:       15 passed, 15 total\nSnapshots:   0 total\nTime:        0.865 s, estimated 1 s\nRan all test suites.\nTest results written to: jest_results.json\nForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?",
+  "jest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_02_heal_retry\\jest.log",
+  "jest_results_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\attempt_02_heal_retry\\jest_results.json",
+  "log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\final\\jest.log",
+  "failure_details": {},
+  "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\final\\jest.log",
+  "collection_log_path": "",
+  "execution_issue": {
+    "type": "none",
+    "title": "Jest execution passed",
+    "hint": "No action required."
+  },
+  "failure_summary": "√ TC-014 finalTotal throws error for negative storeCredit\n√ TC-016 finalTotal throws error for negative subtotal",
+  "selected_attempt_id": "attempt_02_heal_retry",
+  "final_workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_010138_612940\\final"
+}

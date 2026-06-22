@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "coverage_percent": 0.0,
+  "missing_lines": [],
+  "coverage_path": "",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260617_021019_860962\\test_generated.py"
+  ],
+  "output": "......                                                                   [100%]\n6 passed in 2.88s",
+  "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260617_021019_860962\\pytest.log",
+  "collection_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260617_021019_860962\\pytest_collect_only.log"
+}

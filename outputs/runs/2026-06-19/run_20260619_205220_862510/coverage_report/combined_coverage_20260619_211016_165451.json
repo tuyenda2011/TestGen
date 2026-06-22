@@ -1,0 +1,28 @@
+{
+  "framework": "Jest",
+  "passed": true,
+  "coverage_percent": 93.33,
+  "missing_lines": [
+    29,
+    34
+  ],
+  "coverage_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_205220_862510\\final\\coverage\\coverage-summary.json",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_205220_862510\\final\\generated.test.js"
+  ],
+  "output": "> test-workspace@1.0.0 test\n> jest --coverage --runInBand --json --outputFile=jest_results.json --forceExit --env=jsdom\n\nPASS ./generated.test.js\n  orderPricing module tests\n    √ TC-001 normalizeLabel trims and lowercases string (4 ms)\n    √ TC-002 normalizeLabel returns unchanged string when already normalized\n    √ TC-005 calculateDiscount VIP without cap (1 ms)\n    √ TC-006 calculateDiscount VIP with cap\n    √ TC-007 calculateDiscount Loyal without cap\n    √ TC-008 calculateDiscount Loyal with cap\n    √ TC-009 calculateDiscount Standard returns zero (1 ms)\n    √ TC-010 calculateDiscount throws on negative subtotal (6 ms)\n    √ TC-011 calculateDiscount throws on unsupported tier\n    √ TC-012 finalTotal correct calculation with store credit\n    √ TC-013 finalTotal throws on negative store credit (1 ms)\n    √ TC-014 finalTotal floors at zero for negative result (1 ms)\n    √ TC-015 shippingFee domestic weight <=5 no fragile\n    √ TC-016 shippingFee domestic weight >5 adds surcharge\n    √ TC-017 shippingFee international weight >20 adds surcharge\n    √ TC-018 shippingFee adds fragile surcharge\n\nTest Suites: 1 passed, 1 total\nTests:       16 passed, 16 total\nSnapshots:   0 total\nTime:        0.718 s, estimated 1 s\nRan all test suites.\nTest results written to: jest_results.json\nForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?",
+  "jest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_205220_862510\\attempt_02_heal_retry\\jest.log",
+  "jest_results_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_205220_862510\\attempt_02_heal_retry\\jest_results.json",
+  "log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_205220_862510\\final\\jest.log",
+  "failure_details": {},
+  "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_205220_862510\\final\\jest.log",
+  "collection_log_path": "",
+  "execution_issue": {
+    "type": "none",
+    "title": "Jest execution passed",
+    "hint": "No action required."
+  },
+  "failure_summary": "> test-workspace@1.0.0 test\n> jest --coverage --runInBand --json --outputFile=jest_results.json --forceExit --env=jsdom\n\nPASS ./generated.test.js\n  orderPricing module tests\n    √ TC-001 normalizeLabel trims and lowercases string (4 ms)\n    √ TC-002 normalizeLabel returns unchanged string when already normalized\n    √ TC-005 calculateDiscount VIP without cap (1 ms)\n    √ TC-006 calculateDiscount VIP with cap\n    √ TC-007 calculateDiscount Loyal without cap\n    √ TC-008 calculateDiscount Loyal with cap\n    √ TC-009 calculateDiscount Standard returns zero (1 ms)\n    √ TC-010 calculateDiscount throws on negative subtotal (6 ms)\n    √ TC-011 calculateDiscount throws on unsupported tier\n    √ TC-012 finalTotal correct calculation with store credit\n    √ TC-013 finalTotal throws on negative store credit (1 ms)\n    √ TC-014 finalTotal floors at zero for negative result (1 ms)\n    √ TC-015 shippingFee domestic weight <=5 no fragile\n    √ TC-016 shippingFee domestic weight >5 adds surcharge\n    √ TC-017 shippingFee international weight >20 adds surcharge\n    √ TC-018 shippingFee adds fragile surcharge\n\nTest Suites: 1 passed, 1 total\nTests:       16 passed, 16 total\nSnapshots:   0 total\nTime\n...",
+  "selected_attempt_id": "attempt_02_heal_retry",
+  "final_workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_205220_862510\\final"
+}

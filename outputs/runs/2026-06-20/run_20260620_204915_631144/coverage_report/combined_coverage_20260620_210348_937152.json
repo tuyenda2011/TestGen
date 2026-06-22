@@ -1,0 +1,21 @@
+{
+  "framework": "Postman script",
+  "passed": true,
+  "coverage_percent": 0.0,
+  "coverage_path": "",
+  "test_paths": [],
+  "output": "newman\n\nOrder Pricing Demo\n\n→ TC-001 Quote VIP domestic fragile order\n  POST http://localhost:8000/orders/quote [200 OK, 242B, 36ms]\n  √  status is OK\n  √  response has expected total\n  √  response includes diagnostics\n\n→ TC-002 Missing subtotal returns validation error\n  POST http://localhost:8000/orders/quote [400 Bad Request, 187B, 4ms]\n  √  status is Bad Request\n  √  response explains missing subtotal\n\n→ TC-003 Zero subtotal uses shipping as total\n  POST http://localhost:8000/orders/quote [200 OK, 236B, 6ms]\n  √  status is OK\n  √  total equals domestic base shipping\n\n→ TC-004 Invalid destination returns validation error\n  POST http://localhost:8000/orders/quote [400 Bad Request, 190B, 5ms]\n  √  status is Bad Request\n  √  response explains unsupported destination\n\n→ TC-005 Negative store credit returns validation error\n  POST http://localhost:8000/orders/quote [400 Bad Request, 199B, 14ms]\n  √  status is Bad Request\n  √  response explains invalid store credit\n\n┌─────────────────────────┬──────────────────┬──────────────────┐\n│                         │         executed │           failed │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│              iterations │                1 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│                requests │                5 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│            test-scripts │                5 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│      prerequest-scripts │                0 │                0 │\n├─────────────────────────┼──────────────────┼──────────────────┤\n│              assertions │               11 │                0 │\n├─────────────────────────┴──────────────────┴──────────────────┤\n│ total run duration: 472ms                                     │\n├───────────────────────────────────────────────────────────────┤\n│ total data received: 302B (approx)                            │\n├───────────────────────────────────────────────────────────────┤\n│ average response time: 13ms [min: 4ms, max: 36ms, s.d.: 12ms] │\n└───────────────────────────────────────────────────────────────┘",
+  "pytest_log_path": "",
+  "log_path": "",
+  "collection_log_path": "",
+  "execution_issue": {
+    "type": "none",
+    "title": "Newman execution passed",
+    "hint": "No action required.",
+    "missing_lines_count": "0"
+  },
+  "failure_summary": "→ TC-002 Missing subtotal returns validation error\n→ TC-004 Invalid destination returns validation error\n→ TC-005 Negative store credit returns validation error\n│                         │         executed │           failed │",
+  "selected_attempt_id": "attempt_01_initial",
+  "final_workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_204915_631144\\final",
+  "missing_lines": []
+}

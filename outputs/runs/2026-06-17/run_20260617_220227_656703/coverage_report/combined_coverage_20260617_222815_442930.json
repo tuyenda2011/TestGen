@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "coverage_percent": 100.0,
+  "missing_lines": [],
+  "coverage_path": "",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260617_220227_656703\\final\\test_generated.py"
+  ],
+  "output": ""
+}

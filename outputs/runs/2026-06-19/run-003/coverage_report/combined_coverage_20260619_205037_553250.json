@@ -1,0 +1,16 @@
+{
+  "framework": "pytest",
+  "passed": true,
+  "coverage_percent": 95.0,
+  "coverage_path": "",
+  "test_paths": [],
+  "output": "ok",
+  "pytest_log_path": "",
+  "log_path": "",
+  "collection_log_path": "",
+  "execution_issue": {},
+  "failure_summary": "",
+  "selected_attempt_id": "attempt_01_initial",
+  "final_workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run-003\\final",
+  "missing_lines": []
+}

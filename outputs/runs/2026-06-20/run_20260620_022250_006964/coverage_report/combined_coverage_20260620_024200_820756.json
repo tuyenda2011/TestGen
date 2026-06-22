@@ -1,0 +1,31 @@
+{
+  "framework": "Jest",
+  "passed": true,
+  "coverage_percent": 83.33,
+  "missing_lines": [
+    29,
+    34,
+    39,
+    41,
+    44
+  ],
+  "coverage_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_022250_006964\\final\\coverage\\coverage-summary.json",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_022250_006964\\final\\generated.test.js"
+  ],
+  "output": "> test-workspace@1.0.0 test\n> jest --coverage --runInBand --json --outputFile=jest_results.json --forceExit --env=jsdom\n\nPASS ./generated.test.js\n  orderPricing module tests\n    √ TC-001 normalizeLabel trims spaces and lowercases input (2 ms)\n    √ TC-004 calculateDiscount throws error for negative subtotal (7 ms)\n    √ TC-005 calculateDiscount returns correct VIP discount (percentage limit) (1 ms)\n    √ TC-006 calculateDiscount returns correct VIP discount (fixed limit)\n    √ TC-007 calculateDiscount returns correct Loyal discount (percentage limit) (1 ms)\n    √ TC-008 calculateDiscount returns correct Loyal discount (fixed limit)\n    √ TC-009 calculateDiscount returns zero for Standard tier\n    √ TC-010 calculateDiscount throws error for unsupported tier (1 ms)\n    √ TC-011 finalTotal throws error when store credit is negative\n    √ TC-012 finalTotal clamps result to zero when store credit exceeds subtotal after discount and shipping (1 ms)\n    √ TC-013 finalTotal calculates correct amount for VIP tier with positive store credit\n\nTest Suites: 1 passed, 1 total\nTests:       11 passed, 11 total\nSnapshots:   0 total\nTime:        0.889 s\nRan all test suites.\nTest results written to: jest_results.json\nForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?",
+  "jest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_022250_006964\\attempt_02_heal_retry\\jest.log",
+  "jest_results_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_022250_006964\\attempt_02_heal_retry\\jest_results.json",
+  "log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_022250_006964\\final\\jest.log",
+  "failure_details": {},
+  "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_022250_006964\\final\\jest.log",
+  "collection_log_path": "",
+  "execution_issue": {
+    "type": "none",
+    "title": "Jest execution passed",
+    "hint": "No action required."
+  },
+  "failure_summary": "√ TC-004 calculateDiscount throws error for negative subtotal (7 ms)\n√ TC-010 calculateDiscount throws error for unsupported tier (1 ms)\n√ TC-011 finalTotal throws error when store credit is negative",
+  "selected_attempt_id": "attempt_02_heal_retry",
+  "final_workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_022250_006964\\final"
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "coverage_percent": 100.0,
+  "missing_lines": [],
+  "coverage_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260621_192840_531641\\coverage\\coverage-summary.json",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260621_192840_531641\\generated.test.js"
+  ],
+  "output": "> test-workspace@1.0.0 test\n> jest --coverage --runInBand --json --outputFile=jest_results.json --forceExit --env=jsdom\n\nPASS ./generated.test.js\n  calculateDiscount\n    âˆš vip discount below cap (1 ms)\n    âˆš vip discount hits cap\n    âˆš loyal discount below cap\n    âˆš loyal discount hits cap (1 ms)\n    âˆš standard tier receives no discount\n    âˆš throws error for negative subtotal (11 ms)\n    âˆš throws error for unsupported tier (1 ms)\n    âˆš handles tier with spaces and uppercase\n    âˆš boundary subtotal zero returns zero discount\n  shippingFee\n    âˆš domestic base fee without surcharge\n    âˆš adds $10 surcharge for weight >5kg domestic (1 ms)\n    âˆš adds $25 surcharge for weight >20kg domestic\n    âˆš adds $25 surcharge for weight >20kg international\n    âˆš boundary weight exactly 20kg applies $25 surcharge international\n    âˆš boundary weight exactly 5kg no surcharge domestic\n    âˆš adds fragile fee only, domestic weight <=5kg (1 ms)\n    âˆš adds fragile fee on top of weight surcharge, international\n    âˆš throws error for nonâ€‘positive weight\n    âˆš throws error for unsupported destination\n  finalTotal\n    âˆš computes total with discount, shipping, and store credit\n    âˆš returns zero when store credit exceeds amount after discounts and shipping\n    âˆš throws error for negative store credit\n    âˆš finalTotal with standard tier and domestic shipping\n\nTest Suites: 1 passed, 1 total\nTests:       23 passed, 23 total\nSnapshots:   0 total\nTime:        0.991 s, estimated 1 s\nRan all test suites.\nTest results written to: jest_results.json\nForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?"
+}

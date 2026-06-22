@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260617_211301_395955",
+  "created_at": "2026-06-17T21:21:13",
+  "workflow": "Sinh mã kiểm thử",
+  "mode": "OpenRouter / Multi-model",
+  "backend": "openrouter",
+  "framework": "pytest",
+  "test_technique": "Hybrid",
+  "diagnostics": {
+    "docs_chunks_indexed": 0,
+    "docs_chunks_reused": 2643,
+    "source_chunks_indexed": 0,
+    "source_chunks_reused": 0,
+    "rag_reused_collections": 1,
+    "llm_calls_estimated": 8,
+    "pytest_attempts": 1,
+    "pytest_passed": true,
+    "pytest_coverage_percent": 100.0,
+    "pytest_combined_coverage_percent": 0.0,
+    "pytest_targeted_retries": 0,
+    "pytest_full_retries": 0,
+    "pytest_retry_modes": [
+      "initial",
+      "initial",
+      "initial"
+    ],
+    "stage_timings_ms": {
+      "input": 16.78,
+      "rag": 4784.06,
+      "requirement": 56663.1,
+      "planning": 89225.87,
+      "generation": 41810.4,
+      "execution": 3107.53,
+      "review": 63934.82,
+      "heal_generation_1": 69811.48,
+      "heal_execution_1": 2486.46,
+      "heal_review_1": 50928.53,
+      "heal_generation_2": 50265.65,
+      "heal_execution_2": 2661.0,
+      "heal_review_2": 55757.22
+    },
+    "rag_retrieval": {
+      "docs": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": true,
+        "metadata_filter": {
+          "framework": "pytest"
+        }
+      },
+      "source": {
+        "skipped_reason": "pytest_ast_context"
+      }
+    },
+    "context_lengths": {
+      "retrieval_context_chars": 1977,
+      "python_source_chars": 681
+    },
+    "context_budget_chars": {
+      "requirement": 9000,
+      "generation": 8000,
+      "review": 8000
+    },
+    "test_execution_framework": "pytest",
+    "retry_modes": [
+      "initial",
+      "initial",
+      "initial"
+    ],
+    "attempts": 1,
+    "execution_issue_type": "none",
+    "pytest_failure_issue_type": "none",
+    "pytest_best_coverage_percent": 100.0,
+    "pytest_best_coverage_attempt": 1,
+    "traceability": {
+      "planned_cases": 19,
+      "implemented_cases": 12,
+      "missing_case_ids": [
+        "TC-001",
+        "TC-002",
+        "TC-003",
+        "TC-004",
+        "TC-005",
+        "TC-006",
+        "TC-007",
+        "TC-008"
+      ]
+    },
+    "post_review_quality_score": 49,
+    "post_review_quality_verdict": "Rủi ro cao",
+    "post_review_quality_gate": "coverage",
+    "pytest_execution_issue_type": "none"
+  },
+  "metadata": {
+    "models": {
+      "requirement": "nex-agi/nex-n2-pro:free",
+      "planning": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "code_generator": "poolside/laguna-m.1:free",
+      "review": "openai/gpt-oss-120b:free",
+      "embedding": "nomic-embed-text"
+    },
+    "embedding_backend": "ollama"
+  },
+  "artifacts": [
+    {
+      "kind": "generated_code",
+      "label": "Mã kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-17\\run_20260617_211301_395955\\test_code\\ma_kiem_thu_pytest_20260617_212112_951088.py",
+      "name": "ma_kiem_thu_pytest_20260617_212112_951088.py",
+      "size_bytes": 2452,
+      "extension": ".py"
+    },
+    {
+      "kind": "test_plan",
+      "label": "Kế hoạch kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-17\\run_20260617_211301_395955\\test_plan\\ke_hoach_kiem_thu_20260617_212112_966634.xlsx",
+      "name": "ke_hoach_kiem_thu_20260617_212112_966634.xlsx",
+      "size_bytes": 7291,
+      "extension": ".xlsx"
+    },
+    {
+      "kind": "review_report",
+      "label": "Báo cáo rà soát",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-17\\run_20260617_211301_395955\\review_report\\bao_cao_phan_tich_20260617_212113_090052.pdf",
+      "name": "bao_cao_phan_tich_20260617_212113_090052.pdf",
+      "size_bytes": 29159,
+      "extension": ".pdf"
+    },
+    {
+      "kind": "review_report_markdown",
+      "label": "Báo cáo rà soát Markdown",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-17\\run_20260617_211301_395955\\review_report\\bao_cao_phan_tich_20260617_212113_090052.md",
+      "name": "bao_cao_phan_tich_20260617_212113_090052.md",
+      "size_bytes": 4457,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_report",
+      "label": "Combined coverage report",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-17\\run_20260617_211301_395955\\coverage_report\\combined_coverage_20260617_212112_928568.md",
+      "name": "combined_coverage_20260617_212112_928568.md",
+      "size_bytes": 1121,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_json",
+      "label": "Combined coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-17\\run_20260617_211301_395955\\coverage_report\\combined_coverage_20260617_212112_928568.json",
+      "name": "combined_coverage_20260617_212112_928568.json",
+      "size_bytes": 1110,
+      "extension": ".json"
+    },
+    {
+      "kind": "coverage_raw_json",
+      "label": "Raw coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-17\\run_20260617_211301_395955\\coverage_report\\coverage_raw_20260617_212112_928568.json",
+      "name": "coverage_raw_20260617_212112_928568.json",
+      "size_bytes": 2596,
+      "extension": ".json"
+    },
+    {
+      "kind": "pytest_log",
+      "label": "Pytest log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260617_211301_395955\\pytest.log",
+      "name": "pytest.log",
+      "size_bytes": 558,
+      "extension": ".log"
+    },
+    {
+      "kind": "collect_only_log",
+      "label": "Pytest collect-only log",
+      "path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260617_211301_395955\\pytest_collect_only.log",
+      "name": "pytest_collect_only.log",
+      "size_bytes": 761,
+      "extension": ".log"
+    }
+  ]
+}

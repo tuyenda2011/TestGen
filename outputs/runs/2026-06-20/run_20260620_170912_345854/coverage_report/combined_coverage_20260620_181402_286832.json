@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "coverage_percent": 0.0,
+  "missing_lines": [],
+  "coverage_path": "",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_170912_345854\\final\\test_generated.py"
+  ],
+  "output": "..................                                                       [100%]\n============================== warnings summary ===============================\n..\\..\\..\\..\\..\\..\\Miniconda\\envs\\chatbot\\lib\\site-packages\\_pytest\\cacheprovider.py:475\n  D:\\Miniconda\\envs\\chatbot\\lib\\site-packages\\_pytest\\cacheprovider.py:475: PytestCacheWarning: could not create cache path D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_170912_345854\\attempt_02_full_retry\\.pytest_cache\\v\\cache\\nodeids: [WinError 5] Access is denied: 'D:\\\\Chatbot\\\\outputs\\\\runs\\\\tmp_execution\\\\run_20260620_170912_345854\\\\attempt_02_full_retry\\\\pytest-cache-files-vhq5mqt7' -> 'D:\\\\Chatbot\\\\outputs\\\\runs\\\\tmp_execution\\\\run_20260620_170912_345854\\\\attempt_02_full_retry\\\\.pytest_cache'\n    config.cache.set(\"cache/nodeids\", sorted(self.cached_nodeids))\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n18 passed, 1 warning in 67.15s (0:01:07)",
+  "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_170912_345854\\final\\pytest.log",
+  "collection_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_170912_345854\\final\\pytest_collect_only.log",
+  "log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_170912_345854\\final\\pytest.log",
+  "execution_issue": {
+    "type": "none",
+    "title": "Không phát hiện lỗi execution chắc chắn",
+    "hint": "Tiếp tục review chất lượng assert và coverage.",
+    "missing_lines_count": "0"
+  },
+  "failure_summary": "",
+  "selected_attempt_id": "attempt_02_full_retry",
+  "final_workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260620_170912_345854\\final",
+  "framework": "Unknown"
+}

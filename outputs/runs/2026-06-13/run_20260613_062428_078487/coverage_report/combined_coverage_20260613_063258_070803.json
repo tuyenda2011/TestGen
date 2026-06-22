@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "coverage_percent": 95.65217391304348,
+  "missing_lines": [
+    4
+  ],
+  "coverage_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260613_062428_078487\\coverage.json",
+  "test_paths": [
+    "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260613_062428_078487\\test_generated.py"
+  ],
+  "output": ".......                                                                  [100%]\n=============================== tests coverage ================================\n______________ coverage: platform win32, python 3.10.11-final-0 _______________\n\nName                   Stmts   Miss  Cover   Missing\n----------------------------------------------------\nsource_under_test.py      23      1    96%   4\n----------------------------------------------------\nTOTAL                     23      1    96%\nCoverage JSON written to file coverage.json\n7 passed in 0.13s",
+  "pytest_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260613_062428_078487\\pytest.log",
+  "collection_log_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260613_062428_078487\\pytest_collect_only.log"
+}

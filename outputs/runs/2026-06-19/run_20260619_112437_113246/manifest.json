@@ -1,0 +1,460 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260619_112437_113246",
+  "created_at": "2026-06-19T11:32:52",
+  "workflow": "Sinh mã kiểm thử",
+  "mode": "OpenRouter / Multi-model",
+  "backend": "openrouter",
+  "framework": "JUnit",
+  "test_technique": "Hybrid",
+  "diagnostics": {
+    "docs_chunks_indexed": 0,
+    "docs_chunks_reused": 2383,
+    "source_chunks_indexed": 12,
+    "source_chunks_reused": 0,
+    "rag_reused_collections": 1,
+    "llm_calls_estimated": 9,
+    "pytest_attempts": 0,
+    "pytest_passed": false,
+    "pytest_coverage_percent": 0.0,
+    "pytest_combined_coverage_percent": 0.0,
+    "pytest_targeted_retries": 0,
+    "pytest_full_retries": 0,
+    "pytest_retry_modes": [],
+    "stage_timings_ms": {
+      "input": 16.64,
+      "rag": 6773.94,
+      "requirement": 34058.55,
+      "planning": 62455.04,
+      "generation": 67597.32,
+      "execution": 6699.97,
+      "review": 25255.27,
+      "heal_generation_1": 72172.52,
+      "heal_execution_1": 5761.24,
+      "heal_review_1": 28491.75,
+      "heal_generation_2": 83392.92,
+      "heal_execution_2": 84813.78,
+      "heal_review_2": 17398.25
+    },
+    "rag_retrieval": {
+      "docs": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": true,
+        "filter_fallback": false,
+        "metadata_filter": {
+          "framework": "JUnit"
+        }
+      },
+      "source": {
+        "top_k_requested": 4,
+        "returned_chunks": 4,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "framework": "<truncated>",
+            "page_start": "<truncated>",
+            "page_end": "<truncated>",
+            "source_type": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>"
+          }
+        ],
+        "applied_filter": false,
+        "filter_fallback": true,
+        "metadata_filter": {
+          "framework": "JUnit"
+        }
+      }
+    },
+    "context_lengths": {
+      "retrieval_context_chars": 3383,
+      "python_source_chars": 2171
+    },
+    "context_budget_chars": {
+      "requirement": 9000,
+      "generation": 8000,
+      "review": 8000
+    },
+    "test_execution_framework": "JUnit",
+    "retry_modes": [
+      "initial",
+      "initial",
+      "initial",
+      "heal_retry"
+    ],
+    "junit_retry_modes": [
+      "initial",
+      "initial",
+      "initial",
+      "heal_retry"
+    ],
+    "attempts": 2,
+    "junit_attempts": 2,
+    "junit_execution_issue_type": "none",
+    "junit_failure_issue_type": "none",
+    "junit_coverage_gaps": {
+      "missed_lines": [],
+      "missed_methods": [],
+      "partial_methods": [
+        {
+          "class": "BankAccount",
+          "method": "<init>",
+          "line": 6,
+          "missed_instructions": 0,
+          "covered_instructions": 32,
+          "missed_branches": 1,
+          "covered_branches": 5
+        }
+      ],
+      "missed_branches": [
+        {
+          "package": "",
+          "class": "BankAccount",
+          "sourcefile": "BankAccount.java",
+          "line": 7,
+          "missed_branches": 1,
+          "covered_branches": 3
+        }
+      ]
+    },
+    "junit_best_coverage_percent": 100.0,
+    "junit_best_coverage_attempt": 2,
+    "traceability": {
+      "planned_cases": 15,
+      "implemented_cases": 17,
+      "required_in_scope_cases": 15,
+      "implemented_in_scope_cases": 15,
+      "missing_in_scope_case_ids": [],
+      "out_of_scope_case_ids": [],
+      "ambiguous_case_ids": [],
+      "semantically_implemented_case_ids": [],
+      "missing_case_ids": [],
+      "raw_missing_case_ids": [],
+      "case_binding_reasons": {}
+    },
+    "selected_attempt_id": "attempt_02_heal_retry",
+    "ledger": {
+      "run_id": "run_20260619_112437_113246",
+      "selected_attempt_id": "attempt_02_heal_retry",
+      "selection_reason": "better_rank",
+      "attempts": [
+        {
+          "attempt_id": "attempt_01_initial",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_01_initial",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_01_initial\\src\\test\\java\\BankAccountTest.java",
+          "generated_code": "// Plan: TC-001, TC-002, TC-003, TC-004, TC-005, TC-006, TC-007, TC-008, TC-009, TC-010, TC-011, TC-012, TC-013, TC-014, TC-015, TC-016, TC-017\nimport org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class BankAccountTest {\n\n    private static final double DELTA = 0.001;\n\n    // TC-001: Create active account with valid data\n    @Test\n    void testCreateActiveAccount_TC001() {\n        // Kiểm tra việc tạo tài khoản hoạt động với dữ liệu hợp lệ\n        BankAccount account = new BankAccount(\"ACC123\", 1000.0);\n        assertEquals(\"ACC123\", account.getAccountNumber());\n        assertEquals(1000.0, account.getBalance(), DELTA);\n        assertTrue(account.isActive());\n    }\n\n    // TC-002: Constructor throws when account number is empty\n    @Test\n    void testConstructorEmptyAccountNumber_TC002() {\n        // Kiểm tra ngoại lệ khi số tài khoản rỗng\n        assertThrows(IllegalArgumentException.class, () -> {\n            new BankAccount(\"   \", 100.0);\n        });\n    }\n\n    // TC-003: Constructor throws when initial balance is negative\n    @Test\n    void testConstructorNegativeBalance_TC003() {\n        // Kiểm tra ngoại lệ khi số dư ban đầu âm\n        assertThrows(IllegalArgumentException.class, () -> {\n            new BankAccount(\"ACC001\", -50.0);\n        });\n    }\n\n    // TC-004: getAccountNumber returns the value set at construction\n    @Test\n    void testGetAccountNumber_TC004() {\n        // Kiểm tra getter trả về số tài khoản đúng\n        BankAccount account = new BankAccount(\"ACC999\", 0.0);\n        assertEquals(\"ACC999\", account.getAccountNumber());\n    }\n\n    // TC-005: getBalance returns the value set at construction\n    @Test\n    void testGetBalance_TC005() {\n        // Kiểm tra getter trả về số dư đúng\n        BankAccount account = new BankAccount(\"ACC100\", 250.75);\n        assertEquals(250.75, account.getBalance(), DELTA);\n    }\n\n    // TC-006: isActive reflects active flag set at construction\n    @Test\n    void testIsActiveFlag_TC006() {\n        // Kiểm tra trạng thái hoạt động đúng khi tạo tài khoản\n        BankAccount account = new BankAccount(\"ACC200\", 0.0);\n        assertTrue(account.isActive());\n    }\n\n    // TC-007: Deposit positive amount updates balance\n    @Test\n    void testDepositPositiveAmount_TC007() {\n        // Kiểm tra nạp tiền dương tăng số dư\n        BankAccount account = new BankAccount(\"ACC300\", 500.0);\n        account.deposit(200.0);\n        assertEquals(700.0, account.getBalance(), DELTA);\n    }\n\n    // TC-008: Deposit zero or negative amount throws IllegalArgumentException\n    @Test\n    void testDepositNonPositiveAmount_TC008() {\n        // Kiểm tra ngoại lệ khi nạp tiền không dương\n        BankAccount account = new BankAccount(\"ACC400\", 100.0);\n        assertThrows(IllegalArgumentException.class, () -> account.deposit(0));\n        assertThrows(IllegalArgumentException.class, () -> account.deposit(-10.0));\n    }\n\n    // TC-009: Withdraw amount less than balance succeeds\n    @Test\n    void testWithdrawWithinBalance_TC009() {\n        // Kiểm tra rút tiền hợp lệ giảm số dư\n        BankAccount account = new BankAccount(\"ACC500\", 400.0);\n        account.withdraw(150.0);\n        assertEquals(250.0, account.getBalance(), DELTA);\n    }\n\n    // TC-010: Withdraw amount greater than balance throws IllegalStateException\n    @Test\n    void testWithdrawExceedBalance_TC010() {\n        // Kiểm tra ngoại lệ khi rút tiền vượt quá số dư\n        BankAccount account = new BankAccount(\"ACC600\", 100.0);\n        IllegalStateException ex = assertThrows(IllegalStateException.class, () -> account.withdraw(150.0));\n        assertEquals(\"Insufficient funds\", ex.getMessage());\n    }\n\n    // TC-011: Withdraw zero or negative amount throws IllegalArgumentException\n    @Test\n    void testWithdrawNonPositiveAmount_TC011() {\n        // Kiểm tra ngoại lệ khi rút tiền không dương\n        BankAccount account = new BankAccount(\"ACC700\", 200.0);\n        assertThrows(IllegalArgumentException.class, () -> account.withdraw(0));\n        assertThrows(IllegalArgumentException.class, () -> account.withdraw(-20.0));\n    }\n\n    // TC-012: Transfer to active target account succeeds\n    @Test\n    void testTransferSuccess_TC012() {\n        // Kiểm tra chuyển tiền thành công giữa hai tài khoản hoạt động\n        BankAccount source = new BankAccount(\"SRC001\", 300.0);\n        BankAccount target = new BankAccount(\"TGT001\", 100.0);\n        source.transfer(target, 150.0);\n        assertEquals(150.0, source.getBalance(), DELTA);\n        assertEquals(250.0, target.getBalance(), DELTA);\n    }\n\n    // TC-013: Transfer with null target throws IllegalArgumentException\n    @Test\n    void testTransferNullTarget_TC013() {\n        // Kiểm tra ngoại lệ khi target account null\n        BankAccount source = new BankAccount(\"SRC002\", 200.0);\n        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,\n                () -> source.transfer(null, 50.0));\n        assertEquals(\"Target account cannot be null\", ex.getMessage());\n    }\n\n    // TC-014: Transfer to inactive target throws IllegalStateException\n    @Test\n    void testTransferToInactiveTarget_TC014() {\n        // Kiểm tra ngoại lệ khi target tài khoản không hoạt động\n        BankAccount source = new BankAccount(\"SRC003\", 300.0);\n        BankAccount target = new BankAccount(\"TGT002\", 100.0);\n        // Deactivate target (balance is zero)\n        target.deactivate();\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                () -> source.transfer(target, 30.0));\n        assertEquals(\"Target account is inactive\", ex.getMessage());\n    }\n\n    // TC-015: Operation on inactive account throws IllegalStateException via checkActive\n    @Test\n    void testOperationOnInactiveAccount_TC015() {\n        // Kiểm tra rằng mọi thao tác trên tài khoản không hoạt động ném IllegalStateException\n        BankAccount account = new BankAccount(\"ACC_INACTIVE\", 0.0);\n        account.deactivate(); // tài khoản hiện không hoạt động\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                () -> account.deposit(100.0));\n        assertEquals(\"Account is inactive\", ex.getMessage());\n    }\n\n    // TC-016: deactivate() throws IllegalStateException when balance > 0\n    @Test\n    void testDeactivateWithNonZeroBalance_TC016() {\n        // Kiểm tra việc vô hiệu hoá tài khoản có số dư dương ném ngoại lệ\n        BankAccount account = new BankAccount(\"ACC_DEACT\", 10.0);\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                account::deactivate);\n        assertEquals(\"Cannot deactivate account with non-zero balance\", ex.getMessage());\n    }\n\n    // TC-017: deactivate() succeeds when balance is zero and subsequent operations fail\n    @Test\n    void testDeactivateAndSubsequentInactiveOperation_TC017() {\n        // Kiểm tra deactivate thành công khi số dư = 0 và sau đó các thao tác bị chặn\n        BankAccount account = new BankAccount(\"ACC_ZERO\", 0.0);\n        account.deactivate();\n        assertFalse(account.isActive());\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                () -> account.withdraw(10.0));\n        assertEquals(\"Account is inactive\", ex.getMessage());\n    }\n}",
+          "pytest_log_path": "",
+          "collection_log_path": "",
+          "coverage_json_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_01_initial\\target\\site\\jacoco\\jacoco.xml",
+          "review_md_path": "",
+          "passed": false,
+          "coverage_percent": 96.26865671641791,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 49,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "hint": "<truncated>",
+            "title": "<truncated>",
+            "missing_lines_count": "<truncated>"
+          },
+          "source_hash": "9548bbe48ccea7c036b70f2ddaa228901a17068e17e59557d667c6952dbea137",
+          "test_hash": "46f2e8bd362616cb2cda34bd23cb628a4f2243eb343592ca959e7adb1b596e66",
+          "output": "[INFO] Scanning for projects...\n[INFO] \n[INFO] --------------------< com.testgen:generated-tests >---------------------\n[INFO] Building generated-tests 1.0-SNAPSHOT\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- jacoco:0.8.10:prepare-agent (default) @ generated-tests ---\n[INFO] argLine set to -javaagent:C:\\\\Users\\\\Admin\\\\.m2\\\\repository\\\\org\\\\jacoco\\\\org.jacoco.agent\\\\0.8.10\\\\org.jacoco.agent-0.8.10-runtime.jar=destfile=D:\\\\Chatbot\\\\outputs\\\\runs\\\\tmp_execution\\\\run_20260619_112437_113246\\\\attempt_01_initial\\\\target\\\\jacoco.exec\n[INFO] \n[INFO] --- resources:3.4.0:resources (default-resources) @ generated-tests ---\n[INFO] skip non existing resourceDirectory D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_01_initial\\src\\main\\resources\n[INFO] \n[INFO] --- compiler:3.15.0:compile (default-compile) @ generated-tests ---\n[INFO] Recompiling the module because of changed source code.\n[INFO] Compiling 1 source file with javac [debug target 11] to target\\classes\n[WARNING] system modules path not set in conjunction with -source 11\n[INFO] \n[INFO] --- resources:3.4.0:testResources (default-testResources) @ generated-tests ---\n[INFO] skip non existing resourceDirectory D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_01_initial\\src\\test\\resources\n[INFO] \n[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ generated-tests ---\n[INFO] Recompiling the module because of changed dependency.\n[INFO] Compiling 1 source file with javac [debug target 11] to target\\test-classes\n[WARNING] system modules path not set in conjunction with -source 11\n[INFO] \n[INFO] --- surefire:3.1.2:test (default-test) @ generated-tests ---\n[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider\n[INFO] \n[INFO] -------------------------------------------------------\n[INFO]  T E S T S\n[INFO] -------------------------------------------------------\n[INFO] Running BankAccountTest\n[ERROR] Tests run: 17, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.121 s <<< FAILURE! -- in BankAccountTest\n[ERROR] BankAccountTest.testTransferToInactiveTarget_TC014 -- Time elapsed: 0.007 s <<< ERROR!\njava.lang.IllegalStateException: Cannot deactivate account with non-zero balance\n\tat BankAccount.deactivate(BankAccount.java:52)\n\tat BankAccountTest.testTransferToInactiveTarget_TC014(BankAccountTest.java:134)\n\tat java.base/java.lang.reflect.Method.invoke(Method.java:580)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\tat java.base/java.util.ArrayList.forEach(ArrayList.java:1596)\n\n[INFO] \n[INFO] Results:\n[INFO] \n[ERROR] Errors: \n[ERROR]   BankAccountTest.testTransferToInactiveTarget_TC014:134 � IllegalState Cannot deactivate account with non-zero balance\n[INFO] \n[ERROR] Tests run: 17, Failures: 0, Errors: 1, Skipped: 0\n[INFO] \n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD FAILURE\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  2.901 s\n[INFO] Finished at: 2026-06-19T11:31:14+07:00\n[INFO] ------------------------------------------------------------------------\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.1.2:test (default-test) on project generated-tests: \n[ERROR] \n[ERROR] Please refer to D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_01_initial\\target\\surefire-reports for the individual test results.\n[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR] \n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR] \n[ERROR] For more information about the errors and possible solutions, please read the following articles:\n[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException",
+          "collection_output": "",
+          "diagnosis": "Có lỗi Runtime Exception khi chạy.",
+          "failure_summary": "[ERROR] Tests run: 17, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.121 s <<< FAILURE! -- in BankAccountTest\n[ERROR] BankAccountTest.testTransferToInactiveTarget_TC014 -- Time elapsed: 0.007 s <<< ERROR!\njava.lang.IllegalStateException: Cannot deactivate account with non-zero balance\n[ERROR] Errors:\n[ERROR]   BankAccountTest.testTransferToInactiveTarget_TC014:134 � IllegalState Cannot deactivate account with non-zero balance\n[ERROR] Tests run: 17, Failures: 0, Errors: 1, Skipped: 0\n[INFO] BUILD FAILURE\n[ERROR] Failed to execute goal org.apache.maven.plugins:maven-surefire-plugin:3.1.2:test (default-test) on project generated-tests:\n[ERROR]\n[ERROR] Please refer to D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_01_initial\\target\\surefire-reports for the individual test results.\n[ERROR] Please refer to dump files (if any exist) [date].dump, [date]-jvmRun[N].dump and [date].dumpstream.\n[ERROR] -> [Help 1]\n[ERROR]\n[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.\n[ERROR] Re-run Maven using the -X switch to enable full debug logging.\n[ERROR]\n[ERROR] For more information about the errors and possible solutions, please read\n...",
+          "combined_report": {
+            "passed": "<truncated>",
+            "coverage_percent": "<truncated>",
+            "missing_lines": "<truncated>",
+            "coverage_gaps": "<truncated>",
+            "coverage_path": "<truncated>",
+            "test_paths": "<truncated>",
+            "output": "<truncated>",
+            "pytest_log_path": "<truncated>",
+            "collection_log_path": "<truncated>",
+            "execution_issue": "<truncated>",
+            "failure_summary": "<truncated>"
+          }
+        },
+        {
+          "attempt_id": "attempt_02_heal_retry",
+          "stage": "execution",
+          "workspace_dir": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_02_heal_retry",
+          "generated_code_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_02_heal_retry\\src\\test\\java\\BankAccountTest.java",
+          "generated_code": "import org.junit.jupiter.api.Test;\nimport static org.junit.jupiter.api.Assertions.*;\n\npublic class BankAccountTest {\n\n    private static final double DELTA = 0.001;\n\n    // TC-001: Create active account with valid data\n    @Test\n    void testCreateActiveAccount_TC001() {\n        BankAccount account = new BankAccount(\"ACC123\", 1000.0);\n        assertEquals(\"ACC123\", account.getAccountNumber());\n        assertEquals(1000.0, account.getBalance(), DELTA);\n        assertTrue(account.isActive());\n    }\n\n    // TC-002: Constructor throws when account number is empty\n    @Test\n    void testConstructorEmptyAccountNumber_TC002() {\n        assertThrows(IllegalArgumentException.class, () -> {\n            new BankAccount(\"   \", 100.0);\n        });\n    }\n\n    // TC-003: Constructor throws when initial balance is negative\n    @Test\n    void testConstructorNegativeBalance_TC003() {\n        assertThrows(IllegalArgumentException.class, () -> {\n            new BankAccount(\"ACC001\", -50.0);\n        });\n    }\n\n    // TC-004: getAccountNumber returns the value set at construction\n    @Test\n    void testGetAccountNumber_TC004() {\n        BankAccount account = new BankAccount(\"ACC999\", 0.0);\n        assertEquals(\"ACC999\", account.getAccountNumber());\n    }\n\n    // TC-005: getBalance returns the value set at construction\n    @Test\n    void testGetBalance_TC005() {\n        BankAccount account = new BankAccount(\"ACC100\", 250.75);\n        assertEquals(250.75, account.getBalance(), DELTA);\n    }\n\n    // TC-006: isActive reflects active flag set at construction\n    @Test\n    void testIsActiveFlag_TC006() {\n        BankAccount account = new BankAccount(\"ACC200\", 0.0);\n        assertTrue(account.isActive());\n    }\n\n    // TC-007: Deposit positive amount updates balance\n    @Test\n    void testDepositPositiveAmount_TC007() {\n        BankAccount account = new BankAccount(\"ACC300\", 500.0);\n        account.deposit(200.0);\n        assertEquals(700.0, account.getBalance(), DELTA);\n    }\n\n    // TC-008: Deposit zero or negative amount throws IllegalArgumentException\n    @Test\n    void testDepositNonPositiveAmount_TC008() {\n        BankAccount account = new BankAccount(\"ACC400\", 100.0);\n        assertThrows(IllegalArgumentException.class, () -> account.deposit(0));\n        assertThrows(IllegalArgumentException.class, () -> account.deposit(-10.0));\n    }\n\n    // TC-009: Withdraw amount less than balance succeeds\n    @Test\n    void testWithdrawWithinBalance_TC009() {\n        BankAccount account = new BankAccount(\"ACC500\", 400.0);\n        account.withdraw(150.0);\n        assertEquals(250.0, account.getBalance(), DELTA);\n    }\n\n    // TC-010: Withdraw amount greater than balance throws IllegalStateException\n    @Test\n    void testWithdrawExceedBalance_TC010() {\n        BankAccount account = new BankAccount(\"ACC600\", 100.0);\n        IllegalStateException ex = assertThrows(IllegalStateException.class, () -> account.withdraw(150.0));\n        assertEquals(\"Insufficient funds\", ex.getMessage());\n    }\n\n    // TC-011: Withdraw zero or negative amount throws IllegalArgumentException\n    @Test\n    void testWithdrawNonPositiveAmount_TC011() {\n        BankAccount account = new BankAccount(\"ACC700\", 200.0);\n        assertThrows(IllegalArgumentException.class, () -> account.withdraw(0));\n        assertThrows(IllegalArgumentException.class, () -> account.withdraw(-20.0));\n    }\n\n    // TC-012: Transfer to active target account succeeds\n    @Test\n    void testTransferSuccess_TC012() {\n        BankAccount source = new BankAccount(\"SRC001\", 300.0);\n        BankAccount target = new BankAccount(\"TGT001\", 100.0);\n        source.transfer(target, 150.0);\n        assertEquals(150.0, source.getBalance(), DELTA);\n        assertEquals(250.0, target.getBalance(), DELTA);\n    }\n\n    // TC-013: Transfer with null target throws IllegalArgumentException\n    @Test\n    void testTransferNullTarget_TC013() {\n        BankAccount source = new BankAccount(\"SRC002\", 200.0);\n        IllegalArgumentException ex = assertThrows(IllegalArgumentException.class,\n                () -> source.transfer(null, 50.0));\n        assertEquals(\"Target account cannot be null\", ex.getMessage());\n    }\n\n    // TC-014: Transfer to inactive target throws IllegalStateException\n    @Test\n    void testTransferToInactiveTarget_TC014() {\n        BankAccount source = new BankAccount(\"SRC003\", 300.0);\n        BankAccount target = new BankAccount(\"TGT002\", 0.0); // zero balance to allow deactivation\n        target.deactivate();\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                () -> source.transfer(target, 30.0));\n        assertEquals(\"Target account is inactive\", ex.getMessage());\n    }\n\n    // TC-015: Operation on inactive account throws IllegalStateException via checkActive\n    @Test\n    void testOperationOnInactiveAccount_TC015() {\n        BankAccount account = new BankAccount(\"ACC_INACTIVE\", 0.0);\n        account.deactivate();\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                () -> account.deposit(100.0));\n        assertEquals(\"Account is inactive\", ex.getMessage());\n    }\n\n    // TC-016: deactivate() throws IllegalStateException when balance > 0\n    @Test\n    void testDeactivateWithNonZeroBalance_TC016() {\n        BankAccount account = new BankAccount(\"ACC_DEACT\", 10.0);\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                account::deactivate);\n        assertEquals(\"Cannot deactivate account with non-zero balance\", ex.getMessage());\n    }\n\n    // TC-017: deactivate() succeeds when balance is zero and subsequent operations fail\n    @Test\n    void testDeactivateAndSubsequentInactiveOperation_TC017() {\n        BankAccount account = new BankAccount(\"ACC_ZERO\", 0.0);\n        account.deactivate();\n        assertFalse(account.isActive());\n        IllegalStateException ex = assertThrows(IllegalStateException.class,\n                () -> account.withdraw(10.0));\n        assertEquals(\"Account is inactive\", ex.getMessage());\n    }\n}",
+          "pytest_log_path": "",
+          "collection_log_path": "",
+          "coverage_json_path": "D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_02_heal_retry\\target\\site\\jacoco\\jacoco.xml",
+          "review_md_path": "",
+          "passed": true,
+          "coverage_percent": 100.0,
+          "test_count": 0,
+          "traceability": {
+            "planned_cases": "<truncated>",
+            "implemented_cases": "<truncated>",
+            "required_in_scope_cases": "<truncated>",
+            "implemented_in_scope_cases": "<truncated>",
+            "missing_in_scope_case_ids": "<truncated>",
+            "out_of_scope_case_ids": "<truncated>",
+            "ambiguous_case_ids": "<truncated>",
+            "semantically_implemented_case_ids": "<truncated>",
+            "missing_case_ids": "<truncated>",
+            "raw_missing_case_ids": "<truncated>",
+            "case_binding_reasons": "<truncated>"
+          },
+          "post_review_quality_score": 100,
+          "review_findings": {
+            "critical": "<truncated>",
+            "missing_tests": "<truncated>",
+            "weak_assertions": "<truncated>",
+            "maintainability": "<truncated>",
+            "fixes": "<truncated>",
+            "requirement": "<truncated>"
+          },
+          "execution_issue": {
+            "type": "<truncated>",
+            "title": "<truncated>",
+            "hint": "<truncated>",
+            "missing_lines_count": "<truncated>"
+          },
+          "source_hash": "9548bbe48ccea7c036b70f2ddaa228901a17068e17e59557d667c6952dbea137",
+          "test_hash": "0a33037257f5fbfbedc9d37f5ca75b8736078eb97d211da04540ad2d8b85653f",
+          "output": "[INFO] Scanning for projects...\n[INFO] \n[INFO] --------------------< com.testgen:generated-tests >---------------------\n[INFO] Building generated-tests 1.0-SNAPSHOT\n[INFO]   from pom.xml\n[INFO] --------------------------------[ jar ]---------------------------------\n[INFO] \n[INFO] --- clean:3.2.0:clean (default-clean) @ generated-tests ---\n[INFO] \n[INFO] --- jacoco:0.8.10:prepare-agent (default) @ generated-tests ---\n[INFO] argLine set to -javaagent:C:\\\\Users\\\\Admin\\\\.m2\\\\repository\\\\org\\\\jacoco\\\\org.jacoco.agent\\\\0.8.10\\\\org.jacoco.agent-0.8.10-runtime.jar=destfile=D:\\\\Chatbot\\\\outputs\\\\runs\\\\tmp_execution\\\\run_20260619_112437_113246\\\\attempt_02_heal_retry\\\\target\\\\jacoco.exec\n[INFO] \n[INFO] --- resources:3.4.0:resources (default-resources) @ generated-tests ---\n[INFO] skip non existing resourceDirectory D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_02_heal_retry\\src\\main\\resources\n[INFO] \n[INFO] --- compiler:3.15.0:compile (default-compile) @ generated-tests ---\n[INFO] Recompiling the module because of changed source code.\n[INFO] Compiling 1 source file with javac [debug target 11] to target\\classes\n[WARNING] system modules path not set in conjunction with -source 11\n[INFO] \n[INFO] --- resources:3.4.0:testResources (default-testResources) @ generated-tests ---\n[INFO] skip non existing resourceDirectory D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_02_heal_retry\\src\\test\\resources\n[INFO] \n[INFO] --- compiler:3.15.0:testCompile (default-testCompile) @ generated-tests ---\n[INFO] Recompiling the module because of changed dependency.\n[INFO] Compiling 1 source file with javac [debug target 11] to target\\test-classes\n[WARNING] system modules path not set in conjunction with -source 11\n[INFO] \n[INFO] --- surefire:3.1.2:test (default-test) @ generated-tests ---\n[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider\n[INFO] \n[INFO] -------------------------------------------------------\n[INFO]  T E S T S\n[INFO] -------------------------------------------------------\n[INFO] Running BankAccountTest\n[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 s -- in BankAccountTest\n[INFO] \n[INFO] Results:\n[INFO] \n[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0\n[INFO] \n[INFO] \n[INFO] --- jacoco:0.8.10:report (report) @ generated-tests ---\n[INFO] Loading execution data file D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_02_heal_retry\\target\\jacoco.exec\n[INFO] Analyzed bundle 'generated-tests' with 1 classes\n[INFO] \n[INFO] --- jacoco:0.8.10:report (default-cli) @ generated-tests ---\n[INFO] Loading execution data file D:\\Chatbot\\outputs\\runs\\tmp_execution\\run_20260619_112437_113246\\attempt_02_heal_retry\\target\\jacoco.exec\n[INFO] Analyzed bundle 'generated-tests' with 1 classes\n[INFO] ------------------------------------------------------------------------\n[INFO] BUILD SUCCESS\n[INFO] ------------------------------------------------------------------------\n[INFO] Total time:  3.585 s\n[INFO] Finished at: 2026-06-19T11:32:33+07:00\n[INFO] ------------------------------------------------------------------------",
+          "collection_output": "",
+          "diagnosis": "JUnit command passed.",
+          "failure_summary": "[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.104 s -- in BankAccountTest\n[INFO] Tests run: 17, Failures: 0, Errors: 0, Skipped: 0",
+          "combined_report": {
+            "passed": "<truncated>",
+            "coverage_percent": "<truncated>",
+            "missing_lines": "<truncated>",
+            "coverage_gaps": "<truncated>",
+            "coverage_path": "<truncated>",
+            "test_paths": "<truncated>",
+            "output": "<truncated>",
+            "pytest_log_path": "<truncated>",
+            "collection_log_path": "<truncated>",
+            "execution_issue": "<truncated>",
+            "failure_summary": "<truncated>"
+          }
+        }
+      ]
+    },
+    "post_review_quality_score": 92,
+    "post_review_quality_verdict": "Đạt",
+    "post_review_quality_gate": "coverage",
+    "junit_heal_retries": 1,
+    "junit_passed": true,
+    "junit_coverage_percent": 100.0,
+    "junit_coverage_supported": true,
+    "external_attempts": 2,
+    "external_execution_passed": true,
+    "external_coverage_percent": 100.0,
+    "external_coverage_supported": true,
+    "external_execution_issue_type": "none"
+  },
+  "metadata": {
+    "models": {
+      "requirement": "nex-agi/nex-n2-pro:free",
+      "planning": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "code_generator": "poolside/laguna-m.1:free",
+      "review": "openai/gpt-oss-120b:free",
+      "embedding": "nomic-embed-text"
+    },
+    "embedding_backend": "ollama"
+  },
+  "artifacts": [
+    {
+      "kind": "generated_code",
+      "label": "Mã kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_112437_113246\\test_code\\ma_kiem_thu_junit_20260619_113252_038748.java",
+      "name": "ma_kiem_thu_junit_20260619_113252_038748.java",
+      "size_bytes": 6206,
+      "extension": ".java"
+    },
+    {
+      "kind": "test_plan",
+      "label": "Kế hoạch kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_112437_113246\\test_plan\\ke_hoach_kiem_thu_20260619_113252_041763.xlsx",
+      "name": "ke_hoach_kiem_thu_20260619_113252_041763.xlsx",
+      "size_bytes": 6319,
+      "extension": ".xlsx"
+    },
+    {
+      "kind": "review_report",
+      "label": "Báo cáo rà soát",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_112437_113246\\review_report\\bao_cao_phan_tich_20260619_113252_502624.pdf",
+      "name": "bao_cao_phan_tich_20260619_113252_502624.pdf",
+      "size_bytes": 27116,
+      "extension": ".pdf"
+    },
+    {
+      "kind": "review_report_markdown",
+      "label": "Báo cáo rà soát Markdown",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_112437_113246\\review_report\\bao_cao_phan_tich_20260619_113252_502624.md",
+      "name": "bao_cao_phan_tich_20260619_113252_502624.md",
+      "size_bytes": 2759,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_report",
+      "label": "Combined coverage report",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_112437_113246\\coverage_report\\combined_coverage_20260619_113252_026264.md",
+      "name": "combined_coverage_20260619_113252_026264.md",
+      "size_bytes": 3692,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_json",
+      "label": "Combined coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_112437_113246\\coverage_report\\combined_coverage_20260619_113252_026264.json",
+      "name": "combined_coverage_20260619_113252_026264.json",
+      "size_bytes": 4875,
+      "extension": ".json"
+    },
+    {
+      "kind": "coverage_raw_json",
+      "label": "Raw coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-19\\run_20260619_112437_113246\\coverage_report\\coverage_raw_20260619_113252_026264.json",
+      "name": "coverage_raw_20260619_113252_026264.json",
+      "size_bytes": 5838,
+      "extension": ".json"
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "coverage_percent": 95.0,
+  "missing_lines": [],
+  "coverage_path": "",
+  "test_paths": [
+    ""
+  ],
+  "output": "ok"
+}

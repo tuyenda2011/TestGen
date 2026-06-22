@@ -13,6 +13,7 @@ _EXTENSION_LANGUAGE = {
     ".tsx": "javascript",
     ".html": "html",
     ".css": "css",
+    ".json": "json",
 }
 
 _FRAMEWORK_LANGUAGE = {
@@ -63,6 +64,16 @@ def detect_languages(sections: list[tuple[str, str]]) -> set[str]:
     return languages
 
 
+_FRAMEWORK_DISPLAY_NAMES = {
+    "pytest": "Pytest",
+    "JUnit": "JUnit",
+    "Jest": "Jest",
+    "Postman script": "Postman / Newman",
+    "Selenium": "Selenium",
+    "Playwright": "Playwright",
+}
+
+
 def expected_language_for_framework(framework: str) -> str | None:
     return _FRAMEWORK_LANGUAGE.get((framework or "").strip())
 
@@ -82,8 +93,9 @@ def validate_framework_sections(framework: str, sections: list[tuple[str, str]])
         return None
 
     detected = ", ".join(sorted(languages))
+    display_name = _FRAMEWORK_DISPLAY_NAMES.get(framework, framework)
     return (
-        f"Framework đã chọn là `{framework}` (mong đợi code `{expected}`), "
+        f"Framework đã chọn là `{display_name}` (mong đợi code `{expected}`), "
         f"nhưng code đầu vào đang giống `{detected}`. "
         "Hãy đổi framework hoặc đổi code đầu vào cho khớp."
     )

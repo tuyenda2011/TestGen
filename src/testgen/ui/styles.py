@@ -56,6 +56,7 @@ def apply_custom_styles():
             border-radius: 16px;
             background: linear-gradient(135deg, #ffffff 0%, #edf8f4 60%, #e0f4ee 100%);
             padding: 1.1rem 1.3rem 1rem;
+            margin-top: 2rem;
             margin-bottom: 1rem;
             box-shadow: 0 4px 20px rgba(13, 110, 86, 0.07);
         }

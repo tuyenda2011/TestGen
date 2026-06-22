@@ -186,36 +186,37 @@ def render_rag_docs_panel(
             if stale_reason != "manual_clear":
                 st.warning("Thư viện tài liệu đã thay đổi. Kho tìm nhanh cũ đã được xóa để tránh truy xuất nhầm dữ liệu.")
         if saved_doc_files:
-            st.markdown('<div class="action-title" style="margin-top: 1.5rem; margin-bottom: 0.5rem;">📁 Danh sách tài liệu đã lưu</div>', unsafe_allow_html=True)
-            list_container = st.container(border=True)
-            with list_container:
-                if len(saved_doc_files) > 1:
-                    header_cols = st.columns([0.8, 0.2])
-                    header_cols[0].caption("Tất cả tài liệu trong thư viện")
-                    with header_cols[1]:
-                        if st.button("Xóa tất cả", key="delete_all_saved_docs", use_container_width=True, type="primary"):
-                            for path in saved_doc_files:
-                                delete_saved_doc_file(DOC_UPLOAD_PATH, path.name)
-                            invalidate_docs_rag_index()
-                            st.session_state["docs_rag_notice"] = "Đã xóa toàn bộ tài liệu đã lưu và gỡ kho tìm nhanh cũ."
-                            st.rerun()
-                    st.divider()
-                
-                for index, path in enumerate(saved_doc_files):
-                    file_cols = st.columns([0.65, 0.2, 0.15], vertical_alignment="center")
-                    file_cols[0].markdown(f"**📄 {path.name}**")
-                    file_cols[1].caption(f"{path.stat().st_size / 1024:.1f} KB")
-                    with file_cols[2]:
-                        if st.button("Xóa", key=f"delete_doc_{index}_{path.name}", use_container_width=True):
-                            if delete_saved_doc_file(DOC_UPLOAD_PATH, path.name):
+            st.markdown('<div style="margin-top: 1.5rem;"></div>', unsafe_allow_html=True)
+            with st.expander("📁 Danh sách tài liệu đã lưu", expanded=True):
+                list_container = st.container(border=True)
+                with list_container:
+                    if len(saved_doc_files) > 1:
+                        header_cols = st.columns([0.8, 0.2])
+                        header_cols[0].caption("Tất cả tài liệu trong thư viện")
+                        with header_cols[1]:
+                            if st.button("Xóa tất cả", key="delete_all_saved_docs", use_container_width=True, type="primary"):
+                                for path in saved_doc_files:
+                                    delete_saved_doc_file(DOC_UPLOAD_PATH, path.name)
                                 invalidate_docs_rag_index()
-                                st.session_state["docs_rag_notice"] = (
-                                    f"Đã xóa {path.name} và gỡ kho tìm nhanh cũ. "
-                                    "Hãy tạo lại kho tìm nhanh nếu cần dùng các tài liệu còn lại."
-                                )
+                                st.session_state["docs_rag_notice"] = "Đã xóa toàn bộ tài liệu đã lưu và gỡ kho tìm nhanh cũ."
                                 st.rerun()
-                            else:
-                                st.warning(f"Không xóa được {path.name}.")
+                        st.divider()
+                    
+                    for index, path in enumerate(saved_doc_files):
+                        file_cols = st.columns([0.65, 0.2, 0.15], vertical_alignment="center")
+                        file_cols[0].markdown(f"**📄 {path.name}**")
+                        file_cols[1].caption(f"{path.stat().st_size / 1024:.1f} KB")
+                        with file_cols[2]:
+                            if st.button("Xóa", key=f"delete_doc_{index}_{path.name}", use_container_width=True):
+                                if delete_saved_doc_file(DOC_UPLOAD_PATH, path.name):
+                                    invalidate_docs_rag_index()
+                                    st.session_state["docs_rag_notice"] = (
+                                        f"Đã xóa {path.name} và gỡ kho tìm nhanh cũ. "
+                                        "Hãy tạo lại kho tìm nhanh nếu cần dùng các tài liệu còn lại."
+                                    )
+                                    st.rerun()
+                                else:
+                                    st.warning(f"Không xóa được {path.name}.")
 
         if st.session_state.get("docs_rag_ready"):
             st.caption(

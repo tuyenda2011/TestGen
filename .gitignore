@@ -1,0 +1,26 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+.streamlit/secrets.toml
+.env
+.runtime/
+*.sqlite
+*.sqlite3
+*.db
+outputs/
+scratch/
+*.log
+*.tmp
+# IDE / OS / Python Build
+.vscode/
+.idea/
+.DS_Store
+build/
+dist/
+*.egg-info/
+.mypy_cache/
+tests/

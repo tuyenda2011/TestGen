@@ -1,0 +1,29 @@
+[project]
+name = "testgen-chatbot"
+version = "0.1.0"
+description = "Multi-agent test generation chatbot with RAG and pytest execution."
+requires-python = ">=3.10"
+dependencies = [
+    "streamlit>=1.57.0",
+    "requests>=2.32.3",
+    "tenacity>=8.2.3",
+    "tree-sitter-language-pack>=1.8.1",
+    "chromadb>=1.5.9",
+    "pypdf>=6.11.0",
+    "pandas>=3.0.3",
+    "openpyxl>=3.1.5",
+    "python-dotenv>=1.0.1",
+    "reportlab>=4.5.1",
+    "pytest>=9.0.3",
+    "pytest-cov>=7.1.0",
+    "pydantic>=2.10.6"
+]
+
+[project.scripts]
+testgen = "testgen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+testgen = ["assets/fonts/*.ttf", "assets/fonts/README.md"]

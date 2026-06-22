@@ -1,0 +1,13 @@
+[run]
+data_file = outputs/coverage/.coverage
+branch = True
+omit =
+    tests/*
+    */__pycache__/*
+    .pytest_cache/*
+    src/testgen/streamlit_app.py
+    src/testgen/ui/*
+
+[report]
+show_missing = True
+skip_empty = True

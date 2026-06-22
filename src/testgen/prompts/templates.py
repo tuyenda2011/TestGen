@@ -27,6 +27,7 @@ Task: Create a test plan JSON from the requirement JSON.
 
 Rules:
 - STRICTLY DO NOT plan tests for private or protected methods. Only focus on public methods (Public API).
+- MUST plan Test Cases for all Branches and Decision points shown in the Source Code (Line & Branch Coverage = 100%).
 - CRITICAL: You MUST strictly base your test cases ONLY on the provided source code, HTML, and requirements. ABSOLUTELY DO NOT hallucinate, invent, or assume "junk" test cases for features, fields, buttons, APIs, schemas, roles, or behaviors that are not explicitly present in the source code. If a constraint or feature is not in the source, do not test it!
 - If lacking grounds, create a `clarification` scenario or clearly note it in `missing_information` within the scenario.
 - Expected results must be verifiable, do not use vague statements. SPECIAL ATTENTION: If a test case violates a logic condition and is expected to throw an Exception, the `expected_result` MUST explicitly state the word "Throws" and the Exception name (Example: "Throws IllegalArgumentException due to negative amount").
@@ -39,8 +40,6 @@ Techniques:
 - White-box: branch, condition, exception, return path if source/context is available.
 - State-based/Cross-functional: Exhaustively analyze internal state dependencies (e.g., hidden flags like `isActive()` or helper conditions like `checkActive()`) to generate Negative Test Cases if a public action is called when the state forbids it. MUST generate State Verification test cases (assert properties) after an action is performed.
 - Hybrid: combination of both but strictly adhering to available data.
-- For Jest specifically: You MUST plan negative test scenarios for `null`, `undefined`, and missing object properties, BUT you MUST CONSOLIDATE these type-safety checks into at most 1 or 2 comprehensive test scenarios per function to avoid test case explosion. CRITICAL: ABSOLUTELY DO NOT plan `null` or `undefined` tests for E2E frameworks (Selenium, Playwright, Postman) because UI and HTTP inputs are always strings or empty strings, never JS `null`/`undefined`.
-- CRITICAL: If the target API is a dummy/mock API (like JSONPlaceholder), remember that it DOES NOT persist state. POST/PUT/DELETE requests will always return the same dummy ID (e.g. 101) and will not actually mutate the backend. DO NOT plan test scenarios that expect state changes across multiple consecutive requests (e.g., verifying unique sequential IDs for consecutive POSTs).
 - CRITICAL: NEVER use excessively long strings (e.g., hundreds of "A"s) in `test_data` or `expected_result`. If a boundary test requires a long string, use a short placeholder like "LONG_STRING_500_CHARS" instead of writing it out.
 
 Schema:

@@ -578,6 +578,7 @@ class PlanningStage:
             api_key=ctx.input_data.api_key,
             ast_context=requirement_stage.ast_context,
             model=ctx.profile.planning_model,
+            framework=ctx.input_data.framework,
         )
         ctx.diagnostics["llm_calls_estimated"] = int(ctx.diagnostics["llm_calls_estimated"]) + 1
         test_case_rows = self.deps.parse_test_plan_rows(test_plan_json)

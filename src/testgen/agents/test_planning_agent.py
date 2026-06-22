@@ -153,8 +153,25 @@ def generate_test_plan(
     api_key: str | None = None,
     ast_context: str = "",
     model: str | None = None,
+    framework: str = "pytest",
 ) -> str:
     system_prompt = TEST_PLANNING_PROMPT
+    if framework == "Jest":
+        system_prompt += (
+            "\n\n[JEST GUIDANCE]:\n"
+            "You MUST plan negative test scenarios for `null`, `undefined`, and missing object properties, BUT you MUST CONSOLIDATE these type-safety checks into at most 1 or 2 comprehensive test scenarios per function to avoid test case explosion."
+        )
+    if framework == "Postman script":
+        system_prompt += (
+            "\n\n[POSTMAN GUIDANCE]:\n"
+            "CRITICAL: If the target API is a dummy/mock API (like JSONPlaceholder), remember that it DOES NOT persist state. POST/PUT/DELETE requests will always return the same dummy ID (e.g. 101) and will not actually mutate the backend. DO NOT plan test scenarios that expect state changes across multiple consecutive requests (e.g., verifying unique sequential IDs for consecutive POSTs).\n"
+            "CRITICAL: ABSOLUTELY DO NOT plan `null` or `undefined` tests for Postman because HTTP inputs are always strings or empty strings, never JS `null`/`undefined`."
+        )
+    if framework in ("Selenium", "Playwright"):
+        system_prompt += (
+            "\n\n[E2E GUIDANCE]:\n"
+            "CRITICAL: ABSOLUTELY DO NOT plan JS `null` or `undefined` tests for E2E frameworks because UI inputs are always strings."
+        )
     ast_prompt = f"\n\n{ast_context}\n" if ast_context else ""
     base_prompt = (
         f"Kỹ thuật kiểm thử đã chọn: {test_technique}\n\n"

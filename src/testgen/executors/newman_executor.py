@@ -7,6 +7,7 @@ import socket
 from typing import Any
 from urllib.parse import urlparse
 
+from testgen.core.utils import extract_json_payload
 from testgen.executors.base import TestExecutionOutcome, TestExecutionRequest
 from testgen.executors.external_command import ExternalCommandExecutor
 
@@ -154,17 +155,55 @@ class NewmanExecutor(ExternalCommandExecutor):
         if not prepared["collection_text"]:
             prepared["issue_type"] = "invalid_postman_artifact"
             return prepared
-        try:
-            prepared["collection_data"] = json.loads(prepared["collection_text"])
-        except json.JSONDecodeError:
+        
+        extracted_data = extract_json_payload(prepared["collection_text"], silent=True)
+        if isinstance(extracted_data, dict) and "info" in extracted_data and "item" in extracted_data:
+            prepared["collection_data"] = extracted_data
+            prepared["collection_text"] = json.dumps(extracted_data, indent=2, ensure_ascii=False)
+        else:
             prepared["issue_type"] = "invalid_postman_artifact"
+            
         return prepared
 
     def _analyze_postman_static_quality(self, collection_text: str) -> dict[str, Any]:
-        text = collection_text or ""
-        assertions = text.count("pm.test")
-        body_assert = "pm.response.json()" in text or "pm.response.text()" in text
-        schema_assert = "tv4.validate" in text or "ajv.validate" in text
+        assertions = 0
+        body_assert = False
+        schema_assert = False
+        
+        try:
+            data = json.loads(collection_text)
+            
+            def traverse_items(items):
+                nonlocal assertions, body_assert, schema_assert
+                for item in items:
+                    if "item" in item:
+                        traverse_items(item["item"])
+                    if "event" in item:
+                        for event in item["event"]:
+                            if event.get("listen") == "test" and "script" in event:
+                                exec_lines = event["script"].get("exec", [])
+                                if isinstance(exec_lines, list):
+                                    script_text = "\n".join(exec_lines)
+                                elif isinstance(exec_lines, str):
+                                    script_text = exec_lines
+                                else:
+                                    script_text = ""
+                                    
+                                assertions += script_text.count("pm.test")
+                                if "pm.response.json()" in script_text or "pm.response.text()" in script_text:
+                                    body_assert = True
+                                if "tv4.validate" in script_text or "ajv.validate" in script_text:
+                                    schema_assert = True
+            
+            if isinstance(data, dict) and "item" in data:
+                traverse_items(data["item"])
+        except Exception:
+            # Fallback to string matching if JSON is totally broken
+            text = collection_text or ""
+            assertions = text.count("pm.test")
+            body_assert = "pm.response.json()" in text or "pm.response.text()" in text
+            schema_assert = "tv4.validate" in text or "ajv.validate" in text
+
         return {
             "assertions_total": assertions,
             "meaningful_assertion_count": assertions,

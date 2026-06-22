@@ -502,3 +502,21 @@ test_scenarios.0.expected_result
       "id": "TC-001",
       "type": "positive",
       "title": "Create...
+2026-06-22 08:46:51,411 - testgen.core.utils - WARNING - Lỗi parse JSON: Expecting ',' delimiter: line 4 column 19 (char 48). Payload: {
+  "test_scenarios": [
+    {
+      "id": "TC- "TC-001",
+      "type": "positive",
+      "title": "C...
+2026-06-22 10:47:57,451 - testgen.core.utils - WARNING - Lỗi parse JSON: Expecting ',' delimiter: line 35 column 36 (char 1625). Payload: {
+  "test_scenarios": [
+    {
+      "id": "TC-001",
+      "type": "positive",
+      "title": "Create...
+2026-06-22 10:59:25,822 - testgen.core.utils - WARNING - Lỗi parse JSON: Expecting ',' delimiter: line 26 column 49 (char 1248). Payload: {
+  "test_scenarios": [
+    {
+      "id": "TC-001",
+      "type": "positive",
+      "title": "Create...

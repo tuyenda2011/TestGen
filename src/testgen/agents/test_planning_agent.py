@@ -8,7 +8,10 @@ from pydantic import BaseModel, Field, field_validator
 
 from testgen.core.config import GEMINI_TEST_PLANNING_MODEL, OLLAMA_TEST_PLANNING_MODEL, PROMPTS_PATH
 from testgen.core.llm import call_llm_chat
+from testgen.core.logger import get_logger
 from testgen.core.utils import extract_and_validate_json_payload, extract_json_payload
+
+logger = get_logger(__name__)
 from testgen.prompts.templates import TEST_PLANNING_PROMPT
 
 
@@ -153,7 +156,7 @@ def generate_test_plan(
 ) -> str:
     system_prompt = TEST_PLANNING_PROMPT
     ast_prompt = f"\n\n{ast_context}\n" if ast_context else ""
-    prompt = (
+    base_prompt = (
         f"Kỹ thuật kiểm thử đã chọn: {test_technique}\n\n"
         "JSON yêu cầu:\n"
         f"{requirement_json.strip() or 'Cần làm rõ'}\n"
@@ -161,12 +164,37 @@ def generate_test_plan(
         "Hãy tạo ngay JSON kế hoạch kiểm thử theo kỹ thuật đã chọn. "
         "Tất cả field trong mỗi scenario phải là chuỗi, không dùng array/object cho preconditions, test_data hoặc expected_result."
     )
-    result = call_llm_chat(
-        prompt=prompt,
-        system_prompt=system_prompt,
-        backend=backend,
-        model=_model_for_backend(backend, model),
-        api_key=api_key,
-        agent_type="test_planner",
-    )
-    return _ensure_valid_test_plan_json(result)
+    
+    max_retries = 3
+    last_payload = ""
+    for attempt in range(max_retries):
+        if attempt == 0:
+            prompt = base_prompt
+        else:
+            logger.warning(f"Test Planner retry {attempt}/{max_retries - 1} due to JSON schema error.")
+            prompt = (
+                f"{base_prompt}\n\n"
+                "LẦN THỬ TRƯỚC BỊ LỖI JSON SCHEMA:\n"
+                f"Payload đã sinh:\n{last_payload}\n"
+                "Lỗi: Payload bạn trả về không phải là JSON hợp lệ (có thể bạn đã dùng biểu thức JavaScript như .repeat() hoặc nối chuỗi + bên trong chuỗi JSON). "
+                "HÃY CHỈ TRẢ VỀ JSON HỢP LỆ THEO ĐÚNG SCHEMA. TUYỆT ĐỐI KHÔNG SỬ DỤNG JAVASCRIPT BÊN TRONG JSON!"
+            )
+            
+        result = call_llm_chat(
+            prompt=prompt,
+            system_prompt=system_prompt,
+            backend=backend,
+            model=_model_for_backend(backend, model),
+            api_key=api_key,
+            agent_type="test_planner",
+        )
+        last_payload = result
+        
+        try:
+            return _ensure_valid_test_plan_json(result)
+        except ValueError as e:
+            if attempt == max_retries - 1:
+                logger.error(f"Test Planner failed to generate valid JSON after {max_retries} attempts.")
+                raise e
+    
+    raise ValueError("Unexpected error in generate_test_plan retry loop")

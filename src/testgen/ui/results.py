@@ -497,10 +497,16 @@ def render_results(result: dict, workflow_mode: str, framework: str, test_techni
         verdict = str(assessment.get("verdict", ""))
         score = int(assessment.get("score", 0) or 0)
         action_items = assessment.get("action_items", [])
-        coverage_label = str(
-            assessment.get("coverage_label")
-            or f"{float(assessment.get('coverage', 0.0) or 0.0):.1f}%"
-        )
+        display_fw = str(result.get("framework", framework))
+        is_e2e_fw = display_fw in {"Selenium", "Playwright", "Postman script"}
+        
+        if is_e2e_fw:
+            coverage_label = "Không hỗ trợ"
+        else:
+            coverage_label = str(
+                assessment.get("coverage_label")
+                or f"{float(assessment.get('coverage', 0.0) or 0.0):.1f}%"
+            )
 
         # ── Hàng 1: Verdict badge + các metric chính ──
         try:
@@ -510,6 +516,8 @@ def render_results(result: dict, workflow_mode: str, framework: str, test_techni
                 execution_summary=result.get("execution_summary", {}) if isinstance(result.get("execution_summary"), dict) else {},
                 review_report=str(result.get("review_report") or ""),
                 generated_code=str(result.get("generated_code") or ""),
+                test_plan_json=str(result.get("test_plan_json") or ""),
+                requirement_json=str(result.get("requirement_json") or ""),
                 diagnostics=result.get("diagnostics", {}) if isinstance(result.get("diagnostics"), dict) else {}
             )
             if isinstance(result, dict):
@@ -692,7 +700,10 @@ def render_results(result: dict, workflow_mode: str, framework: str, test_techni
             display_fw = str(result.get("framework", framework) or "pytest")
             st.markdown(f"#### Kết quả chạy {display_fw}")
             run_cols = st.columns(3)
-            run_cols[0].metric("Coverage", f"{coverage_value:.1f}%")
+            if display_fw in {"Selenium", "Playwright", "Postman script"}:
+                run_cols[0].metric("Coverage", "Không hỗ trợ")
+            else:
+                run_cols[0].metric("Coverage", f"{coverage_value:.1f}%")
             run_cols[1].metric(f"{display_fw.capitalize()} pass", "Có" if passed_value else "Không")
             run_cols[2].metric(
                 "Missing lines",
@@ -718,10 +729,13 @@ def render_results(result: dict, workflow_mode: str, framework: str, test_techni
             if isinstance(combined_report, dict):
                 st.markdown("#### Combined coverage")
                 combined_cols = st.columns(3)
-                combined_cols[0].metric(
-                    "Combined coverage",
-                    f"{float(combined_report.get('coverage_percent', 0.0) or 0.0):.1f}%",
-                )
+                if display_fw in {"Selenium", "Playwright", "Postman script"}:
+                    combined_cols[0].metric("Combined coverage", "Không hỗ trợ")
+                else:
+                    combined_cols[0].metric(
+                        "Combined coverage",
+                        f"{float(combined_report.get('coverage_percent', 0.0) or 0.0):.1f}%",
+                    )
                 combined_cols[1].metric(
                     "Combined pass",
                     "Có" if bool(combined_report.get("passed", False)) else "Không",

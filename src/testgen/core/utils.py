@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import re
+import json_repair
 from typing import Any
 from pathlib import Path
 from testgen.core.logger import get_logger
@@ -78,12 +79,22 @@ def extract_json_payload(payload: str, silent: bool = False) -> Any:
     try:
         return json.loads(candidate)
     except json.JSONDecodeError as e:
-        if not silent:
-            logger.warning(f"Lỗi parse JSON: {e}. Payload: {candidate[:100]}...")
         # Fallback thử parse thô nếu candidate đã bị cắt lỡ
         try:
             return json.loads(text)
         except json.JSONDecodeError:
+            # Fallback cuối cùng: dùng json_repair
+            try:
+                repaired = json_repair.repair_json(candidate, return_objects=True)
+                if repaired is not None:
+                    if not silent:
+                        logger.info(f"Đã tự động sửa lỗi JSON bằng json_repair.")
+                    return repaired
+            except Exception as repair_err:
+                pass
+            
+            if not silent:
+                logger.warning(f"Lỗi parse JSON: {e}. Payload: {candidate[:100]}...")
             return None
 
 from pydantic import BaseModel, ValidationError

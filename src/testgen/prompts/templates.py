@@ -27,10 +27,11 @@ Task: Create a test plan JSON from the requirement JSON.
 
 Rules:
 - STRICTLY DO NOT plan tests for private or protected methods. Only focus on public methods (Public API).
-- Only create scenarios grounded in the requirement/source context; do NOT invent APIs, selectors, routes, schemas, roles, or data.
+- CRITICAL: You MUST strictly base your test cases ONLY on the provided source code, HTML, and requirements. ABSOLUTELY DO NOT hallucinate, invent, or assume "junk" test cases for features, fields, buttons, APIs, schemas, roles, or behaviors that are not explicitly present in the source code. If a constraint or feature is not in the source, do not test it!
 - If lacking grounds, create a `clarification` scenario or clearly note it in `missing_information` within the scenario.
 - Expected results must be verifiable, do not use vague statements. SPECIAL ATTENTION: If a test case violates a logic condition and is expected to throw an Exception, the `expected_result` MUST explicitly state the word "Throws" and the Exception name (Example: "Throws IllegalArgumentException due to negative amount").
 - Output ONLY valid JSON, no markdown formatting.
+- CRITICAL: Your output MUST be strictly valid JSON. ABSOLUTELY DO NOT use JavaScript expressions, functions, or string concatenation (like `"A".repeat(100)` or `+`) inside the JSON. All values must be literal strings.
 - All fields in each scenario must be strings; do not use arrays/objects for `preconditions`, `test_data`, `expected_result`.
 
 Techniques:
@@ -38,7 +39,8 @@ Techniques:
 - White-box: branch, condition, exception, return path if source/context is available.
 - State-based/Cross-functional: Exhaustively analyze internal state dependencies (e.g., hidden flags like `isActive()` or helper conditions like `checkActive()`) to generate Negative Test Cases if a public action is called when the state forbids it. MUST generate State Verification test cases (assert properties) after an action is performed.
 - Hybrid: combination of both but strictly adhering to available data.
-- For JavaScript/Jest specifically: You MUST plan negative test scenarios for `null`, `undefined`, and missing object properties, BUT you MUST CONSOLIDATE these type-safety checks into at most 1 or 2 comprehensive test scenarios per function to avoid test case explosion.
+- For Jest specifically: You MUST plan negative test scenarios for `null`, `undefined`, and missing object properties, BUT you MUST CONSOLIDATE these type-safety checks into at most 1 or 2 comprehensive test scenarios per function to avoid test case explosion. CRITICAL: ABSOLUTELY DO NOT plan `null` or `undefined` tests for E2E frameworks (Selenium, Playwright, Postman) because UI and HTTP inputs are always strings or empty strings, never JS `null`/`undefined`.
+- CRITICAL: If the target API is a dummy/mock API (like JSONPlaceholder), remember that it DOES NOT persist state. POST/PUT/DELETE requests will always return the same dummy ID (e.g. 101) and will not actually mutate the backend. DO NOT plan test scenarios that expect state changes across multiple consecutive requests (e.g., verifying unique sequential IDs for consecutive POSTs).
 
 Schema:
 {
@@ -76,8 +78,11 @@ Priority Checks:
 - Mocking at the wrong level or mocking non-existent dependencies.
 - Reliance on external uncontrolled time/network/file system/state.
 - CRITICAL: Demanding fake Pytest fixtures (like `db_connection`) or generating intentionally failing tests with mathematically/logically wrong assertions (e.g. `assert 3**2 == 10`). These MUST be flagged as "Lỗi nghiêm trọng".
+- CRITICAL: For E2E frameworks (Selenium/Playwright), if the test script tests a Python helper function instead of interacting with the actual UI via WebDriver/Page, flag it as "Lỗi nghiêm trọng". The test MUST use the driver/page to interact with the web elements and assert against the actual UI output.
 - CRITICAL: For Postman, using Regex in `pm.response.to.have.header()` or using `.to.be.oneOf([null, undefined])` to check missing fields are strict syntax errors and MUST be flagged as "Lỗi nghiêm trọng".
 - CRITICAL: For Postman, generating excessively long strings (e.g. hundreds of characters like "aaaa...") for payloads is strictly prohibited. Flag it as "Lỗi nghiêm trọng" if a generated string exceeds 50 characters, as it breaks the collection JSON structure or crashes the executor.
+- CRITICAL: If a test fails with "DID NOT RAISE" (wrong_exception_expectation), it means the test incorrectly expected an exception for an input that the source code handles normally without throwing. Flag this as "Lỗi nghiêm trọng" and instruct the generator to remove `pytest.raises` and assert the actual successful behavior instead.
+- CRITICAL: For Postman, if the test asserts state changes across multiple requests against a dummy API like JSONPlaceholder (e.g., expecting consecutive POSTs to return different IDs), flag it as "Lỗi nghiêm trọng" because dummy APIs do not persist state and always return the same mocked ID.
 
 Output concise Markdown, using exactly the following headings so the UI can group them properly (Headings MUST be in Vietnamese):
 
@@ -119,8 +124,9 @@ Rules:
 - When comparing floating-point numbers (`double`, `float`) in JUnit, you MUST use the delta parameter (e.g., `assertEquals(100.0, actual, 0.001)`).
 - If `expected_result` in the Plan mentions the keyword "Throw" or "Exception", you MUST wrap that line of code with `assertThrows(ExceptionName.class, () -> {{...}})`. Never leave the bare function call that could crash the system.
 - CRITICAL: You MUST implement EVERY SINGLE Test Case from the Test Plan if it exists in the source code. Skipping cases like initialization tests will result in catastrophic failure.
+- CRITICAL: If you detect that a test case in the Test Plan is hallucinated (i.e., it asks to test a feature, parameter, or UI element that DOES NOT EXIST in the provided source code), DO NOT invent arbitrary helper functions, APIs, or mock objects to satisfy it. You must either adapt it to fit the actual source limits or ignore the hallucinated parts.
 - MUST use parametrization (`@pytest.mark.parametrize` in Python or equivalent in other frameworks) when testing similar scenarios (e.g. boundary checks, different data sets) to improve Maintainability.
-- Only use APIs/classes/functions/parameters/selectors/routes/schemas present in the context.
+- Only use APIs/classes/functions/parameters/selectors/routes/schemas explicitly present in the context.
 - Do not use placeholder values, None, or snapshot() as expected values. All assertions must have concrete values derived from source logic.
 - CRITICAL: You MUST write concise but comprehensive tests to achieve 100% Line and Branch Coverage. DO NOT skip initialization methods (e.g., __init__), property checks, or error-handling branches.
 - ABSOLUTELY DO NOT generate intentionally failing tests (e.g. asserting `3**2 == 10` just to see it fail). Negative tests mean passing invalid inputs to the SOURCE CODE to see how it handles exceptions, NOT writing mathematically/logically wrong assertions.

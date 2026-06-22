@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "run_id": "run_20260622_154044_941365",
+  "created_at": "2026-06-22T15:57:26",
+  "workflow": "Sinh mã kiểm thử",
+  "mode": "OpenRouter / Multi-model",
+  "backend": "openrouter",
+  "framework": "Postman script",
+  "test_technique": "Hybrid",
+  "diagnostics": {
+    "docs_chunks_indexed": 0,
+    "docs_chunks_reused": 1851,
+    "source_chunks_indexed": 0,
+    "source_chunks_reused": 3,
+    "rag_reused_collections": 2,
+    "llm_calls_estimated": 9,
+    "pytest_attempts": 0,
+    "pytest_passed": false,
+    "pytest_coverage_percent": 0.0,
+    "pytest_combined_coverage_percent": 0.0,
+    "pytest_targeted_retries": 0,
+    "pytest_full_retries": 0,
+    "pytest_retry_modes": [],
+    "stage_timings_ms": {
+      "input": 8.68,
+      "rag": 4288.57,
+      "requirement": 71845.79,
+      "planning": 74814.89,
+      "generation_1": 146160.14,
+      "execution_1": 6679.7,
+      "review_1": 50542.36,
+      "generation_2": 201203.96,
+      "execution_2": 3367.29,
+      "review_2": 69011.65,
+      "generation_3": 168558.1,
+      "execution_3": 169509.39,
+      "review_3": 35335.76
+    },
+    "rag_retrieval": {
+      "docs": {
+        "top_k_requested": 8,
+        "returned_chunks": 8,
+        "filtered_low_score_chunks": 0,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          }
+        ]
+      },
+      "source": {
+        "top_k_requested": 8,
+        "returned_chunks": 3,
+        "filtered_low_score_chunks": 0,
+        "sources": [
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          },
+          {
+            "rank": "<truncated>",
+            "source_name": "<truncated>",
+            "section": "<truncated>",
+            "chunk_type": "<truncated>",
+            "line_start": "<truncated>",
+            "line_end": "<truncated>",
+            "distance": "<truncated>",
+            "score": "<truncated>",
+            "metadata_missing_fields": "<truncated>",
+            "filtered_by_min_score": "<truncated>"
+          }
+        ]
+      }
+    },
+    "context_lengths": {
+      "retrieval_context_chars": 11056,
+      "python_source_chars": 3036
+    },
+    "context_budget_chars": {
+      "requirement": 9000,
+      "generation": 8000,
+      "review": 8000
+    },
+    "review_loop_attempt": 3,
+    "test_execution_framework": "Postman script",
+    "retry_modes": [
+      "initial",
+      "initial",
+      "initial",
+      "heal_retry"
+    ],
+    "attempts": 2,
+    "execution_issue_type": "none",
+    "postman_script_passed": true,
+    "postman_script_coverage_percent": 0.0,
+    "postman_script_execution_issue_type": "none",
+    "traceability": {
+      "planned_cases": 7,
+      "implemented_cases": 8,
+      "required_in_scope_cases": 7,
+      "implemented_in_scope_cases": 7,
+      "missing_in_scope_case_ids": [],
+      "out_of_scope_case_ids": [],
+      "ambiguous_case_ids": [],
+      "semantically_implemented_case_ids": [],
+      "missing_case_ids": [],
+      "raw_missing_case_ids": [],
+      "case_bindings": {},
+      "case_binding_reasons": {}
+    },
+    "full_retries": 1
+  },
+  "metadata": {
+    "models": {
+      "requirement": "nex-agi/nex-n2-pro:free",
+      "planning": "nvidia/nemotron-3-ultra-550b-a55b:free",
+      "code_generator": "poolside/laguna-m.1:free",
+      "review": "openai/gpt-oss-120b:free",
+      "embedding": "nomic-embed-text"
+    },
+    "embedding_backend": "ollama"
+  },
+  "artifacts": [
+    {
+      "kind": "generated_code",
+      "label": "Mã kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-22\\run_20260622_154044_941365\\test_code\\ma_kiem_thu_postman_script_20260622_155726_323731.js",
+      "name": "ma_kiem_thu_postman_script_20260622_155726_323731.js",
+      "size_bytes": 12907,
+      "extension": ".js"
+    },
+    {
+      "kind": "test_plan",
+      "label": "Kế hoạch kiểm thử",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-22\\run_20260622_154044_941365\\test_plan\\ke_hoach_kiem_thu_20260622_155726_327304.xlsx",
+      "name": "ke_hoach_kiem_thu_20260622_155726_327304.xlsx",
+      "size_bytes": 6058,
+      "extension": ".xlsx"
+    },
+    {
+      "kind": "review_report",
+      "label": "Báo cáo rà soát",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-22\\run_20260622_154044_941365\\review_report\\bao_cao_phan_tich_20260622_155726_363611.pdf",
+      "name": "bao_cao_phan_tich_20260622_155726_363611.pdf",
+      "size_bytes": 3801,
+      "extension": ".pdf"
+    },
+    {
+      "kind": "review_report_markdown",
+      "label": "Báo cáo rà soát Markdown",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-22\\run_20260622_154044_941365\\review_report\\bao_cao_phan_tich_20260622_155726_363611.md",
+      "name": "bao_cao_phan_tich_20260622_155726_363611.md",
+      "size_bytes": 3256,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_report",
+      "label": "Combined coverage report",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-22\\run_20260622_154044_941365\\coverage_report\\combined_coverage_20260622_155726_316696.md",
+      "name": "combined_coverage_20260622_155726_316696.md",
+      "size_bytes": 8672,
+      "extension": ".md"
+    },
+    {
+      "kind": "coverage_json",
+      "label": "Combined coverage JSON",
+      "path": "D:\\Chatbot\\outputs\\runs\\2026-06-22\\run_20260622_154044_941365\\coverage_report\\combined_coverage_20260622_155726_316696.json",
+      "name": "combined_coverage_20260622_155726_316696.json",
+      "size_bytes": 8607,
+      "extension": ".json"
+    }
+  ]
+}

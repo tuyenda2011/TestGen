@@ -1,0 +1,94 @@
+{
+  "test_scenarios": [
+    {
+      "id": "TC-001",
+      "type": "positive",
+      "title": "Create a new post with valid payload",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/posts is reachable",
+      "test_data": "{\"userId\":1,\"title\":\"Sample title\",\"body\":\"Sample body content\"}",
+      "expected_result": "Response status 201, response JSON contains userId 1, title \"Sample title\", body \"Sample body content\", and an automatically generated numeric id field",
+      "priority": "High"
+    },
+    {
+      "id": "TC-002",
+      "type": "negative",
+      "title": "Create a new post missing required field 'title'",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/posts is reachable",
+      "test_data": "{\"userId\":1,\"body\":\"Sample body content\"}",
+      "expected_result": "Throws 400 Bad Request or returns status code other than 201 indicating validation failure",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC-003",
+      "type": "boundary",
+      "title": "Create a new post with maximum length title and body",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/posts is reachable",
+      "test_data": "{\"userId\":1,\"title\":\"" + "A".repeat(255) + "\",\"body\":\"" + "B".repeat(5000) + "\"}",
+      "expected_result": "Response status 201 and response JSON includes the same long title and body values with a generated id",
+      "priority": "Low"
+    },
+    {
+      "id": "TC-004",
+      "type": "negative",
+      "title": "Create a new post with non-integer userId",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/posts is reachable",
+      "test_data": "{\"userId\":\"one\",\"title\":\"Sample\",\"body\":\"Sample\"}",
+      "expected_result": "Throws 400 Bad Request or returns status code other than 201 due to type mismatch",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC-005",
+      "type": "integration",
+      "title": "Create post then retrieve the same user information",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/posts and https://jsonplaceholder.typicode.com/users/1 are reachable",
+      "test_data": "POST payload {\"userId\":1,\"title\":\"Integration test\",\"body\":\"Testing\"} followed by GET /users/1",
+      "expected_result": "POST returns status 201 with generated id, GET /users/1 returns status 200 and user data with id 1; no state persistence is required as dummy API always returns static user data",
+      "priority": "High"
+    },
+    {
+      "id": "TC-006",
+      "type": "clarification",
+      "title": "Verify behavior when POST payload includes extra undefined fields",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/posts is reachable",
+      "test_data": "{\"userId\":1,\"title\":\"Extra\",\"body\":\"Field\",\"extraField\":\"value\"}",
+      "expected_result": "Missing_information: unclear whether extra fields are ignored or cause error; test to be defined after clarification",
+      "priority": "Low"
+    },
+    {
+      "id": "TC-007",
+      "type": "positive",
+      "title": "Retrieve user information for a valid user ID",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/users/1 is reachable",
+      "test_data": "GET request to /users/1",
+      "expected_result": "Response status 200 and JSON contains fields id, name, username, email, address, phone, website, company with id equal to 1",
+      "priority": "High"
+    },
+    {
+      "id": "TC-008",
+      "type": "negative",
+      "title": "Retrieve user information with non-existent user ID",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/users/9999 is reachable",
+      "test_data": "GET request to /users/9999",
+      "expected_result": "Response status 404 Not Found or empty body as per API definition",
+      "priority": "Medium"
+    },
+    {
+      "id": "TC-009",
+      "type": "boundary",
+      "title": "Retrieve user information with user ID zero",
+      "preconditions": "API endpoint https://jsonplaceholder.typicode.com/users/0 is reachable",
+      "test_data": "GET request to /users/0",
+      "expected_result": "Response status 404 Not Found or appropriate error indicating invalid ID",
+      "priority": "Low"
+    },
+    {
+      "id": "TC-010",
+      "type": "clarification",
+      "title": "Determine exact GET /users/{id} request parameters and response schema",
+      "preconditions": "None",
+      "test_data": "N/A",
+      "expected_result": "Missing_information: request parameters and full response schema are not provided in requirements; need clarification before detailed test design",
+      "priority": "Low"
+    }
+  ]
+}

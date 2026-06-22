@@ -71,7 +71,7 @@ class JestExecutor(ExternalCommandExecutor):
                 if msg:
                     human_msgs.append(msg)
             if human_msgs:
-                output = "--- JEST ERROR DETAILS ---\n" + "\n\n".join(human_msgs)
+                output = "--- JEST ERROR DETAILS ---\n" + "\n\n".join(human_msgs) + "\n\n--- JEST RAW OUTPUT ---\n" + output
         else:
             test_counts = self._parse_test_counts(output)
         
@@ -171,21 +171,28 @@ class JestExecutor(ExternalCommandExecutor):
             "jest": {
                 "coverageReporters": ["json-summary", "clover"],
                 "collectCoverageFrom": ["source_under_test.js"]
-            },
-            "devDependencies": {
-                "jest": "^29.0.0",
-                "jest-environment-jsdom": "^29.0.0"
             }
         }
         self._write_text(package_json_path, json.dumps(package_json_content, indent=2))
         
-        if not (workspace_dir / "node_modules").exists():
+        # Tối ưu hiệu năng Cực hạn: Tận dụng cơ chế Node Module Resolution
+        # Thay vì tốn 10 giây install Jest ở mỗi thư mục run_XXX, ta chỉ install 1 lần ở thư mục cha.
+        # Node.js trong run_XXX sẽ tự động tìm kiếm node_modules ở thư mục cha!
+        parent_dir = workspace_dir.parent
+        parent_node_modules = parent_dir / "node_modules"
+        jest_bin = parent_node_modules / "jest" / "bin" / "jest.js"
+        
+        if not jest_bin.exists():
+            parent_pkg = parent_dir / "package.json"
+            if not parent_pkg.exists():
+                self._write_text(parent_pkg, '{"name":"tmp_execution_cache","version":"1.0.0"}')
+                
             import subprocess
             npm_cmd = self._which("npm") or "npm"
             try:
                 subprocess.run(
-                    [npm_cmd, "install", "--no-fund", "--no-audit", "--loglevel=error"], 
-                    cwd=workspace_dir, 
+                    [npm_cmd, "install", "jest@^29.0.0", "jest-environment-jsdom@^29.0.0", "--no-fund", "--no-audit", "--loglevel=error"], 
+                    cwd=parent_dir, 
                     capture_output=True, 
                     check=True
                 )
@@ -194,6 +201,15 @@ class JestExecutor(ExternalCommandExecutor):
 
     def _command_for_workspace(self, workspace_dir: Path) -> list[str]:
         base_flags = ["--coverage", "--runInBand", "--json", "--outputFile=jest_results.json", "--forceExit", "--env=jsdom"]
+        parent_dir = workspace_dir.parent
+        jest_bin = parent_dir / "node_modules" / "jest" / "bin" / "jest.js"
+        
+        # Gọi thẳng file nhị phân Jest thay vì qua npx hay npm test để tăng tối đa tốc độ
+        if jest_bin.exists():
+            node_cmd = self._which("node") or "node"
+            return [node_cmd, str(jest_bin)] + base_flags
+            
+        # Fallback về cách cũ nếu install ở parent fail
         if (workspace_dir / "package.json").exists():
             return ["npm", "test", "--"] + base_flags
         return ["npx", "--no-install", "jest"] + base_flags

@@ -45,6 +45,14 @@ def review_test_code(
             "3. DO NOT penalize maintainability for hardcoding the local HTML file path or using Edge driver (webdriver.Edge), as these are required in the execution environment.\n"
             "4. Do NOT penalize test cases for 'Missing meaningful assertions' if they rely on implicit UI interactions (e.g. `find_element`, `click`, `fill`, `expect`) to verify the page state or flow."
         )
+    if framework == "Postman script":
+        system_prompt += (
+            "\n\n[POSTMAN GUIDANCE]:\n"
+            "1. Using Regex in `pm.response.to.have.header()` or using `.to.be.oneOf([null, undefined])` to check missing fields are strict syntax errors and MUST be flagged as 'Lỗi nghiêm trọng'.\n"
+            "2. Generating excessively long strings (e.g. hundreds of characters) for payloads is strictly prohibited. Flag it as 'Lỗi nghiêm trọng' if a generated string exceeds 50 characters.\n"
+            "3. If the test asserts state changes across multiple requests against a dummy API like JSONPlaceholder (e.g., expecting consecutive POSTs to return different IDs), flag it as 'Lỗi nghiêm trọng' because dummy APIs do not persist state.\n"
+            "4. Using `pm.expect(pm.response.text()).to.be.empty` to assert an empty JSON object is logically wrong and fails at runtime (because `{}` is not empty). Flag this as 'Lỗi nghiêm trọng' and instruct the generator to use `pm.expect(Object.keys(pm.response.json())).to.be.empty` instead."
+        )
     source_block = source_code_text.strip() or "No source code provided."
     prompt = (
         f"Selected framework: {framework}\n\n"

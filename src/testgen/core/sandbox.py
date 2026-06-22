@@ -80,7 +80,7 @@ def _regex_rules_for_language(language: str) -> list[SandboxRule]:
 
 def _regex_check(code: str, language: str, allow_e2e: bool = False) -> tuple[bool, str]:
     for rule in _regex_rules_for_language(language):
-        if allow_e2e and rule.reason == "network URL literal":
+        if allow_e2e and rule.reason in ("network URL literal", "dangerous Python module call", "dangerous Python builtin"):
             continue
         if rule.pattern.search(code or ""):
             return False, f"Regex sandbox blocked {rule.reason}."
@@ -98,9 +98,13 @@ def _python_ast_check(code: str, allow_e2e: bool = False) -> tuple[bool, str]:
             for alias in node.names:
                 root_name = (alias.name or "").split(".", 1)[0]
                 if root_name in _PYTHON_BLOCKED_IMPORTS:
+                    if allow_e2e and root_name in ("os", "subprocess"):
+                        continue
                     return False, f"Blocked unsafe Python import: {root_name}"
         if isinstance(node, ast.Call):
             if isinstance(node.func, ast.Name) and node.func.id in _PYTHON_BLOCKED_CALLS:
+                if allow_e2e and node.func.id == "open":
+                    continue
                 return False, f"Blocked unsafe Python call: {node.func.id}()"
             if isinstance(node.func, ast.Attribute) and node.func.attr in _PYTHON_BLOCKED_ATTRIBUTES:
                 return False, f"Blocked unsafe Python attribute call: {node.func.attr}()"
